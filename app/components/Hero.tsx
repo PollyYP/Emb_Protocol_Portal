@@ -92,11 +92,11 @@ export default function Hero() {
 
             {/* Title */}
             <h2 className="text-2xl font-extrabold leading-tight md:text-3xl">
-              Contact Information
+              Contact Us
             </h2>
 
             {/* Contact Information */}
-            <div className="mt-6 space-y-8 text-sm md:text-base">
+            <div className="mt-6 md:mt-2 lg:mt-10 space-y-8 text-sm lg:text-base">
 
               {/* Address */}
               <div>
@@ -104,9 +104,10 @@ export default function Hero() {
                 <LocationIcon />
                 <span>Address</span>
                 </div>
-                <div className="mt-2 border-b border-white/60 pb-2">
+                <div className="mt-2 border-b border-white/60 pb-6 md:pb-4 lg:pb-10">
                 1024 Wisconsin Ave NW <br />
-                Washington, D.C. 20007
+                Washington, D.C. 20007 <br />
+                ตึกหลัง ชั้น 2
                 </div>
             </div>
 
@@ -116,7 +117,7 @@ export default function Hero() {
                 <MailIcon />
                 <span>Email</span>
                 </div>
-                <div className="mt-2 border-b border-white/60 pb-2">
+                <div className="mt-2 border-b border-white/60 pb-10 md:pb-4 lg:pb-10">
                 protocol@thaiembdc.org
                 </div>
             </div>
@@ -127,8 +128,8 @@ export default function Hero() {
                 <PhoneIcon />
                 <span>Telephone</span>
                 </div>
-                <div className="mt-2 border-b border-white/60 pb-2">
-                +1 (202) 555-1234
+                <div className="mt-2 border-b border-white/60 pb-10 md:pb-4 lg:pb-10">
+                +1 (202) 298-4798
                 </div>
             </div>
 
