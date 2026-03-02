@@ -185,7 +185,7 @@ export default function Header() {
 
             {/* Contact button */}
             <a
-              href="#contact"
+              href="mailto:protocol@thaiembdc.org"
               className="ml-3 inline-flex items-center gap-2 rounded-lg bg-[#c40000] px-5 py-2 text-sm lg:text-basefont-semibold text-white transition-all hover:bg-[#a80000] active:scale-[0.97]"
             >
               ติดต่อเรา
