@@ -350,7 +350,7 @@ export default function CarPage() {
           {/* CTA */}
           <FadeIn className="mt-10 flex justify-center">
             <Link
-              href="/license"
+              href="/dmv"
               className="inline-flex items-center gap-2 rounded-lg bg-[#0c0479] px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#0a0360]"
             >
               การขอใบขับขี่ทางการทูต อ่านรายละเอียด →

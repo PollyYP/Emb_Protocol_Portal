@@ -10,18 +10,18 @@ const ofmMenu = [
   {
     group: "Person Management",
     items: [
-      { label: "Notification of Appointment", href: "/ofm/appointment" },
-      { label: "Notification of Change", href: "/ofm/change" },
-      { label: "Notification of Terminate", href: "/ofm/terminate" },
+      { label: "Notification of Appointment", href: "/person-management" },
+      { label: "Notification of Change", href: "/person-management" },
+      { label: "Notification of Terminate", href: "/person-management" },
     ],
   },
   {
     group: "เกี่ยวกับรถ",
     items: [
-      { label: "ขอมีป้ายทะเบียนการทูต", href: "/vehicle/plates" },
-      { label: "การขอใบขับขี่", href: "/vehicle/license" },
-      { label: "การซื้อ/เช่าซื้อรถ", href: "/vehicle/purchase" },
-      { label: "การขายรถ", href: "/vehicle/sell" },
+      { label: "ขอมีป้ายทะเบียนการทูต", href: "/dmv" },
+      { label: "การขอใบขับขี่", href: "/dmv" },
+      { label: "การซื้อ/เช่าซื้อรถ", href: "/dmv" },
+      { label: "การขายรถ", href: "/dmv" },
     ],
   },
 ];
