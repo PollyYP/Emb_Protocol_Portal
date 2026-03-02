@@ -67,8 +67,9 @@ export default function VehiclePage() {
             </p>
           </motion.div>
 
-          {/* ──────────── Card 1: การขอมีป้ายทะเบียน ──────────── */}
           <div className="space-y-6">
+
+            {/* ──────────── Card 1: การขอมีป้ายทะเบียน ──────────── */}
             <motion.article
               custom={0}
               variants={fadeUp}
@@ -98,13 +99,11 @@ export default function VehiclePage() {
                     โดยไม่สามารถไปจดทะเบียนที่ DMV ของรัฐได้โดยตรง
                     รถยนต์จะได้รับป้ายทะเบียนการทูต (Diplomatic License Plate) ซึ่งเป็นป้ายทะเบียนเฉพาะสำหรับบุคลากรทางการทูตเท่านั้น
                   </p>
-
                   <p>
                     เมื่อดำเนินการจดทะเบียนแล้ว OFM
                     จะเป็นผู้ครอบครองใบกรรมสิทธิ์รถยนต์ (Title Certificate)
                     ที่มีชื่อของท่านอยู่ โดยท่านจะไม่ได้รับ Title Certificate มาถือไว้เอง
                   </p>
-
                   <p>
                     เมื่อ OFM ได้รับเอกสารครบถ้วนแล้ว
                     จะออกป้ายทะเบียนการทูตพร้อมสติกเกอร์ (Decal) ให้
@@ -138,9 +137,164 @@ export default function VehiclePage() {
               </div>
             </motion.article>
 
-            {/* ──────────── Card 2: การขายรถ ──────────── */}
+            {/* ──────────── Card 2: การขอใบขับขี่ ──────────── */}
             <motion.article
               custom={1}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-40px" }}
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm transition-shadow duration-300 hover:shadow-lg hover:shadow-black/5"
+            >
+              <div className="h-1 w-full bg-gradient-to-r from-[#0c0479] to-[#3a2fd4]" />
+
+              <div className="flex flex-1 flex-col p-7 sm:p-8">
+                <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-[#0c0479]/8 text-sm font-bold text-[#0c0479]">
+                  02
+                </div>
+
+                <h3 className="text-lg font-bold tracking-tight text-black/85 sm:text-xl">
+                  การขอใบขับขี่
+                </h3>
+                <p className="mt-1 text-sm font-medium text-[#0c0479]/60">
+                  Diplomatic Driver&apos;s License
+                </p>
+
+                <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-black/55">
+
+                  {/* Step 1 */}
+                  <div className="rounded-xl border border-black/5 bg-gray-50/80 p-5">
+                    <div className="mb-3 flex items-center gap-2.5">
+                      <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#0c0479]/10 text-xs font-bold text-[#0c0479]">
+                        1
+                      </span>
+                      <h4 className="text-sm font-bold text-black/75">
+                        นำส่งเอกสารทางอีเมลมายังฝ่ายพิธีฯ
+                      </h4>
+                    </div>
+                    <div className="space-y-3">
+                      <p>เตรียมเอกสารดังต่อไปนี้แล้วส่งไฟล์ทางอีเมลมายังฝ่ายพิธีการทูต</p>
+                      <div className="space-y-2 pl-1">
+                        <div className="flex items-start gap-2.5">
+                          <span className="mt-1 flex h-1.5 w-1.5 shrink-0 rounded-full bg-[#0c0479]/40" />
+                          <p>
+                            <span className="font-semibold text-black/70">ใบขับขี่ไทย</span>{" "}
+                            — หากท่านมีใบขับขี่ไทยจะทำให้ไม่ต้องสอบขับรถที่สหรัฐฯ
+                          </p>
+                        </div>
+                        <div className="flex items-start gap-2.5">
+                          <span className="mt-1 flex h-1.5 w-1.5 shrink-0 rounded-full bg-[#0c0479]/40" />
+                          <p>
+                            <span className="font-semibold text-black/70">ใบแปลใบขับขี่ไทยเป็นภาษาอังกฤษ</span>
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Download button */}
+                      <Link
+                        href="https://image.mfa.go.th/mfa/0/91fPdh6NtO/Consular-Services/Consular_service-forms/4.22_New_Driver_License.pdf"
+                        className="mt-2 inline-flex items-center gap-2 rounded-lg border border-[#0c0479]/15 bg-[#0c0479]/5 px-4 py-2.5 text-sm font-semibold text-[#0c0479] transition-all hover:bg-[#0c0479]/10 active:scale-[0.97]"
+                      >
+                        <svg
+                          className="h-4 w-4"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+                          />
+                        </svg>
+                        ดาวน์โหลดแบบฟอร์มแปลใบขับขี่
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* Step 2 */}
+                  <div className="rounded-xl border border-black/5 bg-gray-50/80 p-5">
+                    <div className="mb-3 flex items-center gap-2.5">
+                      <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#0c0479]/10 text-xs font-bold text-[#0c0479]">
+                        2
+                      </span>
+                      <h4 className="text-sm font-bold text-black/75">
+                        ตรวจสายตา
+                      </h4>
+                    </div>
+                    <p>
+                      ฝ่ายพิธีฯ จะนำข้อมูลของท่านเข้าระบบ
+                      เพื่อออกใบตรวจสายตาที่มีข้อมูลของท่านอยู่ในแบบฟอร์มเรียบร้อยแล้ว
+                      ท่านสามารถนำแบบฟอร์มนี้ไปตรวจสายตาได้ที่ร้านขายแว่นเอกชนทั่วไปที่มีจักษุแพทย์ประจำร้าน
+                      หรือหน่วยงานของรัฐ
+                    </p>
+                    <div className="mt-3 flex items-start gap-3 rounded-lg border border-blue-200/60 bg-blue-50/60 px-4 py-3">
+                      <svg
+                        className="mt-0.5 h-5 w-5 shrink-0 text-blue-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                        />
+                      </svg>
+                      <p className="text-sm leading-relaxed text-blue-800/80">
+                        <span className="font-semibold text-blue-900">แนะนำ:</span>{" "}
+                        DMV Arlington Metro at Virginia Square
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Step 3 */}
+                  <div className="rounded-xl border border-black/5 bg-gray-50/80 p-5">
+                    <div className="mb-3 flex items-center gap-2.5">
+                      <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#0c0479]/10 text-xs font-bold text-[#0c0479]">
+                        3
+                      </span>
+                      <h4 className="text-sm font-bold text-black/75">
+                        นำแบบฟอร์มกลับมายังฝ่ายพิธีฯ
+                      </h4>
+                    </div>
+                    <p>
+                      เมื่อตรวจสายตาเสร็จเรียบร้อยแล้ว
+                      ให้นำแบบฟอร์มที่กรอกครบถ้วนกลับมายังฝ่ายพิธีการทูต
+                      เพื่อให้ฝ่ายพิธีฯ ดำเนินการในขั้นตอนต่อไป
+                    </p>
+                  </div>
+
+                  {/* Step 4 */}
+                  <div className="rounded-xl border border-black/5 bg-gray-50/80 p-5">
+                    <div className="mb-3 flex items-center gap-2.5">
+                      <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#0c0479]/10 text-xs font-bold text-[#0c0479]">
+                        4
+                      </span>
+                      <h4 className="text-sm font-bold text-black/75">
+                        รับใบขับขี่ทางไปรษณีย์
+                      </h4>
+                    </div>
+                    <p>
+                      เมื่อคำร้องได้รับการอนุมัติในระบบ OFM แล้ว
+                      ใบขับขี่จะถูกส่งไปทางไปรษณีย์ตามที่อยู่ที่ท่านได้ให้ไว้
+                      ใช้เวลาทำการประมาณ 5–7 วัน
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.article>
+
+            {/* ──────────── Card 3: การขายรถ ──────────── */}
+            <motion.article
+              custom={2}
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
@@ -151,7 +305,7 @@ export default function VehiclePage() {
 
               <div className="flex flex-1 flex-col p-7 sm:p-8">
                 <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-[#c40000]/8 text-sm font-bold text-[#c40000]">
-                  02
+                  03
                 </div>
 
                 <h3 className="text-lg font-bold tracking-tight text-black/85 sm:text-xl">
@@ -167,7 +321,7 @@ export default function VehiclePage() {
                     โดยมีขั้นตอนแตกต่างกันตามประเภทของผู้ซื้อ ดังนี้
                   </p>
 
-                  {/* Sub-section A: ขายให้นักการทูต */}
+                  {/* Sub-section A */}
                   <div className="rounded-xl border border-black/5 bg-gray-50/80 p-5">
                     <div className="mb-3 flex items-center gap-2.5">
                       <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#0c0479]/10 text-xs font-bold text-[#0c0479]">
@@ -187,7 +341,7 @@ export default function VehiclePage() {
                     </p>
                   </div>
 
-                  {/* Sub-section B: ขายให้ dealer / บุคคลทั่วไป */}
+                  {/* Sub-section B */}
                   <div className="rounded-xl border border-black/5 bg-gray-50/80 p-5">
                     <div className="mb-3 flex items-center gap-2.5">
                       <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#c40000]/10 text-xs font-bold text-[#c40000]">
@@ -293,6 +447,7 @@ export default function VehiclePage() {
                 </div>
               </div>
             </motion.article>
+
           </div>
         </div>
       </section>

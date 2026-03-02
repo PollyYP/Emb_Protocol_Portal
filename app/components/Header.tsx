@@ -20,7 +20,7 @@ const ofmMenu = [
     items: [
       { label: "ขอมีป้ายทะเบียนการทูต", href: "/dmv" },
       { label: "การขอใบขับขี่", href: "/dmv" },
-      { label: "การซื้อ/เช่าซื้อรถ", href: "/dmv" },
+      { label: "การซื้อ/เช่าซื้อรถ", href: "/arrival/car" },
       { label: "การขายรถ", href: "/dmv" },
     ],
   },
