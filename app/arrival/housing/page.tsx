@@ -23,7 +23,7 @@ function FadeIn({
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ duration: 0.6, ease: "easeOut", delay }}
+      transition={{ duration: 0.6, ease: "easeOut" as const, delay }}
       className={className}
     >
       {children}
@@ -50,7 +50,7 @@ export default function HousingPage() {
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.8, ease: "easeOut" }}
+              transition={{ duration: 1.8, ease: "easeOut" as const }}
               className="mt-4 text-sm tracking-[0.35em] md:text-base"
             >
               DC, Maryland, Virginia area (DMV)
