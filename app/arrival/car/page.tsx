@@ -253,7 +253,7 @@ export default function CarPage() {
       </section>
 
       {/* ══════════════════════════════════════
-          SECTION 4 — เอกสารที่ต้องจัดส่ง OFM
+          SECTION 4 — เอกสาร
           ══════════════════════════════════════ */}
       <section className="w-full py-16 md:py-24 bg-[#fafafa]">
         <div className="mx-auto w-full max-w-7xl px-4 md:px-8 lg:px-10">
@@ -298,7 +298,7 @@ export default function CarPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c40000]/60">
               Documents for OFM
             </p>
-            <h3 className="mt-2 text-xl font-extrabold text-[#0c0479] md:text-2xl">
+            <h3 className="mt-2 text-xl font-extrabold text-[#0c0479] md:text-4xl">
               เอกสารที่ต้องจัดส่งไปยัง OFM
             </h3>
             <div className="mt-3 h-px w-12 bg-[#c40000]" />
@@ -353,7 +353,7 @@ export default function CarPage() {
               href="/license"
               className="inline-flex items-center gap-2 rounded-lg bg-[#0c0479] px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#0a0360]"
             >
-              สำหรับการขอใบขับขี่ทางการทูต <br/> อ่านรายละเอียด →
+              การขอใบขับขี่ทางการทูต อ่านรายละเอียด →
             </Link>
           </FadeIn>
         </div>

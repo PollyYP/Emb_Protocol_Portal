@@ -19,7 +19,7 @@ export default function OfmSection() {
           <div className="w-full md:w-1/2">
           <div ref={titleRef}>
           <motion.h2
-            className="mt-4 text-xl font-extrabold uppercase tracking-tight text-[#c40000] md:text-3xl"
+            className="mt-10 text-xl font-extrabold uppercase tracking-tight text-[#c40000] md:text-3xl"
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
