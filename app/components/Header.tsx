@@ -101,6 +101,13 @@ export default function Header() {
 
           {/* Center / Right — Desktop nav */}
           <nav className="hidden items-center gap-1 md:flex">
+            {/* Home */}
+            <Link
+              href="/"
+              className="rounded-lg px-4 py-2 text-sm lg:text-base font-medium text-black/70 transition-colors hover:bg-black/4 hover:text-black"
+            >
+              หน้าแรก
+            </Link>
             {/* ข้าราชการมาใหม่ — scrolls to section */}
             <a
               href="#arrival-guide"
@@ -225,6 +232,14 @@ export default function Header() {
             className="overflow-hidden border-b border-black/6 bg-white md:hidden"
           >
             <div className="mx-auto max-w-7xl space-y-1 px-4 py-3">
+              {/* Home link */}
+              <Link
+                href="/"
+                onClick={() => setMobileOpen(false)}
+                className="block rounded-lg px-4 py-3 text-sm font-medium text-black/70 transition-colors hover:bg-black/4"
+              >
+                หน้าแรก
+              </Link>
               {/* Arrival link */}
               <a
                 href="#arrival-guide"
@@ -293,7 +308,7 @@ export default function Header() {
 
               {/* Contact */}
               <a
-                href="#contact"
+                href="mailto:protocol@thaiembdc.org"
                 onClick={() => setMobileOpen(false)}
                 className="block rounded-lg bg-[#c40000] px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#a80000]"
               >

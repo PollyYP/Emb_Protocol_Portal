@@ -56,7 +56,7 @@ export default function ArrivalGuideCarousel() {
   const active = slides[i];
 
   return (
-    <section id="arrival-guide" className="w-full py-12">
+    <section id="arrival-guide" className="w-full">
       <div className="mx-auto w-full px-2 sm:px-4 md:px-6 lg:px-10">
         <div ref={titleRef}>
           <motion.h2

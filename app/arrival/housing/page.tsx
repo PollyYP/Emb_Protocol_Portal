@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -35,28 +36,47 @@ export default function HousingPage() {
     <main className="w-full bg-white">
 
       {/* ══════════════════════════════════════
-          HERO — full mobile screen, no overlay
+          HERO
           ══════════════════════════════════════ */}
       <section className="relative h-[90vh] overflow-hidden">
-             <Image src="/interior.jpg" alt="Interior background" fill className="object-cover" priority />
-             <div className="absolute inset-0 bg-black/45" />
+        <Image src="/interior.jpg" alt="Interior background" fill className="object-cover" priority />
+        <div className="absolute inset-0 bg-black/45" />
 
-             <div className="absolute inset-0 flex items-center justify-center px-4">
-               <div className="text-center text-white">
-                 <h1 className="text-4xl font-extrabold tracking-wide md:text-6xl">
-                   ที่พักอาศัย
-                 </h1>
-                 <motion.p
-                   initial={{ opacity: 0, y: 10 }}
-                   animate={{ opacity: 1, y: 0 }}
-                   transition={{ duration: 1.8, ease: "easeOut" }}
-                   className="mt-4 text-sm tracking-[0.35em] md:text-base"
-                 >
-                   DC, Maryland, Virginia area (DMV)
-                 </motion.p>
-               </div>
-             </div>
-           </section>
+        <div className="absolute inset-0 flex items-center justify-center px-4">
+          <div className="text-center text-white">
+            <h1 className="text-4xl font-extrabold tracking-wide md:text-6xl">
+              ที่พักอาศัย
+            </h1>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.8, ease: "easeOut" }}
+              className="mt-4 text-sm tracking-[0.35em] md:text-base"
+            >
+              DC, Maryland, Virginia area (DMV)
+            </motion.p>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
+          STICKY NEXT-STEP LINK
+          ══════════════════════════════════════ */}
+      {/* Desktop — fixed circle on the right */}
+      <Link
+        href="/arrival/ssn"
+        className="fixed right-6 bottom-8 z-40 hidden md:flex h-16 w-16 items-center justify-center rounded-full border-2 border-[#0c0479] bg-white text-[11px] font-bold uppercase tracking-wider text-[#0c0479] shadow-lg transition-all hover:bg-[#0c0479] hover:text-white hover:shadow-xl"
+      >
+        Step 2
+      </Link>
+
+      {/* Mobile — fixed circle on the right */}
+      <Link
+        href="/arrival/ssn"
+        className="fixed right-4 bottom-5 z-40 flex md:hidden h-14 w-14 items-center justify-center rounded-full border-2 border-[#0c0479] bg-white text-[10px] font-bold uppercase tracking-wider text-[#0c0479] shadow-lg"
+      >
+        Step 2
+      </Link>
 
       {/* ══════════════════════════════════════
           SECTION 1 — การหาที่พัก + image grid
@@ -282,7 +302,7 @@ export default function HousingPage() {
       {/* ══════════════════════════════════════
           BOTTOM — full-width house image
           ══════════════════════════════════════ */}
-      <section className="w-full">
+      <section className="w-full pb-14 md:pb-0">
         <div className="relative aspect-16/7 w-full overflow-hidden">
           <Image
             src="/house.jpg"

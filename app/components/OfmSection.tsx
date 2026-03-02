@@ -85,9 +85,9 @@ export default function OfmSection() {
               href="https://www.state.gov/bureaus-offices/under-secretary-for-management/office-of-foreign-missions/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center justify-center bg-[#e0261c] rounded-lg px-4 py-2 text-sm font-extrabold text-white border border-white/30 hover:bg-[#1f3f9a] transition-colors"
+              className="mt-4 inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-extrabold border border-[#e0261c] hover:bg-[#e0261c] hover:text-white transition-colors"
             >
-              อ่านเพิ่มเติมเกี่ยวกับ OFM
+              อ่านเพิ่มเติมเกี่ยวกับ OFM <span className="pl-1">→</span>
             </a>
           </div>
 

@@ -20,7 +20,7 @@ export default function Hero() {
         }
       `}</style>
       <motion.p
-        className="text-right text-sm font-semibold uppercase italic tracking-[0.15em] text-[#c40000] md:text-[11px] lg:text-[12px] mr-9"
+        className="text-right text-sm font-semibold uppercase italic tracking-[0.15em] text-[#c40000] md:text-[11px] lg:text-[12px] mx-10 p-2 bg-[#f3f3f3]"
         initial="hidden"
         animate="show"
         variants={{

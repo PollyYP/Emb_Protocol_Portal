@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 
 /* ─── Fade-in wrapper (same as housing page) ─── */
 function FadeIn({
@@ -43,12 +44,12 @@ const DOCS = [
   {
     num: "01",
     title: "หนังสือเดินทาง (Passport) และวีซ่า",
-    desc: "เอกสารแสดงตัวตนหลักสำหรับการยืนยันสัญชาติและสถานะการเข้าเมือง",
+    desc: "เอกสารแสดงตัวตนหลักสำหรับการยืนยันสถานะการเข้าเมือง",
   },
   {
     num: "02",
     title: "เอกสารยืนยันสถานะ / การปฏิบัติหน้าที่",
-    desc: "เช่น หนังสือรับรองจากสถานเอกอัครราชทูตฯ เพื่อยืนยันสถานะทางการทูต",
+    desc: "เช่น หนังสือรับรองการทำงานจากสถานเอกอัครราชทูตฯ",
   },
   {
     num: "03",
@@ -96,6 +97,25 @@ export default function BankPage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════
+          STICKY NEXT-STEP LINK
+          ══════════════════════════════════════ */}
+      {/* Desktop — fixed circle on the right */}
+      <Link
+        href="/arrival/car"
+        className="fixed right-6 bottom-8 z-40 hidden md:flex h-16 w-16 items-center justify-center rounded-full border-2 border-[#0c0479] bg-white text-[11px] font-bold uppercase tracking-wider text-[#0c0479] shadow-lg transition-all hover:bg-[#0c0479] hover:text-white hover:shadow-xl"
+      >
+        Step 4
+      </Link>
+
+      {/* Mobile — fixed circle on the right */}
+      <Link
+        href="/arrival/car"
+        className="fixed right-4 bottom-5 z-40 flex md:hidden h-14 w-14 items-center justify-center rounded-full border-2 border-[#0c0479] bg-white text-[10px] font-bold uppercase tracking-wider text-[#0c0479] shadow-lg"
+      >
+        Step 4
+      </Link>
 
       {/* ══════════════════════════════════════
           SECTION 1 — การเปิดบัญชี
@@ -244,7 +264,7 @@ export default function BankPage() {
           <div className="mt-8 space-y-3">
             {DOCS.map((doc, idx) => (
               <FadeIn key={doc.num} delay={idx * 0.08}>
-                <div className="flex gap-5 rounded-xl border border-black/[0.06] bg-[#fafafa] p-5 md:p-6">
+                <div className="flex gap-5 rounded-xl border border-black/6 bg-[#fafafa] p-5 md:p-6">
                   <span className="text-sm font-mono font-bold text-[#0c0479]">{doc.num}</span>
                   <div>
                     <p className="text-sm font-semibold text-black/80 md:text-base">{doc.title}</p>
@@ -261,7 +281,7 @@ export default function BankPage() {
           FULL-WIDTH IMAGE BREAK
           ══════════════════════════════════════ */}
       <section className="w-full">
-        <div className="relative aspect-[21/9] w-full overflow-hidden">
+        <div className="relative aspect-21/9 w-full overflow-hidden">
           <Image src="/money1.jpg" alt="Banking" fill className="object-cover" />
         </div>
       </section>
