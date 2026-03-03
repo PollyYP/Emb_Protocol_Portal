@@ -44,7 +44,7 @@ const steps: Step[] = [
         <div className="mt-4">
           <Link
             href="/vehicle"
-            className="inline-block rounded-lg border-[#c40000] bg-white px-4 py-3 text-center text-sm font-semibold transition-colors hover:bg-[#c40000] hover:text-white"
+            className="inline-block rounded-lg px-4 py-3 text-center text-sm font-semibold border border-[#e0261c] hover:bg-[#e0261c] hover:text-white transition-colors"
           >
             อ่านเพิ่มเติม
           </Link>
