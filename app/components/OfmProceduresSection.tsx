@@ -16,7 +16,7 @@ const steps: Step[] = [
       <>
         เป็นสิ่งแรกที่ต้องดำเนินการเมื่อเดินทางมาถึง กรุณากรอกข้อมูลตามแบบฟอร์มนี้{" "}
         <a
-          href="PUT_LINK_TO_FORM_HERE"
+          href="https://www.cognitoforms.com/RoyalThaiEmbassy1/NotificationOfAppointmentEnglishOnly"
           target="_blank"
           rel="noopener noreferrer"
           className="font-semibold underline hover:text-[#e0261c]"
