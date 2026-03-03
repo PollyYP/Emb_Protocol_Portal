@@ -14,7 +14,7 @@ const steps: Step[] = [
     title: "Notification of Appointment",
     detail: (
       <>
-        เป็นสิ่งแรกที่ต้องดำเนินการเมื่อเดินทางมาถึง กรุณากรอกข้อมูลตามแบบฟอร์มนี้{" "}
+        เป็นสิ่งแรกที่ต้องดำเนินการเมื่อเดินทางมาถึง กรุณากรอกข้อมูลตามแบบฟอร์มนี้<br/>{" "}
         <a
           href="https://www.cognitoforms.com/RoyalThaiEmbassy1/NotificationOfAppointmentEnglishOnly"
           target="_blank"
@@ -44,7 +44,7 @@ const steps: Step[] = [
         <div className="mt-4">
           <Link
             href="/vehicle"
-            className="inline-block rounded-lg bg-[#c40000] px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#a80000]"
+            className="inline-block rounded-lg border-[#c40000] bg-white px-4 py-3 text-center text-sm font-semibold transition-colors hover:bg-[#c40000] hover:text-white"
           >
             อ่านเพิ่มเติม
           </Link>
