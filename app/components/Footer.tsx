@@ -2,6 +2,7 @@
 
 export default function Footer() {
   return (
+<<<<<<< HEAD
     <footer className="w-full bg-[#e0261c] py-12 text-white">
       <div className="mx-auto w-full px-4 text-center md:px-10">
 
@@ -47,5 +48,12 @@ export default function Footer() {
 
       </div>
     </footer>
+=======
+      <div className="py-6 text-center bg-[#f3f3f3]" style={{ borderTop: "1px solid var(--border)" }}>
+        <p className="text-[11px] lg:text-sm tracking-widest uppercase" style={{ color: "var(--mid)" }}>
+          Protocol Section · Royal Thai Embassy · Washington D.C.
+        </p>
+      </div>
+>>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
   );
 }

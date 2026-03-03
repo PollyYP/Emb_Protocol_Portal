@@ -2,7 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
+<<<<<<< HEAD
 import { useMemo, useState } from "react";
+=======
+import { motion, useInView } from "framer-motion";
+import { useMemo, useRef, useState } from "react";
+>>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
 
 type Slide = {
   no: number;
@@ -12,6 +17,14 @@ type Slide = {
 };
 
 export default function ArrivalGuideCarousel() {
+<<<<<<< HEAD
+=======
+  const subtitle = "คำแนะนำเมื่อเดินทางมาถึง";
+  const subtitleLetters = Array.from(subtitle);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(titleRef, { once: true, amount: 0.5 });
+
+>>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
   const slides: Slide[] = useMemo(
     () => [
       {
@@ -50,11 +63,49 @@ export default function ArrivalGuideCarousel() {
   const active = slides[i];
 
   return (
+<<<<<<< HEAD
     <section className="w-full py-12">
       <div className="mx-auto w-full px-2 sm:px-4 md:px-6 lg:px-10">
         <h2 className="text-4xl font-extrabold text-[#e0261c] md:text-6xl">
           แนวทางปฏิบัติเมื่อเดินทางมาถึง
         </h2>
+=======
+    <section id="arrival-guide" className="w-full">
+      <div className="mx-auto w-full px-2 sm:px-4 md:px-6 lg:px-10">
+        <div ref={titleRef}>
+          <motion.h2
+            className="text-xl font-extrabold uppercase tracking-tight text-[#c40000] md:text-3xl"
+            initial={{ opacity: 0, y: 16 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            New Diplomat Arrival Guide
+          </motion.h2>
+
+          <motion.p
+            className="text-sm font-semibold italic tracking-[0.1em] text-[#0c0479]/60 md:text-base lg:text-lg"
+            initial="hidden"
+            animate={inView ? "show" : "hidden"}
+            variants={{
+              hidden: {},
+              show: { transition: { staggerChildren: 0.025, delayChildren: 0.4 } },
+            }}
+          >
+            {subtitleLetters.map((ch, idx) => (
+              <motion.span
+                key={`${ch}-${idx}`}
+                className="inline-block"
+                variants={{
+                  hidden: { opacity: 0, y: 4 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+                }}
+              >
+                {ch === " " ? "\u00A0" : ch}
+              </motion.span>
+            ))}
+          </motion.p>
+        </div>
+>>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
 
         <div className="mt-8">
           <div className="relative w-full overflow-hidden border border-black/10">

@@ -1,11 +1,22 @@
 "use client";
 
 import Image from "next/image";
+<<<<<<< HEAD
 
 export default function Hero() {
   return (
     <section className="mt-2 w-full">
       {/* local keyframes so you don't need globals.css */}
+=======
+import { motion } from "framer-motion";
+
+export default function Hero() {
+  const text = "PROTOCOL SECTION · OFM/VISA DESK";
+  const letters = Array.from(text);
+
+  return (
+    <section className="mt-2 w-full">
+>>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
       <style jsx global>{`
         @keyframes spinSlow {
           from {
@@ -16,12 +27,41 @@ export default function Hero() {
           }
         }
       `}</style>
+<<<<<<< HEAD
 
+=======
+      <motion.p
+        className="text-right text-sm font-semibold uppercase italic tracking-[0.15em] text-[#c40000] md:text-[11px] lg:text-[12px] mx-10 p-2 bg-[#f3f3f3]"
+        initial="hidden"
+        animate="show"
+        variants={{
+        hidden: {},
+        show: { transition: { staggerChildren: 0.03, delayChildren: 0.5 } },
+        }}
+        >
+        {letters.map((ch, i) => (
+          <motion.span
+            key={`${ch}-${i}`}
+            className="inline-block"
+            variants={{
+            hidden: { opacity: 0, y: 4 },
+            show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+            }}
+          >
+            {ch === " " ? "\u00A0" : ch}
+          </motion.span>
+        ))}
+      </motion.p>
+>>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
       <div className="mx-auto w-full px-2 sm:px-4 md:px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:gap-6">
           {/* LEFT: Image */}
           <div className="relative w-full md:w-2/3">
+<<<<<<< HEAD
             <div className="relative aspect-[16/9] w-full overflow-hidden bg-black/5 md:aspect-[16/10]">
+=======
+            <div className="relative aspect-video w-full overflow-hidden bg-black/5 md:aspect-16/10">
+>>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
               <Image
                 src="/emb_front3.jpg"
                 alt="Royal Thai Embassy"
@@ -34,6 +74,7 @@ export default function Hero() {
 
           {/* RIGHT: Red panel */}
           <div className="relative mt-4 w-full bg-[#e0261c] p-5 text-white md:mt-0 md:w-1/3 md:p-7">
+<<<<<<< HEAD
             {/* Spinning badge */}
             <div className="absolute -right-6 -top-6 md:-right-8 md:-top-8">
               <div
@@ -98,6 +139,19 @@ export default function Hero() {
             {/* Contact Information */}
             <div className="mt-6 md:mt-2 lg:mt-10 space-y-8 text-sm lg:text-base">
 
+=======
+
+
+            {/* Title */}
+            <h2 className="text-xl font-extrabold leading-tight md:text-2xl">
+              GET IN TOUCH
+            </h2>
+
+            <div className="relative flex w-full flex-1 flex-col bg-[#e0261c] text-white"></div>
+
+            {/* Contact Information */}
+            <div className="mt-6 md:mt-2 lg:mt-10 space-y-8 text-sm lg:text-base">
+>>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
               {/* Address */}
               <div>
                 <div className="flex items-center gap-3 font-semibold">
@@ -107,7 +161,11 @@ export default function Hero() {
                 <div className="mt-2 border-b border-white/60 pb-6 md:pb-4 lg:pb-10">
                 1024 Wisconsin Ave NW <br />
                 Washington, D.C. 20007 <br />
+<<<<<<< HEAD
                 ตึกหลัง ชั้น 2
+=======
+                ตึกหลัง ชั้น 3
+>>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
                 </div>
             </div>
 

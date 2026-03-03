@@ -1,6 +1,10 @@
 "use client";
 
+<<<<<<< HEAD
 import React, { useEffect, useMemo, useRef, useState } from "react";
+=======
+import React, { useMemo, useRef } from "react";
+>>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 
@@ -44,7 +48,11 @@ const steps: Step[] = [
         <div className="mt-4">
           <Link
             href="/vehicle"
+<<<<<<< HEAD
             className="inline-flex items-center justify-center bg-[#e0261c] px-4 py-2 text-sm font-extrabold text-white hover:bg-white/10 border border-white/30"
+=======
+            className="inline-block rounded-lg bg-[#c40000] px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#a80000]"
+>>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
           >
             อ่านเพิ่มเติม
           </Link>
@@ -64,18 +72,67 @@ const steps: Step[] = [
 ];
 
 export default function OfmProceduresSection() {
+<<<<<<< HEAD
+=======
+  const subtitle = "ระเบียบปฏิบัติที่ต้องดำเนินการกับ OFM";
+  const subtitleLetters = Array.from(subtitle);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(titleRef, { once: true, amount: 0.5 });
+>>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
   const rows = useMemo(() => steps, []);
 
   return (
     <section className="w-full py-12">
       <div className="mx-auto w-full px-2 sm:px-4 md:px-6 lg:px-10">
         {/* Title */}
+<<<<<<< HEAD
         <h2 className="text-4xl font-extrabold text-[#e0261c] md:text-6xl">
           ระเบียบปฏิบัติที่ต้องดำเนินการกับ OFM
         </h2>
 
         {/* Rows */}
         <div className="mt-8 space-y-4">
+=======
+        <div ref={titleRef}>
+          <motion.h2
+            className="text-xl font-extrabold uppercase tracking-tight text-[#c40000] md:text-3xl"
+            initial={{ opacity: 0, y: 16 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            OFM Procedures
+          </motion.h2>
+
+          <motion.p
+            className="text-sm font-semibold italic tracking-widest text-[#0c0479]/60 md:text-base lg:text-lg"
+            initial="hidden"
+            animate={inView ? "show" : "hidden"}
+            variants={{
+              hidden: {},
+              show: { transition: { staggerChildren: 0.025, delayChildren: 0.4 } },
+            }}
+          >
+            {subtitleLetters.map((ch, idx) => (
+              <motion.span
+                key={`${ch}-${idx}`}
+                className="inline-block"
+                variants={{
+                  hidden: { opacity: 0, y: 4 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+                }}
+              >
+                {ch === " " ? "\u00A0" : ch}
+              </motion.span>
+            ))}
+          </motion.p>
+        </div>
+
+        {/* Rows */}
+        <div className="mt-8 space-y-4">
+          <p className="text-sm font-semibold uppercase tracking-widest text-[#0c0479]/60 md:text-base">
+            ระเบียบที่ทำบ่อย
+          </p>
+>>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
           {rows.map((s, idx) => (
             <StepRow
               key={idx}
@@ -123,6 +180,7 @@ function StepRow({
   );
 }
 
+<<<<<<< HEAD
 /**
  * Big number that fades in + counts up when scrolled into view
  * (slower animation as you requested)
@@ -147,6 +205,11 @@ function CountInView({ value }: { value: number }) {
 
     requestAnimationFrame(tick);
   }, [inView, value]);
+=======
+function CountInView({ value }: { value: number }) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const inView = useInView(ref, { amount: 0.6, once: true });
+>>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
 
   return (
     <motion.div
@@ -157,7 +220,11 @@ function CountInView({ value }: { value: number }) {
       className="text-white"
     >
       <div className="text-6xl font-extrabold leading-none md:text-7xl">
+<<<<<<< HEAD
         {display}
+=======
+        {value}
+>>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
       </div>
     </motion.div>
   );
