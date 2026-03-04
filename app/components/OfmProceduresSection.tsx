@@ -43,7 +43,7 @@ const steps: Step[] = [
         ระเบียบปฏิบัติเกี่ยวกับรถยนต์ เช่น การซื้อ/เช่าซื้อ-ขาย และการขอมีป้ายทะเบียนทางการทูต
         <div className="mt-4">
           <Link
-            href="/vehicle"
+            href="/arrival/vehicle-purchase"
             className="inline-block rounded-lg px-4 py-3 text-center text-sm font-semibold border border-[#e0261c] hover:bg-[#e0261c] hover:text-white transition-colors"
           >
             อ่านเพิ่มเติม
