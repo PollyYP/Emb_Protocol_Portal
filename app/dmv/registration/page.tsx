@@ -1,0 +1,440 @@
+"use client";
+
+import Link from "next/link";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+/* ─── Fade-in wrapper ─── */
+function FadeIn({
+  children,
+  className = "",
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.15 });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.6, ease: "easeOut" as const, delay }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export default function RegistrationPage() {
+  return (
+    <>
+      {/* ══════════ HERO ══════════ */}
+      <section className="relative overflow-hidden bg-linear-to-br from-[#0c0479] via-[#150d6b] to-[#1a0f8a]">
+        <div className="absolute inset-0">
+          <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-[#c40000]/8 blur-3xl" />
+          <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-50" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:py-32">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" as const }}
+            className="max-w-3xl"
+          >
+            {/* Breadcrumb */}
+            <div className="mb-6 flex items-center gap-2 text-sm text-white/40">
+              <Link href="/" className="transition-colors hover:text-white/70">
+                หน้าแรก
+              </Link>
+              <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+              <span className="text-white/60">เกี่ยวกับรถ</span>
+            </div>
+
+            <h1 className="text-3xl font-bold tracking-tight text-white lg:text-6xl">
+              การจดทะเบียนรถ <br/>
+              และการขอมีป้ายทะเบียน
+            </h1>
+            <p className="mt-4 text-xl leading-relaxed text-white/60 lg:text-2xl">
+              Vehicle Registration
+            </p>
+            <p className="text-lg leading-relaxed text-white/60">ขั้นตอนการขอมีป้ายทะเบียนการทูต</p>
+          </motion.div>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
+      </section>
+
+      {/* ══════════ KEY INFO ══════════ */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-6 pt-16 pb-6">
+          <FadeIn>
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-2xl font-bold tracking-tight text-[#0c0479] sm:text-3xl">
+                สิ่งที่ควรทราบ
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-black/50">
+                การจดทะเบียนรถยนต์ของเจ้าหน้าที่ทางการทูตในสหรัฐฯ
+                จะต้องดำเนินการผ่าน Office of Foreign Missions (OFM) เท่านั้น
+                ไม่สามารถจดทะเบียนที่ DMV/MVA ของรัฐได้โดยตรง
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* Key facts */}
+          <FadeIn className="mt-12" delay={0.1}>
+            <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3">
+              <div className="rounded-2xl border border-[#0c0479]/8 bg-[#0c0479]/3 p-6 text-center">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-[#0c0479]/10">
+                  <svg className="h-6 w-6 text-[#0c0479]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+                  </svg>
+                </div>
+                <p className="mt-3 text-base font-semibold text-[#0c0479]">
+                  ป้ายทะเบียนการทูต
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-black/45">
+                  ป้ายทะเบียนเฉพาะสำหรับ<br />บุคลากรทางการทูตเท่านั้น <br/> (ป้ายทะเบียนพื้นสีฟ้า ตัวอักษรสีดำ)
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-[#c40000]/8 bg-[#c40000]/3 p-6 text-center">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-[#c40000]/10">
+                  <svg className="h-6 w-6 text-[#c40000]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                  </svg>
+                </div>
+                <p className="mt-3 text-base  font-semibold text-[#c40000]">
+                  OFM ถือ Title
+                </p>
+                <p className="mt-1 text-sm  leading-relaxed text-black/45">
+                  ใบกรรมสิทธิ์รถยนต์ <br/>(Title Certificate)<br />OFM จะเป็นผู้ครอบครองไว้
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-[#0c0479]/8 bg-[#0c0479]/3 p-6 text-center">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-[#0c0479]/10">
+                  <svg className="h-6 w-6 text-[#0c0479]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182M2.985 19.644l3.181-3.182" />
+                  </svg>
+                </div>
+                <p className="mt-3 text-base font-semibold text-[#0c0479]">
+                  Decal ต่ออายุโดย OFM
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-black/45">
+                  สติกเกอร์มีอายุ 1 ปี<br />OFM จะเป็นผู้ดำเนินการต่ออายุ เมื่อถึงเดือนที่หมดอายุ ฝ่ายพิธีฯ จะไปรับสติกเกอร์อันใหม่มาให้
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ══════════ DETAILED CONTENT ══════════ */}
+      <section className="bg-gray-50/60">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-3xl space-y-8">
+            {/* Warning */}
+          <div className="mt-6 flex items-start gap-3 rounded-xl border border-red-200/60 bg-red-50/60 px-4 py-4 lg:px-5">
+            <svg className="mt-0.5 h-5 w-5 shrink-0 text-[#c40000]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+            </svg>
+            <p className="text-base leading-relaxed text-red-800/80">
+              <span className="font-semibold text-red-900">โปรดทราบ:</span>{" "}
+              หากมีรถส่วนบุคคลหรือรถสำนักงานที่ไม่ได้แจ้งการต่อประกัน
+              หรือไม่ได้จ่ายค่าปรับเมื่อได้รับใบสั่ง OFM
+              จะไม่ออกสติกเกอร์ (Decal)
+              ให้หากมีรถที่ต้องต่ออายุสติกเกอร์ในเดือนนั้น
+            </p>
+          </div>
+
+            {/* ── ขั้นตอนการจดทะเบียน ── */}
+            <FadeIn>
+              <div className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
+                <div className="h-1 w-full bg-linear-to-r from-[#0c0479] to-[#3a2fd4]" />
+                <div className="p-7 sm:p-8">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0c0479]/8 text-sm font-bold text-[#0c0479]">
+                      01
+                    </div>
+                    <h3 className="text-lg font-bold tracking-tight text-black/85">
+                      จดทะเบียนผ่าน OFM เท่านั้น
+                    </h3>
+                  </div>
+
+                  <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-black/55">
+                    <p>
+                      เจ้าหน้าที่ทางการทูตที่ต้องการจดทะเบียนรถยนต์ในสหรัฐอเมริกา
+                      จะต้องดำเนินการผ่าน OFM เท่านั้น
+                      โดยไม่สามารถไปจดทะเบียนที่ DMV ของรัฐได้โดยตรง
+                    </p>
+                    <p>
+                      รถยนต์จะได้รับ
+                      <span className="font-semibold text-[#0c0479]"> ป้ายทะเบียนการทูต (Diplomatic License Plate) </span>
+                      ซึ่งเป็นป้ายทะเบียนเฉพาะสำหรับบุคลากรทางการทูตเท่านั้น
+                    </p>
+
+                    {/* Important note */}
+                    <div className="flex items-start gap-3 rounded-xl border border-amber-200/60 bg-amber-50/80 px-5 py-4">
+                      <svg className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                      </svg>
+                      <p className="text-sm leading-relaxed text-amber-800/80">
+                        <span className="font-semibold text-amber-900">หมายเหตุ:</span>{" "}
+                        ท่านจะต้องมีใบขับขี่ทางการทูตและประกันภัยรถยนต์ก่อนดำเนินการจดทะเบียน
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* ── ใบกรรมสิทธิ์รถยนต์ ── */}
+            <FadeIn>
+              <div className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
+                <div className="h-1 w-full bg-linear-to-r from-[#c40000] to-[#e04040]" />
+                <div className="p-7 sm:p-8">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#c40000]/8 text-sm font-bold text-[#c40000]">
+                      02
+                    </div>
+                    <h3 className="text-lg font-bold tracking-tight text-black/85">
+                      ใบกรรมสิทธิ์รถยนต์ (Title Certificate)
+                    </h3>
+                  </div>
+
+                  <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-black/55">
+                    <p>
+                      เมื่อดำเนินการจดทะเบียนแล้ว OFM จะเป็นผู้ครอบครองใบกรรมสิทธิ์รถยนต์
+                      (Title Certificate) ที่มีชื่อของท่านอยู่
+                    </p>
+
+                    <div className="flex items-start gap-3 rounded-xl border border-red-200/60 bg-red-50/60 px-5 py-4">
+                      <svg className="mt-0.5 h-5 w-5 shrink-0 text-[#c40000]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                      </svg>
+                      <p className="text-sm leading-relaxed text-red-800/80">
+                        <span className="font-semibold">สำคัญ:</span>{" "}
+                        ท่านจะไม่ได้รับ Title Certificate มาถือไว้เอง <br/> OFM จะเป็นผู้ครอบครองไว้ตลอดระยะเวลาที่ท่านใช้รถยนต์คันดังกล่าว
+                        <br/> Title จะถูกขอคืนเมื่อท่านต้องการขายรถให้บุคคลที่ไม่ใช่นักการทูต
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* ── ป้ายทะเบียนและสติกเกอร์ ── */}
+            <FadeIn>
+              <div className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
+                <div className="h-1 w-full bg-linear-to-r from-[#0c0479] to-[#3a2fd4]" />
+                <div className="p-7 sm:p-8">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0c0479]/8 text-sm font-bold text-[#0c0479]">
+                      03
+                    </div>
+                    <h3 className="text-lg font-bold tracking-tight text-black/85">
+                      ป้ายทะเบียนและสติกเกอร์ (Decal)
+                    </h3>
+                  </div>
+
+                  <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-black/55">
+                    <p>
+                      เมื่อ OFM ได้รับเอกสารครบถ้วนแล้ว
+                      จะออกป้ายทะเบียนการทูตพร้อมสติกเกอร์ (Decal) ให้
+                    </p>
+
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                      <div className="rounded-xl border border-[#0c0479]/8 bg-[#0c0479]/3 p-5">
+                        <div className="flex items-center gap-2.5">
+                          <svg className="h-5 w-5 text-[#0c0479]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                          </svg>
+                          <p className="text-sm font-semibold text-[#0c0479]">อายุ 1 ปี</p>
+                        </div>
+                        <p className="mt-2 text-sm text-black/45">
+                          สติกเกอร์มีอายุการใช้งาน 1 ปี
+                        </p>
+                      </div>
+                      <div className="rounded-xl border border-[#0c0479]/8 bg-[#0c0479]/3 p-5">
+                        <div className="flex items-center gap-2.5">
+                          <svg className="h-5 w-5 text-[#0c0479]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182M2.985 19.644l3.181-3.182" />
+                          </svg>
+                          <p className="text-sm font-semibold text-[#0c0479]">ต่ออายุอัตโนมัติ</p>
+                        </div>
+                        <p className="mt-2 text-sm text-black/45">
+                          Auto-Renew โดยไม่ต้องดำเนินการเอง
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3 rounded-xl border border-blue-200/60 bg-blue-50/60 px-5 py-4">
+                      <svg className="mt-0.5 h-5 w-5 shrink-0 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                      </svg>
+                      <p className="text-sm leading-relaxed text-blue-800/80">
+                        ฝ่ายพิธีการทูตจะเป็นผู้ไปรับป้ายทะเบียนและสติกเกอร์จาก OFM มาให้ท่าน
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* ── กรอกแบบฟอร์ม ── */}
+            <FadeIn>
+              <div className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
+                <div className="h-1 w-full bg-linear-to-r from-[#c40000] to-[#e04040]" />
+                <div className="p-7 sm:p-8">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#c40000]/8 text-sm font-bold text-[#c40000]">
+                      04
+                    </div>
+                    <h3 className="text-lg font-bold tracking-tight text-black/85">
+                      ดำเนินการขอขึ้นทะเบียน
+                    </h3>
+                  </div>
+
+                  <p className="mt-5 text-[15px] leading-relaxed text-black/55">
+                    กรุณากรอกแบบฟอร์มด้านล่างเพื่อเริ่มกระบวนการขึ้นทะเบียนรถยนต์
+                    ฝ่ายพิธีการทูตจะดำเนินการประสานงานกับ OFM ให้ท่าน
+                  </p>
+
+                  <div className="mt-5">
+                    <Link
+                      href="#"
+                      className="inline-flex items-center gap-2.5 rounded-lg bg-[#0c0479] px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-[#0c0479]/20 transition-all hover:bg-[#09035e] active:scale-[0.97]"
+                    >
+                      กรอกแบบฟอร์ม
+                      <svg
+                        className="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                        />
+                      </svg>
+                    </Link>
+                  </div>
+                  {/* Dealer reminder */}
+                  <div className="mt-5 flex items-start gap-3 rounded-xl border border-amber-200/60 bg-amber-50/80 px-4 py-4 lg:px-5">
+                    <svg className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                    </svg>
+                    <div className="text-sm leading-relaxed text-amber-800/80">
+                      <p>
+                        <span className="font-semibold text-amber-900">Reminder:</span>{" "}
+                        หากท่านซื้อหรือเช่าซื้อรถจาก Dealer
+                        กรุณาแจ้งให้ Dealer ส่งเอกสารตัวจริงไปยัง OFM โดยตรง
+                        เพื่อให้กระบวนการจดทะเบียนเป็นไปอย่างราบรื่นและรวดเร็ว
+                      </p>
+                      <Link
+                        href="/arrival/vehicle-purchase"
+                        className="mt-2 inline-flex items-center gap-1.5 font-semibold text-amber-900 underline decoration-amber-400/50 underline-offset-2 transition-colors hover:decoration-amber-900"
+                      >
+                        ดูรายละเอียดเอกสารที่ต้องเตรียม
+                        <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+          </div>
+
+          {/* Related pages */}
+          <FadeIn className="mt-12">
+            <div className="mx-auto max-w-3xl">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-black/30">
+                หน้าที่เกี่ยวข้อง
+              </p>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <Link
+                  href="/dmv/driver-license"
+                  className="flex items-center gap-3 rounded-xl border border-[#0c0479]/10 bg-white p-5 transition-colors hover:bg-[#0c0479]/3"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0c0479]/8">
+                    <svg className="h-5 w-5 text-[#0c0479]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-[#0c0479]">การขอใบขับขี่</p>
+                    <p className="mt-0.5 text-xs text-black/40">Diplomatic Driver&apos;s License</p>
+                  </div>
+                  <svg className="ml-auto h-4 w-4 text-black/25" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </Link>
+                <Link
+                  href="/arrival/vehicle-purchase"
+                  className="flex items-center gap-3 rounded-xl border border-[#c40000]/10 bg-white p-5 transition-colors hover:bg-[#c40000]/3"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#c40000]/8">
+                    <svg className="h-5 w-5 text-[#c40000]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-[#c40000]">การซื้อ / เช่าซื้อรถ</p>
+                    <p className="mt-0.5 text-xs text-black/40">Vehicle Purchase &amp; Lease</p>
+                  </div>
+                  <svg className="ml-auto h-4 w-4 text-black/25" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Bottom contact */}
+          <FadeIn className="mt-8">
+            <div className="mx-auto max-w-3xl rounded-2xl border border-black/5 bg-white p-7 shadow-sm sm:p-8">
+              <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#0c0479]/8">
+                  <svg className="h-6 w-6 text-[#0c0479]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-base font-bold text-black/80">
+                    หากมีข้อสงสัยเพิ่มเติม
+                  </h3>
+                  <p className="mt-1 text-sm text-black/45">
+                    กรุณาติดต่อ จนท.พิธี ของ สอท. ได้ทางอีเมล
+                  </p>
+                </div>
+                <a
+                  href="mailto:protocol@thaiembdc.org"
+                  className="inline-flex items-center gap-2 rounded-lg bg-[#0c0479] px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#0c0479]/20 transition-all hover:bg-[#09035e] active:scale-[0.97]"
+                >
+                  ส่งอีเมล
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+    </>
+  );
+}

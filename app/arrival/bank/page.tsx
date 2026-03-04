@@ -103,7 +103,7 @@ export default function BankPage() {
           ══════════════════════════════════════ */}
       {/* Desktop — fixed circle on the right */}
       <Link
-        href="/arrival/car"
+        href="/arrival/vehicle-purchase"
         className="fixed right-6 bottom-8 z-40 hidden md:flex h-16 w-16 items-center justify-center rounded-full border-2 border-[#0c0479] bg-white text-[11px] font-bold uppercase tracking-wider text-[#0c0479] shadow-lg transition-all hover:bg-[#0c0479] hover:text-white hover:shadow-xl"
       >
         Step 4

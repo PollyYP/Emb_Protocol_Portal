@@ -18,10 +18,11 @@ const ofmMenu = [
   {
     group: "เกี่ยวกับรถ",
     items: [
-      { label: "ขอมีป้ายทะเบียนการทูต", href: "/dmv" },
-      { label: "การขอใบขับขี่", href: "/dmv" },
-      { label: "การซื้อ/เช่าซื้อรถ", href: "/arrival/car" },
-      { label: "การขายรถ", href: "/dmv" },
+      { label: "การขอใบขับขี่", href: "/dmv/driver-license" },
+      { label: "การซื้อ/เช่าซื้อรถ", href: "/arrival/vehicle-purchase" },
+      { label: "การขึ้นทะเบียนรถ", href: "/dmv/registration" },
+      { label: "ประกันรถยนต์", href: "/dmv/auto-insurance" },
+      { label: "การขายรถ", href: "/termination/vehicle-sale" },
     ],
   },
 ];
@@ -186,7 +187,7 @@ export default function Header() {
             {/* Contact button */}
             <a
               href="mailto:protocol@thaiembdc.org"
-              className="ml-3 inline-flex items-center gap-2 rounded-lg bg-[#c40000] px-5 py-2 text-sm lg:text-basefont-semibold text-white transition-all hover:bg-[#a80000] active:scale-[0.97]"
+              className="ml-3 inline-flex items-center gap-2 rounded-lg bg-[#c40000] px-5 py-2 text-sm lg:text-base font-semibold text-white transition-all hover:bg-[#a80000] active:scale-[0.97]"
             >
               ติดต่อเรา
             </a>
