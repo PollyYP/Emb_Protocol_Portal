@@ -12,7 +12,7 @@ const ofmMenu = [
     items: [
       { label: "Notification of Appointment", href: "/person-management" },
       { label: "Notification of Change", href: "/person-management" },
-      { label: "Notification of Terminate", href: "/person-management" },
+      { label: "Notification of Termination", href: "/person-management" },
     ],
   },
   {
@@ -91,10 +91,10 @@ export default function Header() {
               className="h-10 w-auto transition-transform group-hover:scale-105"
             />
             <div className="leading-tight">
-              <span className="block text-[21px] font-bold tracking-tight text-[#0c0479]">
+              <span className="block text-xl lg:text-[21px] font-bold tracking-tight text-[#0c0479]">
                 RTE PROTOCOL PORTAL
               </span>
-              <span className="block text-[10px] font-medium tracking-widest uppercase text-black/40">
+              <span className="block text-sm lg:text-[10px] font-medium tracking-widest uppercase text-black/40">
                 Royal Thai Embassy, Washington, D.C.
               </span>
             </div>
@@ -247,7 +247,7 @@ export default function Header() {
                 onClick={scrollToArrival}
                 className="block rounded-lg px-4 py-3 text-sm font-medium text-black/70 transition-colors hover:bg-black/4"
               >
-                ข้าราชการมาใหม่
+                สำหรับข้าราชการใหม่
               </a>
 
               {/* OFM accordion */}
