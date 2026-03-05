@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-@import "tailwindcss";
-=======
 @import "tailwindcss";
 @theme {
   --font-satoshi: 'Satoshi', sans-serif;
@@ -9,4 +6,3 @@
 body {
   font-family: 'Satoshi', sans-serif;
 }
->>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38

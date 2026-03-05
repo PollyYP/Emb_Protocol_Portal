@@ -2,12 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-<<<<<<< HEAD
-import { useMemo, useState } from "react";
-=======
 import { motion, useInView } from "framer-motion";
 import { useMemo, useRef, useState } from "react";
->>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
 
 type Slide = {
   no: number;
@@ -17,14 +13,11 @@ type Slide = {
 };
 
 export default function ArrivalGuideCarousel() {
-<<<<<<< HEAD
-=======
   const subtitle = "คำแนะนำเมื่อเดินทางมาถึง";
   const subtitleLetters = Array.from(subtitle);
   const titleRef = useRef<HTMLDivElement>(null);
   const inView = useInView(titleRef, { once: true, amount: 0.5 });
 
->>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
   const slides: Slide[] = useMemo(
     () => [
       {
@@ -63,13 +56,6 @@ export default function ArrivalGuideCarousel() {
   const active = slides[i];
 
   return (
-<<<<<<< HEAD
-    <section className="w-full py-12">
-      <div className="mx-auto w-full px-2 sm:px-4 md:px-6 lg:px-10">
-        <h2 className="text-4xl font-extrabold text-[#e0261c] md:text-6xl">
-          แนวทางปฏิบัติเมื่อเดินทางมาถึง
-        </h2>
-=======
     <section id="arrival-guide" className="w-full">
       <div className="mx-auto w-full px-2 sm:px-4 md:px-6 lg:px-10">
         <div ref={titleRef}>
@@ -105,7 +91,6 @@ export default function ArrivalGuideCarousel() {
             ))}
           </motion.p>
         </div>
->>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
 
         <div className="mt-8">
           <div className="relative w-full overflow-hidden border border-black/10">

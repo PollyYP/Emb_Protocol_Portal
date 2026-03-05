@@ -1,10 +1,6 @@
 "use client";
 
-<<<<<<< HEAD
-import React, { useEffect, useMemo, useRef, useState } from "react";
-=======
 import React, { useMemo, useRef } from "react";
->>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 
@@ -18,9 +14,9 @@ const steps: Step[] = [
     title: "Notification of Appointment",
     detail: (
       <>
-        เป็นสิ่งแรกที่ต้องดำเนินการเมื่อเดินทางมาถึง กรุณากรอกข้อมูลตามแบบฟอร์มนี้{" "}
+        เป็นสิ่งแรกที่ต้องดำเนินการเมื่อเดินทางมาถึง กรุณากรอกข้อมูลตามแบบฟอร์มนี้<br/>{" "}
         <a
-          href="PUT_LINK_TO_FORM_HERE"
+          href="https://www.cognitoforms.com/RoyalThaiEmbassy1/NotificationOfAppointmentEnglishOnly"
           target="_blank"
           rel="noopener noreferrer"
           className="font-semibold underline hover:text-[#e0261c]"
@@ -48,11 +44,7 @@ const steps: Step[] = [
         <div className="mt-4">
           <Link
             href="/vehicle"
-<<<<<<< HEAD
-            className="inline-flex items-center justify-center bg-[#e0261c] px-4 py-2 text-sm font-extrabold text-white hover:bg-white/10 border border-white/30"
-=======
-            className="inline-block rounded-lg bg-[#c40000] px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#a80000]"
->>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
+            className="inline-block rounded-lg border-[#c40000] bg-white px-4 py-3 text-center text-sm font-semibold transition-colors hover:bg-[#a80000]"
           >
             อ่านเพิ่มเติม
           </Link>
@@ -72,27 +64,16 @@ const steps: Step[] = [
 ];
 
 export default function OfmProceduresSection() {
-<<<<<<< HEAD
-=======
   const subtitle = "ระเบียบปฏิบัติที่ต้องดำเนินการกับ OFM";
   const subtitleLetters = Array.from(subtitle);
   const titleRef = useRef<HTMLDivElement>(null);
   const inView = useInView(titleRef, { once: true, amount: 0.5 });
->>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
   const rows = useMemo(() => steps, []);
 
   return (
     <section className="w-full py-12">
       <div className="mx-auto w-full px-2 sm:px-4 md:px-6 lg:px-10">
         {/* Title */}
-<<<<<<< HEAD
-        <h2 className="text-4xl font-extrabold text-[#e0261c] md:text-6xl">
-          ระเบียบปฏิบัติที่ต้องดำเนินการกับ OFM
-        </h2>
-
-        {/* Rows */}
-        <div className="mt-8 space-y-4">
-=======
         <div ref={titleRef}>
           <motion.h2
             className="text-xl font-extrabold uppercase tracking-tight text-[#c40000] md:text-3xl"
@@ -132,7 +113,6 @@ export default function OfmProceduresSection() {
           <p className="text-sm font-semibold uppercase tracking-widest text-[#0c0479]/60 md:text-base">
             ระเบียบที่ทำบ่อย
           </p>
->>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
           {rows.map((s, idx) => (
             <StepRow
               key={idx}
@@ -180,36 +160,9 @@ function StepRow({
   );
 }
 
-<<<<<<< HEAD
-/**
- * Big number that fades in + counts up when scrolled into view
- * (slower animation as you requested)
- */
 function CountInView({ value }: { value: number }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const inView = useInView(ref, { amount: 0.6, once: true });
-  const [display, setDisplay] = useState(0);
-
-  useEffect(() => {
-    if (!inView) return;
-
-    const durationMs = 1800; // slower
-    const start = performance.now();
-
-    const tick = (now: number) => {
-      const t = Math.min(1, (now - start) / durationMs);
-      const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
-      setDisplay(Math.max(0, Math.round(eased * value)));
-      if (t < 1) requestAnimationFrame(tick);
-    };
-
-    requestAnimationFrame(tick);
-  }, [inView, value]);
-=======
-function CountInView({ value }: { value: number }) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const inView = useInView(ref, { amount: 0.6, once: true });
->>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
 
   return (
     <motion.div
@@ -220,11 +173,7 @@ function CountInView({ value }: { value: number }) {
       className="text-white"
     >
       <div className="text-6xl font-extrabold leading-none md:text-7xl">
-<<<<<<< HEAD
-        {display}
-=======
         {value}
->>>>>>> 353824705c0d698d85aad93d2bbcc1ea1c681d38
       </div>
     </motion.div>
   );
