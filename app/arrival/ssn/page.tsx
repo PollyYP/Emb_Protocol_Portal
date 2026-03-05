@@ -96,11 +96,11 @@ export default function SsnPage() {
               <div className="space-y-5 text-sm leading-relaxed text-black/70 md:text-base">
                 <p>
                   <strong className="text-[#0c0479]">Social Security Number (SSN)</strong> หรือเลขโซเชียล 9 หลัก
-                  แม้วัตถุประสงค์หลักของมันคือเรื่องภาษีและประกันสังคม
+                  แม้วัตถุประสงค์หลักคือเรื่องภาษีและประกันสังคม
                   แต่ในความเป็นจริง SSN คือกุญแจที่ช่วยให้ชีวิตในสหรัฐฯ ง่ายขึ้นในหลายด้าน
                 </p>
                 <p>
-                  ธนาคารหลายแห่งถามหา SSN ตอนเปิดบัญชี
+                  ธนาคารหลายแห่งมักจะต้องการเลข SSN เพื่อใช้เปิดบัญชี
                   แม้จะสามารถแจ้งว่ายังไม่มีได้ แต่บางธนาคารกำหนดให้ต้องมีเท่านั้น
                   นอกจากการเปิดบัญชีแล้ว SSN ยังช่วยให้สามารถสร้าง{" "}
                   <strong className="text-[#0c0479]">Credit Score</strong>{" "}
@@ -124,6 +124,7 @@ export default function SsnPage() {
                 <div className="mt-5 space-y-4 text-sm leading-relaxed text-black/70 md:text-base">
                   {[
                     "เปิดบัญชีธนาคาร",
+                    "สมัครบัตรเครดิต",
                     "สร้าง Credit Score สำหรับซื้อรถ / กู้บ้าน / เช่าบ้าน",
                     "Background Check โดย Landlord ก่อนเซ็นสัญญาเช่า",
                     "เปิดมิเตอร์น้ำ ไฟ และอินเทอร์เน็ตที่บ้าน",
