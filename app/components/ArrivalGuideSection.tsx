@@ -56,20 +56,20 @@ export default function ArrivalGuideCarousel() {
   const active = slides[i];
 
   return (
-    <section id="arrival-guide" className="w-full">
-      <div className="mx-auto w-full px-2 sm:px-4 md:px-6 lg:px-10">
+    <section id="arrival-guide" className="mt-8 w-full">
+      <div className="mx-auto w-full px-2 md:px-6 lg:px-10">
         <div ref={titleRef}>
           <motion.h2
-            className="text-xl font-extrabold uppercase tracking-tight text-[#c40000] md:text-3xl"
+            className="text-xl font-extrabold uppercase italic tracking-widest text-[#c40000] md:text-3xl"
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            New Diplomat Arrival Guide
+            Arrival Guide
           </motion.h2>
 
           <motion.p
-            className="text-sm font-semibold italic tracking-[0.1em] text-[#0c0479]/60 md:text-base lg:text-lg"
+            className="text-sm font-semibold text-[#0c0479]/60 md:text-base lg:text-lg"
             initial="hidden"
             animate={inView ? "show" : "hidden"}
             variants={{

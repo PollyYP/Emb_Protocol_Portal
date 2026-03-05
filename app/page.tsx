@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <div className="">
       <Hero/>
-      <OfmSection/>
       <ArrivalGuideCarousel/>
       <OfmProceduresSection/>
+      <OfmSection/>
     </div>
   );
 }
