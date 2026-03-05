@@ -210,7 +210,7 @@ export default function Header() {
               <span className="block lg:text-xl font-bold text-[#0c0479] leading-none">
                 RTE PROTOCOL PORTAL
               </span>
-              <span className="block text-sm lg:text-base font-medium uppercase text-black/40 leading-none -mt-1">
+              <span className="block text-sm lg:text-base font-medium uppercase text-black/40 leading-none">
                 สถานเอกอัครราชทูต ณ กรุงวอชิงตัน
               </span>
             </div>
