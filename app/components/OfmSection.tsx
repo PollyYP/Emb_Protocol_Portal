@@ -19,7 +19,7 @@ export default function OfmSection() {
           <div className="w-full md:w-1/2">
           <div ref={titleRef}>
           <motion.h2
-            className="mt-10 text-xl font-extrabold uppercase tracking-tight text-[#c40000] md:text-3xl"
+            className="mt-10 text-xl font-extrabold uppercase italic tracking-widest text-[#c40000] md:text-3xl"
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
@@ -28,7 +28,7 @@ export default function OfmSection() {
           </motion.h2>
 
           <motion.p
-            className="text-sm font-semibold italic tracking-widest text-[#0c0479]/60 md:text-base lg:text-lg"
+            className="text-sm font-semibold text-[#0c0479]/60 md:text-base lg:text-lg"
             initial="hidden"
             animate={inView ? "show" : "hidden"}
             variants={{
@@ -65,30 +65,29 @@ export default function OfmSection() {
             <h3 className="text-xl font-extrabold text-[#1f3f9a] md:text-3xl">
               Office of Foreign Missions (OFM)
             </h3>
-
-            <p className="mt-4 text-sm text-black/80 md:text-base">
-              The Office of Foreign Missions (OFM) เป็นหน่วยงานภายใต้กระทรวงการต่างประเทศสหรัฐอเมริกา
-              มีหน้าที่กำกับดูแลและประสานงานกิจการที่เกี่ยวข้องกับนักการทูต เจ้าหน้าที่สถานทูตฯ และสถานกงสุลฯ
-              ในสหรัฐอเมริกา รวมไปถึงลูกจ้างท้องถิ่นทุกคนที่ทำงานกับสถานทูตฯ สถานกงสุลฯ
+            <p className="mt-8 text-sm text-black/80 md:text-base leading-relaxed">
+              The Office of Foreign Missions (OFM) เป็นหน่วยงานภายใต้กระทรวงการต่างประเทศสหรัฐอเมริกา <br/>
+              มีหน้าที่กำกับดูแลและประสานงานกิจการที่เกี่ยวข้องกับนักการทูต เจ้าหน้าที่สถานเอกอัครราชทูตฯ <br/>
+              และสถานกงสุลใหญ่ฯ ในสหรัฐอเมริกา รวมไปถึงลูกจ้างท้องถิ่นทุกคนจะต้องทำการรายงานตัวกับ OFM <br/>
               เพื่อให้เป็นไปตามกฎหมายและระเบียบข้อบังคับที่เกี่ยวข้อง
             </p>
 
-            <p className="mt-4 text-sm text-black/80 md:text-base">
-              นักการทูต ข้าราชการและเจ้าหน้าที่ที่เดินทางมาปฏิบัติหน้าที่ใหม่
-              จำเป็นต้องดำเนินการตามขั้นตอนที่กำหนด เช่น
-              การแจ้งเข้ารับตำแหน่ง (Notification of Appointment หรือ NOA)
-              การขึ้นทะเบียนยานพาหนะ (Vehicle Registration)
-              การขอรับบัตรยกเว้นภาษี (Tax Exemption Card) และการดำเนินการด้านสถานะทางการทูตอื่น ๆ
+            <p className="mt-4 text-sm text-black/80 md:text-base leading-relaxed">
+              นักการทูต ข้าราชการและเจ้าหน้าที่ที่เดินทางมาปฏิบัติหน้าที่ใหม่จำเป็นต้องดำเนินการตามขั้นตอนที่กำหนด <br/>
+              เช่น การแจ้งเข้ารับตำแหน่ง (Notification of Appointment หรือ NOA)
+              การขึ้นทะเบียนยานพาหนะ (Vehicle Registration) การขอรับบัตรยกเว้นภาษี (Tax Exemption Card) และการดำเนินการด้านสถานะทางการทูตอื่น ๆ
               ผ่านระบบของ OFM ตามระเบียบของทางการสหรัฐฯ
             </p>
-            <a
-              href="https://www.state.gov/bureaus-offices/under-secretary-for-management/office-of-foreign-missions/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-extrabold border border-[#e0261c] hover:bg-[#e0261c] hover:text-white transition-colors"
-            >
-              อ่านเพิ่มเติมเกี่ยวกับ OFM <span className="pl-1">→</span>
-            </a>
+            <div className="mt-8">
+              <a
+                href="https://www.state.gov/bureaus-offices/under-secretary-for-management/office-of-foreign-missions/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#0c0479] font-semibold hover:text-[#e0261c]"
+              >
+                อ่านเพิ่มเติม →
+              </a>
+            </div>
           </div>
 
         </div>

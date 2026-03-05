@@ -15,14 +15,16 @@ const steps: Step[] = [
     detail: (
       <>
         เป็นสิ่งแรกที่ต้องดำเนินการเมื่อเดินทางมาถึง กรุณากรอกข้อมูลตามแบบฟอร์มนี้<br/>{" "}
-        <a
-          href="https://www.cognitoforms.com/RoyalThaiEmbassy1/NotificationOfAppointmentEnglishOnly"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-semibold underline hover:text-[#e0261c]"
-        >
-          (คลิกเพื่อเปิดแบบฟอร์ม)
-        </a>
+        <div className="mt-2">
+          <a
+            href="https://www.cognitoforms.com/RoyalThaiEmbassy1/NotificationOfAppointmentEnglishOnly"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#0c0479] font-semibold hover:text-[#e0261c]"
+          >
+              กรอกแบบฟอร์ม →
+          </a>
+        </div>
       </>
     ),
   },
@@ -37,27 +39,37 @@ const steps: Step[] = [
     ),
   },
   {
-    title: "ระเบียบปฏิบัติเกี่ยวกับรถยนต์",
+    title: "การขอมีใบขับขี่",
     detail: (
       <>
-        ระเบียบปฏิบัติเกี่ยวกับรถยนต์ เช่น การซื้อ/เช่าซื้อ-ขาย และการขอมีป้ายทะเบียนทางการทูต
+        ข้าราชการที่ประจำการในสหรัฐฯ จำเป็นต้องมีใบขับขี่ของรัฐที่พำนักอยู่
+        โดยทั่วไปจะต้องผ่านการสอบข้อเขียนและการสอบขับขี่จริง
+        รวมถึงการยื่นเอกสารประกอบที่เกี่ยวข้อง เช่น หนังสือเดินทาง บัตรประจำตัวทางการทูต และหลักฐานที่อยู่อาศัย
         <div className="mt-4">
           <Link
-            href="/vehicle"
-            className="inline-block rounded-lg border-[#c40000] bg-white px-4 py-3 text-center text-sm font-semibold transition-colors hover:bg-[#a80000]"
+            href="/arrival/driver-license"
+            className="text-[#0c0479] font-semibold hover:text-[#e0261c]"
           >
-            อ่านเพิ่มเติม
+            อ่านเพิ่มเติม →
           </Link>
         </div>
       </>
     ),
   },
   {
-    title: "การขอบัตร Tax Exemption",
+    title: "การทำประกันรถยนต์",
     detail: (
       <>
-        เฉพาะหัวหน้าสำนักงานเท่านั้นที่จะได้รับบัตรยกเว้นภาษี (Tax Exemption) ทั้งนี้ ท่านสามารถติดต่อฝ่ายพิธีการฯ
-        เพื่อให้ดำเนินการได้
+        การทำประกันรถยนต์เป็นข้อบังคับตามกฎหมายในทุกมลรัฐ ข้าราชการควรดำเนินการทำประกันให้เรียบร้อย
+        ก่อนนำรถออกใช้งาน โดยมีรายละเอียดเกี่ยวกับประเภทความคุ้มครองและขั้นตอนการดำเนินการที่ควรทราบ
+        <div className="mt-4">
+          <Link
+            href="/arrival/auto-insurance"
+            className="text-[#0c0479] font-semibold hover:text-[#e0261c]"
+          >
+            อ่านเพิ่มเติม →
+          </Link>
+        </div>
       </>
     ),
   },
@@ -76,7 +88,7 @@ export default function OfmProceduresSection() {
         {/* Title */}
         <div ref={titleRef}>
           <motion.h2
-            className="text-xl font-extrabold uppercase tracking-tight text-[#c40000] md:text-3xl"
+            className="text-xl font-extrabold uppercase italic tracking-widest text-[#c40000] md:text-3xl"
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
@@ -85,7 +97,7 @@ export default function OfmProceduresSection() {
           </motion.h2>
 
           <motion.p
-            className="text-sm font-semibold italic tracking-widest text-[#0c0479]/60 md:text-base lg:text-lg"
+            className="text-sm font-semibold text-[#0c0479]/60 md:text-base lg:text-lg"
             initial="hidden"
             animate={inView ? "show" : "hidden"}
             variants={{
@@ -110,7 +122,7 @@ export default function OfmProceduresSection() {
 
         {/* Rows */}
         <div className="mt-8 space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#0c0479]/60 md:text-base">
+          <p className="text-sm font-semibold uppercase text-[#0c0479]/60 md:text-base">
             ระเบียบที่ทำบ่อย
           </p>
           {rows.map((s, idx) => (

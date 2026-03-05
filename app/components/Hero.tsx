@@ -19,29 +19,31 @@ export default function Hero() {
           }
         }
       `}</style>
-      <motion.p
-        className="text-right text-sm font-semibold uppercase italic tracking-[0.15em] text-[#c40000] md:text-[11px] lg:text-[12px] mx-10 p-2 bg-[#f3f3f3]"
-        initial="hidden"
-        animate="show"
-        variants={{
-        hidden: {},
-        show: { transition: { staggerChildren: 0.03, delayChildren: 0.5 } },
-        }}
-        >
-        {letters.map((ch, i) => (
-          <motion.span
-            key={`${ch}-${i}`}
-            className="inline-block"
-            variants={{
-            hidden: { opacity: 0, y: 4 },
-            show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
-            }}
+      <div className="px-2 md:px-6 lg:px-10">
+        <motion.p
+          className="text-right text-xs lg:text-sm font-semibold uppercase italic tracking-[0.15em] text-[#c40000] p-2 bg-[#f3f3f3]"
+          initial="hidden"
+          animate="show"
+          variants={{
+          hidden: {},
+          show: { transition: { staggerChildren: 0.03, delayChildren: 0.5 } },
+          }}
           >
-            {ch === " " ? "\u00A0" : ch}
-          </motion.span>
-        ))}
-      </motion.p>
-      <div className="mx-auto w-full px-2 sm:px-4 md:px-6 lg:px-10">
+          {letters.map((ch, i) => (
+            <motion.span
+              key={`${ch}-${i}`}
+              className="inline-block"
+              variants={{
+              hidden: { opacity: 0, y: 4 },
+              show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+              }}
+            >
+              {ch === " " ? "\u00A0" : ch}
+            </motion.span>
+          ))}
+        </motion.p>
+      </div>
+      <div className="mx-auto w-full px-2 md:px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:gap-6">
           {/* LEFT: Image */}
           <div className="relative w-full md:w-2/3">

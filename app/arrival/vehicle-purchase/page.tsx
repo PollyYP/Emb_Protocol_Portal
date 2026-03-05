@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
 
-/* ─── Fade-in wrapper (same as other pages) ─── */
+/* ─── Fade-in wrapper ─── */
 function FadeIn({
   children,
   className = "",
@@ -54,7 +54,7 @@ const DOCS = [
   },
 ];
 
-export default function CarPage() {
+export default function VehiclePurchasePage() {
   return (
     <main className="w-full bg-white">
 
@@ -68,7 +68,7 @@ export default function CarPage() {
         <div className="absolute inset-0 flex items-center justify-center px-4">
           <div className="text-center text-white">
             <h1 className="text-4xl font-extrabold tracking-wide md:text-6xl">
-              รถยนต์ส่วนบุคคล
+              การซื้อ / เช่าซื้อรถ
             </h1>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -112,20 +112,20 @@ export default function CarPage() {
                   ค่าบำรุงรักษา ความประหยัดน้ำมัน และความเหมาะสมกับลักษณะการใช้งาน
                 </p>
                 <p>
-                  หากซื้อรถจาก Dealer จะมีเอกสารประกอบ เช่น Purchase Order / Buyer's Order
+                  หากซื้อรถจาก Dealer จะมีเอกสารประกอบ เช่น Purchase Order / Buyer&apos;s Order
                   และเอกสารโอนกรรมสิทธิ์ ซึ่งจำเป็นสำหรับขั้นตอนการดำเนินการกับ OFM
                 </p>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.15}>
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
+              <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg">
                 <Image src="/bmw.jpg" alt="BMW" fill className="object-cover" />
               </div>
             </FadeIn>
           </div>
 
-          {/* Image mosaic — dealer + blueaudi + ford */}
+          {/* Image mosaic */}
           <FadeIn className="mt-12">
             <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
               <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
@@ -135,7 +135,7 @@ export default function CarPage() {
                 <Image src="/blueaudi.jpg" alt="Blue Audi" fill className="object-cover" />
               </div>
               <div className="relative col-span-2 aspect-[16/9] overflow-hidden rounded-lg md:col-span-1 md:aspect-[3/4]">
-                <Image src="/ferrari.jpg" alt="Ford" fill className="object-cover" />
+                <Image src="/ferrari.jpg" alt="Ferrari" fill className="object-cover" />
               </div>
             </div>
           </FadeIn>
@@ -160,7 +160,7 @@ export default function CarPage() {
 
           <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
             <FadeIn>
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
+              <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg">
                 <Image src="/tire.jpg" alt="Audi" fill className="object-cover" />
               </div>
             </FadeIn>
@@ -187,10 +187,10 @@ export default function CarPage() {
       </section>
 
       {/* ══════════════════════════════════════
-          FULL-WIDTH IMAGE BREAK — tire
+          FULL-WIDTH IMAGE BREAK
           ══════════════════════════════════════ */}
       <section className="w-full">
-        <div className="relative aspect-[21/9] w-full overflow-hidden">
+        <div className="relative aspect-21/9 w-full overflow-hidden">
           <Image src="/audi.jpg" alt="Tire close-up" fill className="object-cover" />
         </div>
       </section>
@@ -214,7 +214,7 @@ export default function CarPage() {
           {/* Prerequisites */}
           <FadeIn className="mt-10">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              <div className="flex items-start gap-4 rounded-xl border border-[#0c0479]/[0.08] bg-[#0c0479]/[0.03] p-6">
+              <div className="flex items-start gap-4 rounded-xl border border-[#0c0479]/8 bg-[#0c0479]/3 p-6">
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0c0479] text-xs font-bold text-white">1</span>
                 <div>
                   <p className="text-sm font-semibold text-[#0c0479]">ใบขับขี่ทางการทูต</p>
@@ -223,7 +223,7 @@ export default function CarPage() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 rounded-xl border border-[#c40000]/[0.08] bg-[#c40000]/[0.03] p-6">
+              <div className="flex items-start gap-4 rounded-xl border border-[#c40000]/8 bg-[#c40000]/3 p-6">
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#c40000] text-xs font-bold text-white">2</span>
                 <div>
                   <p className="text-sm font-semibold text-[#c40000]">ประกันภัยรถยนต์</p>
@@ -237,7 +237,7 @@ export default function CarPage() {
 
           {/* OFM note */}
           <FadeIn className="mt-10">
-            <div className="rounded-xl border border-black/[0.06] bg-[#fafafa] p-6 md:p-8">
+            <div className="rounded-xl border border-black/6 bg-[#fafafa] p-6 md:p-8">
               <p className="text-sm leading-relaxed text-black/70 md:text-base">
                 กรณีตัวแทนจำหน่าย (Dealer) ไม่มีความคุ้นเคยกับการซื้อขายรถกับนักการทูต
                 หรือไม่ทราบระเบียบของ OFM ท่านจะต้องแจ้งให้ตัวแทนจำหน่ายทราบว่า
@@ -278,7 +278,7 @@ export default function CarPage() {
               ].map((doc, i) => (
                 <div
                   key={i}
-                  className="flex flex-col items-center rounded-xl border border-black/[0.06] bg-white p-5 text-center"
+                  className="flex flex-col items-center rounded-xl border border-black/6 bg-white p-5 text-center"
                 >
                   <span
                     className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold text-white ${
@@ -307,7 +307,7 @@ export default function CarPage() {
           <div className="mt-6 space-y-3">
             {DOCS.map((doc, idx) => (
               <FadeIn key={doc.num} delay={idx * 0.08}>
-                <div className="flex gap-5 rounded-xl border border-black/[0.06] bg-white p-5 md:p-6">
+                <div className="flex gap-5 rounded-xl border border-black/6 bg-white p-5 md:p-6">
                   <span className="text-sm font-mono font-bold text-[#0c0479]">{doc.num}</span>
                   <div>
                     <p className="text-sm font-semibold text-black/80 md:text-base">{doc.title}</p>
@@ -347,14 +347,44 @@ export default function CarPage() {
             </div>
           </FadeIn>
 
-          {/* CTA */}
-          <FadeIn className="mt-10 flex justify-center">
-            <Link
-              href="/dmv"
-              className="inline-flex items-center gap-2 rounded-lg bg-[#0c0479] px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#0a0360]"
-            >
-              การขอใบขับขี่ทางการทูต อ่านรายละเอียด →
-            </Link>
+          {/* Related pages */}
+          <FadeIn className="mt-10">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <Link
+                href="/dmv/driver-license"
+                className="flex items-center gap-3 rounded-xl border border-[#0c0479]/10 bg-white p-5 transition-colors hover:bg-[#0c0479]/3"
+              >
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0c0479]/8">
+                  <svg className="h-5 w-5 text-[#0c0479]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-[#0c0479]">การขอใบขับขี่</p>
+                  <p className="mt-0.5 text-xs text-black/40">Diplomatic Driver&apos;s License</p>
+                </div>
+                <svg className="ml-auto h-4 w-4 text-black/25" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </Link>
+              <Link
+                href="/dmv/registration"
+                className="flex items-center gap-3 rounded-xl border border-[#c40000]/10 bg-white p-5 transition-colors hover:bg-[#c40000]/3"
+              >
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#c40000]/8">
+                  <svg className="h-5 w-5 text-[#c40000]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-[#c40000]">การขึ้นทะเบียนรถ</p>
+                  <p className="mt-0.5 text-xs text-black/40">Diplomatic Plate Registration</p>
+                </div>
+                <svg className="ml-auto h-4 w-4 text-black/25" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </Link>
+            </div>
           </FadeIn>
         </div>
       </section>
