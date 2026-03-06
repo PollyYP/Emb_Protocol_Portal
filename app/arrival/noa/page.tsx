@@ -31,8 +31,8 @@ function FadeIn({
 const steps = [
   {
     no: "01",
-    title: "เตรียมเอกสาร",
-    body: "รวบรวมเอกสารที่จำเป็นให้ครบถ้วน ได้แก่ หนังสือเดินทาง วีซ่า คำสั่งแต่งตั้ง และ Signature Card ที่กรอกข้อมูลเรียบร้อยแล้ว",
+    title: "เตรียมเอกสารและข้อมูลการทำงานให้พร้อม",
+    body: "รวบรวมเอกสารที่จำเป็นให้ครบถ้วน ได้แก่ หนังสือเดินทาง วีซ่า และ Signature Card ที่กรอกข้อมูลเรียบร้อยแล้ว พร้อมทั้งประวัติการทำงานย้อนหลัง 5 ปี ชื่อสำนักงาน ชื่อตำแหน่ง และวัน เดือน ปีที่ปฏิบัติงาน",
   },
   {
     no: "02",
@@ -47,31 +47,25 @@ const steps = [
   {
     no: "04",
     title: "รับบัตรประจำตัวทางการทูต",
-    body: "เมื่อ OFM อนุมัติแล้ว ฝ่ายพิธีฯ จะแจ้งให้ท่านทราบเพื่อรับบัตรประจำตัวทางการทูต (Diplomatic ID Card)",
+    body: "เมื่อ OFM อนุมัติแล้ว ฝ่ายพิธีฯ จะแจ้งให้ท่านทราบเพื่อให้ท่านรอรับบัตรประจำตัวทางการทูต (Diplomatic ID Card) ทางไปรษณีย์",
   },
 ];
 
 const documents = [
   {
     name: "หนังสือเดินทาง (Passport)",
-    note: "ใช้เฉพาะสำเนา",
+    note: "ส่งไฟล์หน้าแรกที่มีข้อมูลของท่านมาทางอีเมลฝ่ายพิธีฯ",
     required: true,
   },
   {
     name: "วีซ่าประเภท A หรือ G",
-    note: "ที่ยังไม่หมดอายุ",
+    note: "วีซ่าต้องไม่หมดอายุ และส่งไฟล์มาทางอีเมลฝ่ายพิธีฯ",
     required: true,
   },
   {
-    name: "Signature Card",
-    note: "ดาวน์โหลดและกรอกให้ครบ",
+    name: "ข้อมูลการทำงานย้อนหลัง 5 ปี",
+    note: "ประวัติการทำงานย้อนหลัง 5 ปี ชื่อสำนักงาน ชื่อตำแหน่ง และวัน เดือน ปีที่ปฏิบัติงาน",
     required: true,
-    download: true,
-  },
-  {
-    name: "ข้อมูลที่อยู่ในสหรัฐฯ",
-    note: "หากยังไม่มี สามารถใช้ที่อยู่สถานเอกอัครราชทูตฯ ชั่วคราวได้",
-    required: false,
   },
 ];
 
@@ -103,9 +97,9 @@ export default function NOAPage() {
               Notification of<br />
               <span className="text-[#c40000]">Appointment</span>
             </h1>
-            <p className="mt-5 text-base leading-relaxed text-white/55 sm:text-lg">
+            <p className="mt-5 text-base leading-relaxed text-white/55">
               การแจ้งเข้ารับตำแหน่งต่อ Office of Foreign Missions (OFM)
-              เป็นขั้นตอนแรกที่ข้าราชการทุกท่านต้องดำเนินการภายใน 30 วัน
+              เป็นขั้นตอนแรกที่ข้าราชการทุกท่าน <br/> ต้องดำเนินการภายใน 30 วัน
               นับจากวันที่เดินทางมาถึงสหรัฐอเมริกา
             </p>
 
@@ -146,8 +140,8 @@ export default function NOAPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c40000]/60">
                 เกี่ยวกับ NOA
               </p>
-              <h2 className="mt-2 text-2xl font-extrabold text-[#0c0479] md:text-3xl">
-                Notification of Appointment คืออะไร?
+              <h2 className="mt-2 text-xl font-extrabold text-[#0c0479] md:text-3xl">
+                Notification of Appointment คืออะไร
               </h2>
               <div className="mt-4 h-px w-12 bg-[#c40000]" />
               <div className="mt-6 space-y-4 text-sm leading-relaxed text-black/60 md:text-base">
@@ -160,7 +154,7 @@ export default function NOAPage() {
                   การดำเนินการ NOA เป็นพื้นฐานสำคัญสำหรับขั้นตอนอื่น ๆ ที่ตามมา
                   เช่น การออกบัตรประจำตัวทางการทูต การขึ้นทะเบียนยานพาหนะ
                   การขอบัตร Tax Exemption และการดำเนินการด้านสถานะทางการทูตทั้งหมด
-                  หากไม่ดำเนินการ NOA ท่านจะไม่ได้รับหมายเลขประจำตัวนักการทูตและไม่สามารถดำเนินขั้นตอนอื่น ๆ ได้
+                  หากไม่ดำเนินการ NOA ท่านจะไม่ได้รับหมายเลขประจำตัวนักการทูตทำให้ไม่สามารถดำเนินการในเรื่องอื่น ๆ ได้
                 </p>
                 <p>
                   ฝ่ายพิธีการทางการทูตของสถานเอกอัครราชทูตฯ จะเป็นผู้ดำเนินการยื่น NOA ต่อ OFM ผ่านระบบออนไลน์
@@ -188,7 +182,7 @@ export default function NOAPage() {
                   {[
                     { label: "ยื่นโดย", value: "ฝ่ายพิธีการทางการทูต สถานเอกอัครราชทูต ณ กรุงวอชิงตัน" },
                     { label: "ยื่นต่อ", value: "Office of Foreign Missions (OFM), U.S. Department of State" },
-                    { label: "ระยะเวลาดำเนินการ", value: "ประมาณ 2 - 4 สัปดาห์หลังยื่นครบ" },
+                    { label: "ระยะเวลาดำเนินการ", value: "ประมาณ 2 - 4 สัปดาห์" },
                     { label: "ผลลัพธ์", value: "บัตรประจำตัวทางการทูต (Diplomatic ID Card)" },
                   ].map((item) => (
                     <div key={item.label} className="flex flex-col gap-0.5 border-b border-black/6 pb-4 last:border-0 last:pb-0">
@@ -211,12 +205,12 @@ export default function NOAPage() {
               เอกสารประกอบ
             </p>
             <h2 className="mt-2 text-2xl font-extrabold text-[#0c0479] md:text-3xl">
-              เอกสารที่ต้องเตรียม
+              สิ่งที่ต้องเตรียม
             </h2>
             <div className="mt-4 h-px w-12 bg-[#c40000]" />
           </FadeIn>
 
-          <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-3 lg:grid-cols-3">
             {documents.map((doc, idx) => (
               <FadeIn key={idx} delay={idx * 0.05}>
                 <div className="flex h-full flex-col justify-between rounded-xl border border-black/6 bg-white p-5 shadow-sm">
@@ -260,8 +254,8 @@ export default function NOAPage() {
                 <div>
                   <p className="font-extrabold text-[#0c0479]">Signature Card</p>
                   <p className="mt-1 text-sm text-black/55">
-                    แบบฟอร์มลายมือชื่อสำหรับการแจ้ง NOA กรุณาดาวน์โหลด กรอกข้อมูลให้ครบถ้วน
-                    และนำส่งพร้อมแบบฟอร์ม NOA ออนไลน์
+                    ดาวน์โหลดและกรอกให้ครบถ้วน <span className="text-[#c40000]">ยกเว้นช่อง 1. Principal's PID และ 2. Applicant's PID</span> <br/> พร้อมทั้ง
+                    <span className="font-bold text-black">ลงนามในช่อง A. ด้วยหมึกสีดำ</span> แล้วส่งไฟล์มาทางอีเมลฝ่ายพิธีฯ
                   </p>
                 </div>
               </div>
@@ -317,9 +311,9 @@ export default function NOAPage() {
           <FadeIn>
             <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-white/40">พร้อมดำเนินการแล้ว?</p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-white/40">พร้อมดำเนินการ</p>
                 <h2 className="mt-1 text-2xl font-extrabold text-white md:text-3xl">กรอกแบบฟอร์ม NOA ได้เลย</h2>
-                <p className="mt-2 text-sm text-white/50">อย่าลืมดาวน์โหลดและแนบ Signature Card ด้วย</p>
+                <p className="mt-2 text-sm text-white/50">อย่าลืมดาวน์โหลดและส่ง Signature Card มาทางอีเมลฝ่ายพิธีฯ</p>
               </div>
               <div className="flex flex-wrap justify-center gap-3 sm:justify-end">
                 <a

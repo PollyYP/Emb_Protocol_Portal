@@ -105,9 +105,12 @@ export default function Hero() {
                 +1 (202) 298-4798
                 </div>
             </div>
-
             </div>
-
+            <div className="mt-12 mb-8 text-sm text-center lg:text-base lg:mt-16">
+                หากท่านมีข้อสงสัยเกี่ยวกับระเบียบ OFM <br/>
+                หรือต้องการขยายระยะเวลาการตรวจลงตราของสหรัฐฯ <br/> 
+                OFM/VISA DESK ยินดีให้บริการทุกท่านค่ะ
+            </div>
           </div>
         </div>
       </div>

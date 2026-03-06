@@ -54,6 +54,55 @@ const DOCS = [
   },
 ];
 
+const COMPARE = [
+  {
+    aspect: "ค่าใช้จ่ายรายเดือน",
+    buy: { text: "ไม่มีค่างวด", pro: false },
+    lease: { text: "มีค่างวด", pro: true },
+  },
+  {
+    aspect: "กรรมสิทธิ์",
+    buy: { text: "เป็นเจ้าของรถ", pro: true },
+    lease: { text: "ไม่ได้เป็นเจ้าของรถ", pro: false },
+  },
+  {
+    aspect: "เมื่อกลับประจำการ",
+    buy: { text: "ต้องจำหน่ายรถเอง", pro: false },
+    lease: { text: "คืนรถตามสัญญาได้ทันที", pro: true },
+  },
+  {
+    aspect: "การคืนรถก่อนกำหนด",
+    buy: { text: "ขายได้เมื่อพร้อม", pro: true },
+    lease: { text: "ต้องจ่ายที่เหลือให้ครบตามสัญญา", pro: false },
+  },
+  {
+    aspect: "ค่าบำรุงรักษา",
+    buy: { text: "รับผิดชอบเองทั้งหมด", pro: false },
+    lease: { text: "มักรวมในสัญญาบางส่วน", pro: true },
+  },
+  {
+    aspect: "ระยะทางการใช้งาน",
+    buy: { text: "ไม่มีข้อจำกัด", pro: true },
+    lease: { text: "จำกัดไมล์ต่อปี (mileage limit)", pro: false },
+  },
+  {
+    aspect: "ความยืดหยุ่น",
+    buy: { text: "ดัดแปลงรถได้ตามต้องการ", pro: true },
+    lease: { text: "ต้องคืนในสภาพตามกำหนด", pro: false },
+  },
+];
+
+const Check = () => (
+  <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+  </svg>
+);
+const Cross = () => (
+  <svg className="h-4 w-4 shrink-0 text-black/20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+  </svg>
+);
+
 export default function VehiclePurchasePage() {
   return (
     <main className="w-full bg-white">
@@ -89,12 +138,8 @@ export default function VehiclePurchasePage() {
         <div className="mx-auto w-full max-w-7xl px-4 md:px-8 lg:px-10">
 
           <FadeIn>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c40000]/60">
-              Buy
-            </p>
-            <h2 className="mt-2 text-2xl font-extrabold text-[#0c0479] md:text-4xl">
-              การซื้อรถยนต์
-            </h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c40000]/60">Buy</p>
+            <h2 className="mt-2 text-2xl font-extrabold text-[#0c0479] md:text-4xl">การซื้อรถยนต์</h2>
             <div className="mt-4 h-px w-16 bg-[#c40000]" />
           </FadeIn>
 
@@ -108,12 +153,10 @@ export default function VehiclePurchasePage() {
                   ไม่สามารถจดทะเบียนผ่านหน่วยงานรัฐของแต่ละมลรัฐโดยตรง
                 </p>
                 <p>
-                  ก่อนตัดสินใจซื้อ ควรพิจารณาปัจจัยต่าง ๆ เช่น งบประมาณ ค่าใช้จ่ายด้านประกันภัย
-                  ค่าบำรุงรักษา ความประหยัดน้ำมัน และความเหมาะสมกับลักษณะการใช้งาน รวมถึงหากซื้อแล้ว จะส
-                </p>
-                <p>
-                  หากซื้อรถจาก Dealer จะมีเอกสารประกอบ เช่น Purchase Order / Buyer&apos;s Order
-                  และเอกสารโอนกรรมสิทธิ์ ซึ่งจำเป็นสำหรับขั้นตอนการดำเนินการกับ OFM
+                  ก่อนตัดสินใจ ขอให้ท่านพิจารณาปัจจัยที่เกี่ยวข้องอย่างรอบคอบ ไม่ว่าจะเป็นงบประมาณ ค่าเบี้ยประกันภัย ค่าบำรุงรักษา
+                  อัตราการสิ้นเปลืองเชื้อเพลิง และความเหมาะสมกับรูปแบบการใช้งาน นอกจากนี้ หากท่านเลือกซื้อรถยนต์
+                  ควรคำนึงถึงความเป็นไปได้ในการจำหน่ายรถยนต์ให้แล้วเสร็จก่อนกลับประจำการ และหากท่านเลือกเช่าซื้อ
+                  ควรทราบว่าหากมีความจำเป็นต้องคืนรถก่อนครบกำหนดสัญญา ท่านยังคงมีภาระผูกพันที่จะต้องจ่ายทั้งหมดตามข้อตกลงที่ได้ทำไว้กับผู้ให้เช่าซื้อ
                 </p>
               </div>
             </FadeIn>
@@ -129,10 +172,10 @@ export default function VehiclePurchasePage() {
           <FadeIn className="mt-12">
             <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
               <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
-                <Image src="/dealer.jpg" alt="Car dealer" fill className="object-cover" />
+                <Image src="/bmw2.jpg" alt="Car dealer" fill className="object-cover" />
               </div>
               <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
-                <Image src="/blueaudi.jpg" alt="Blue Audi" fill className="object-cover" />
+                <Image src="/dealer.jpg" alt="Blue Audi" fill className="object-cover" />
               </div>
               <div className="relative col-span-2 aspect-[16/9] overflow-hidden rounded-lg md:col-span-1 md:aspect-[3/4]">
                 <Image src="/ferrari.jpg" alt="Ferrari" fill className="object-cover" />
@@ -149,12 +192,8 @@ export default function VehiclePurchasePage() {
         <div className="mx-auto w-full max-w-7xl px-4 md:px-8 lg:px-10">
 
           <FadeIn>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c40000]/60">
-              Lease
-            </p>
-            <h2 className="mt-2 text-2xl font-extrabold text-[#0c0479] md:text-4xl">
-              การเช่าซื้อ
-            </h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c40000]/60">Lease</p>
+            <h2 className="mt-2 text-2xl font-extrabold text-[#0c0479] md:text-4xl">การเช่าซื้อ</h2>
             <div className="mt-4 h-px w-16 bg-[#c40000]" />
           </FadeIn>
 
@@ -187,6 +226,54 @@ export default function VehiclePurchasePage() {
       </section>
 
       {/* ══════════════════════════════════════
+          COMPARISON TABLE
+          ══════════════════════════════════════ */}
+      <section className="w-full py-16 md:py-24">
+        <div className="mx-auto w-full max-w-7xl px-4 md:px-8 lg:px-10">
+          <FadeIn>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c40000]/60">Compare</p>
+            <h2 className="mt-2 text-2xl font-extrabold text-[#0c0479] md:text-4xl">ซื้อสด vs เช่าซื้อ</h2>
+            <div className="mt-4 h-px w-16 bg-[#c40000]" />
+          </FadeIn>
+
+          <FadeIn className="mt-10 overflow-x-auto">
+            <table className="w-full border-collapse text-sm md:text-base">
+              <thead>
+                <tr>
+                  <th className="w-1/3 rounded-tl-xl bg-[#fafafa] px-6 py-4 text-left text-xs font-semibold uppercase tracking-widest text-black/30" />
+                  <th className="w-1/3 bg-[#0c0479] px-6 py-4 text-center text-sm font-extrabold uppercase tracking-widest text-white">
+                    ซื้อรถ
+                  </th>
+                  <th className="w-1/3 rounded-tr-xl bg-[#c40000] px-6 py-4 text-center text-sm font-extrabold uppercase tracking-widest text-white">
+                    เช่าซื้อ
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {COMPARE.map((row, idx) => (
+                  <tr key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-[#fafafa]"}>
+                    <td className="px-6 py-4 text-sm font-semibold text-black/60">{row.aspect}</td>
+                    <td className="px-6 py-4 text-center">
+                      <span className={`inline-flex items-center justify-center gap-2 ${row.buy.pro ? "text-[#0c0479]" : "text-black/35"}`}>
+                        {row.buy.pro ? <Check /> : <Cross />}
+                        {row.buy.text}
+                      </span>
+                    </td>
+                    <td className="px-6 py-4 text-center">
+                      <span className={`inline-flex items-center justify-center gap-2 ${row.lease.pro ? "text-[#c40000]" : "text-black/35"}`}>
+                        {row.lease.pro ? <Check /> : <Cross />}
+                        {row.lease.text}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════
           FULL-WIDTH IMAGE BREAK
           ══════════════════════════════════════ */}
       <section className="w-full">
@@ -202,16 +289,11 @@ export default function VehiclePurchasePage() {
         <div className="mx-auto w-full max-w-7xl px-4 md:px-8 lg:px-10">
 
           <FadeIn>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c40000]/60">
-              Before You Drive
-            </p>
-            <h2 className="mt-2 text-2xl font-extrabold text-[#0c0479] md:text-4xl">
-              ข้อควรรู้
-            </h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c40000]/60">Before You Drive</p>
+            <h2 className="mt-2 text-2xl font-extrabold text-[#0c0479] md:text-4xl">ข้อควรรู้</h2>
             <div className="mt-4 h-px w-16 bg-[#c40000]" />
           </FadeIn>
 
-          {/* Prerequisites */}
           <FadeIn className="mt-10">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div className="flex items-start gap-4 rounded-xl border border-[#0c0479]/8 bg-[#0c0479]/3 p-6">
@@ -228,14 +310,13 @@ export default function VehiclePurchasePage() {
                 <div>
                   <p className="text-sm font-semibold text-[#c40000]">ประกันภัยรถยนต์</p>
                   <p className="mt-1 text-sm leading-relaxed text-black/50 md:text-base">
-                    ต้องมีประกันที่มีผลบังคับใช้แล้ว (Car Insurance)
+                    ต้องมีประกันรถยนต์ (Car Insurance) ก่อนขับขี่
                   </p>
                 </div>
               </div>
             </div>
           </FadeIn>
 
-          {/* OFM note */}
           <FadeIn className="mt-10">
             <div className="rounded-xl border border-black/6 bg-[#fafafa] p-6 md:p-8">
               <p className="text-sm leading-relaxed text-black/70 md:text-base">
@@ -259,12 +340,8 @@ export default function VehiclePurchasePage() {
         <div className="mx-auto w-full max-w-7xl px-4 md:px-8 lg:px-10">
 
           <FadeIn>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c40000]/60">
-              Required Documents
-            </p>
-            <h2 className="mt-2 text-2xl font-extrabold text-[#0c0479] md:text-4xl">
-              เอกสารที่ต้องเตรียม
-            </h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c40000]/60">Required Documents</p>
+            <h2 className="mt-2 text-2xl font-extrabold text-[#0c0479] md:text-4xl">เอกสารที่ต้องเตรียม</h2>
             <div className="mt-4 h-px w-16 bg-[#c40000]" />
           </FadeIn>
 
@@ -276,15 +353,8 @@ export default function VehiclePurchasePage() {
                 "ประกันภัยรถยนต์",
                 "ใบขับขี่ทางการทูต",
               ].map((doc, i) => (
-                <div
-                  key={i}
-                  className="flex flex-col items-center rounded-xl border border-black/6 bg-white p-5 text-center"
-                >
-                  <span
-                    className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold text-white ${
-                      i % 2 === 0 ? "bg-[#0c0479]" : "bg-[#c40000]"
-                    }`}
-                  >
+                <div key={i} className="flex flex-col items-center rounded-xl border border-black/6 bg-white p-5 text-center">
+                  <span className={`flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold text-white ${i % 2 === 0 ? "bg-[#0c0479]" : "bg-[#c40000]"}`}>
                     {i + 1}
                   </span>
                   <p className="mt-3 text-sm leading-snug text-black/70">{doc}</p>
@@ -293,15 +363,13 @@ export default function VehiclePurchasePage() {
             </div>
           </FadeIn>
 
-          {/* Documents dealer sends to OFM */}
           <FadeIn className="mt-12">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c40000]/60">
-              Documents for OFM
-            </p>
-            <h3 className="mt-2 text-xl font-extrabold text-[#0c0479] md:text-4xl">
-              เอกสารที่ต้องจัดส่งไปยัง OFM
-            </h3>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c40000]/60">Documents for OFM</p>
+            <h3 className="mt-2 text-xl font-extrabold text-[#0c0479] md:text-4xl">เอกสารที่ต้องจัดส่งไปยัง OFM</h3>
             <div className="mt-3 h-px w-12 bg-[#c40000]" />
+            <div className="mt-4">
+              <p>หากท่านซื้อหรือเช่าซื้อรถจาก Dealer จะมีเอกสารประกอบ ซึ่งจำเป็นสำหรับขั้นตอนการดำเนินการกับ OFM ดังต่อไปนี้</p>
+            </div>
           </FadeIn>
 
           <div className="mt-6 space-y-3">
@@ -318,24 +386,16 @@ export default function VehiclePurchasePage() {
             ))}
           </div>
 
-          {/* Summary pills */}
           <FadeIn className="mt-8">
             <div className="flex flex-wrap gap-3">
-              <span className="rounded-full bg-[#0c0479] px-5 py-2.5 text-sm font-medium text-white">
-                ซื้อรถ → ส่งเอกสารข้อ 1–3
-              </span>
-              <span className="rounded-full bg-[#c40000] px-5 py-2.5 text-sm font-medium text-white">
-                เช่าซื้อ → ส่งเอกสารทุกข้อ (1–4)
-              </span>
+              <span className="rounded-full bg-[#0c0479] px-5 py-2.5 text-sm font-medium text-white">ซื้อรถ → ส่งเอกสารข้อ 1–3</span>
+              <span className="rounded-full bg-[#c40000] px-5 py-2.5 text-sm font-medium text-white">เช่าซื้อ → ส่งเอกสารทุกข้อ (1–4)</span>
             </div>
           </FadeIn>
 
-          {/* Important callout */}
           <FadeIn className="mt-10">
             <div className="rounded-xl bg-[#0c0479] p-7 md:p-10">
-              <span className="inline-block rounded-full bg-[#c40000] px-3 py-1 text-xs font-semibold text-white">
-                ข้อสำคัญ
-              </span>
+              <span className="inline-block rounded-full bg-[#c40000] px-3 py-1 text-xs font-semibold text-white">ข้อสำคัญ</span>
               <p className="mt-4 text-sm leading-relaxed text-white/80 md:text-base">
                 การได้รับอนุมัติการจดทะเบียนรถล่าช้า อาจเกิดจากกรณีที่ตัวแทนจำหน่ายไม่ได้จัดส่งเอกสารตัวจริงไปยัง OFM
                 ดังนั้น ขอความกรุณาติดตามกับตัวแทนจำหน่ายโดยตรง เพื่อยืนยันว่าเอกสารได้ถูกจัดส่งเรียบร้อยแล้ว
@@ -347,13 +407,9 @@ export default function VehiclePurchasePage() {
             </div>
           </FadeIn>
 
-          {/* Related pages */}
           <FadeIn className="mt-10">
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              <Link
-                href="/dmv/driver-license"
-                className="flex items-center gap-3 rounded-xl border border-[#0c0479]/10 bg-white p-5 transition-colors hover:bg-[#0c0479]/3"
-              >
+              <Link href="/dmv/driver-license" className="flex items-center gap-3 rounded-xl border border-[#0c0479]/10 bg-white p-5 transition-colors hover:bg-[#0c0479]/3">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0c0479]/8">
                   <svg className="h-5 w-5 text-[#0c0479]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" />
@@ -367,10 +423,7 @@ export default function VehiclePurchasePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                 </svg>
               </Link>
-              <Link
-                href="/dmv/registration"
-                className="flex items-center gap-3 rounded-xl border border-[#c40000]/10 bg-white p-5 transition-colors hover:bg-[#c40000]/3"
-              >
+              <Link href="/dmv/registration" className="flex items-center gap-3 rounded-xl border border-[#c40000]/10 bg-white p-5 transition-colors hover:bg-[#c40000]/3">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#c40000]/8">
                   <svg className="h-5 w-5 text-[#c40000]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
@@ -388,12 +441,10 @@ export default function VehiclePurchasePage() {
           </FadeIn>
         </div>
       </section>
-       {/* ══════════ BACK NAV ══════════ */}
+
+      {/* ══════════ BACK NAV ══════════ */}
       <div className="mx-auto max-w-7xl px-6 py-8 lg:px-10">
-        <Link
-          href="/arrival"
-          className="inline-flex items-center gap-2 text-sm font-medium text-black/40 transition-colors hover:text-[#0c0479]"
-        >
+        <Link href="/arrival" className="inline-flex items-center gap-2 text-sm font-medium text-black/40 transition-colors hover:text-[#0c0479]">
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
           </svg>

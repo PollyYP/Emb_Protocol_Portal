@@ -39,7 +39,7 @@ const changeTypes = [
     urgency: "สำคัญมาก",
     urgencyColor: "red",
     body: "เมื่อย้ายที่พักใหม่ ต้องแจ้ง OFM ทันที เนื่องจากที่อยู่ในระบบต้องตรงกับที่อยู่จริงเสมอ โดยเฉพาะหากท่านมีรถทะเบียนทางการทูต ใบขับขี่ หรือบัตร Tax Exemption ที่ผูกกับที่อยู่เดิม",
-    note: "OFM อนุโลมให้ใช้ที่อยู่สถานเอกอัครราชทูตฯ ชั่วคราวในช่วงแรก แต่ต้องอัปเดตทันทีเมื่อได้ที่อยู่จริง",
+    note: "OFM อนุโลมให้ใช้ที่อยู่สถานเอกอัครราชทูตฯ ชั่วคราวในช่วงแรก แต่ต้องอัปเดตทันทีเมื่อได้ที่อยู่แน่นอน",
   },
   {
     icon: (
@@ -75,7 +75,7 @@ const changeTypes = [
     urgency: "ต้องแจ้ง",
     urgencyColor: "blue",
     body: "การสมรส การหย่าร้าง การมีบุตร หรือการที่ผู้ติดตามเดินทางออกจากสหรัฐฯ ล้วนต้องแจ้ง OFM เพื่ออัปเดตสถานะ และส่งผลต่อสิทธิ์ทางการทูตของผู้ที่เกี่ยวข้องด้วย",
-    note: "บุตรที่เกิดในสหรัฐฯ ต้องแจ้งเพิ่มในระบบ OFM โดยเร็วเช่นกัน",
+    note: "บุตรที่เกิดในสหรัฐฯ ต้องแจ้งเพิ่มในระบบ OFM โดยเร็ว",
   },
   {
     icon: (
@@ -95,10 +95,10 @@ const changeTypes = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" />
       </svg>
     ),
-    title: "การต่ออายุ Diplomatic ID",
-    urgency: "ควรดำเนินการล่วงหน้า",
-    urgencyColor: "amber",
-    body: "บัตรประจำตัวทางการทูตมีอายุตามวาระประจำการที่แจ้งไว้กับ OFM ควรติดต่อฝ่ายพิธีฯ ล่วงหน้าก่อนบัตรหมดอายุ เพราะบัตรหมดอายุจะกระทบสิทธิ์ Tax Exemption และสิทธิ์ทางการทูตอื่น ๆ",
+    title: "การเปลี่ยนสถานะ",
+    urgency: "สำคัญมาก",
+    urgencyColor: "red",
+    body: "หากสถานะวีซ่าที่ท่านยื่นขอเปลี่ยนแปลงได้รับอนุมัติ กรุณาแจ้งให้ฝ่ายพิธีฯ ทราบโดยเร็ว เพื่อดำเนินการอัปเดตข้อมูลในระบบของ OFM ต่อไป",
     note: null,
   },
 ];
@@ -148,18 +148,6 @@ export default function NOCPage() {
               เมื่อข้อมูลส่วนตัวหรือข้อมูลทางการทูตมีการเปลี่ยนแปลง ท่านต้องแจ้งให้ฝ่ายพิธีการทางการทูต <br/>
               ดำเนินการยื่นขอเปลี่ยนแปลงข้อมูลกับ OFM ทันที เพื่อให้ข้อมูลของท่านในระบบ OFM ถูกต้อง <br/> และไม่กระทบสิทธิ์ทางการทูต
             </p>
-
-            <div className="mt-8">
-              <div className="inline-flex items-center gap-3 rounded-xl border border-amber-400/30 bg-amber-400/10 px-5 py-3 backdrop-blur-sm">
-                <svg className="h-5 w-5 shrink-0 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-                </svg>
-                <p className="text-sm font-medium text-amber-200">
-                  ไม่มีแบบฟอร์มออนไลน์ — กรุณาติดต่อ{" "}
-                  <span className="font-bold text-amber-100">ฝ่ายพิธีการทูต</span> โดยตรง
-                </p>
-              </div>
-            </div>
           </motion.div>
         </div>
 
@@ -280,7 +268,7 @@ export default function NOCPage() {
               {
                 no: "03",
                 title: "ฝ่ายพิธีฯ ดำเนินการให้",
-                body: "ฝ่ายพิธีฯ จะยื่น NOC ต่อ OFM ให้ในนามของท่าน",
+                body: "ฝ่ายพิธีฯ จะดำเนินการแบบออนไลน์ในระบบ OFM ให้ท่าน",
               },
             ].map((step, idx) => (
               <FadeIn key={idx} delay={idx * 0.1}>
@@ -301,9 +289,9 @@ export default function NOCPage() {
           <FadeIn>
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-white/40">มีการเปลี่ยนแปลงข้อมูล?</p>
-                <h2 className="mt-1 text-2xl font-extrabold text-white md:text-3xl">ติดต่อฝ่ายพิธีฯ ได้เลย</h2>
-                <p className="mt-2 text-sm text-white/50">ฝ่ายพิธีการทูต (OFM/VISA Desk) พร้อมดำเนินการให้ท่าน</p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-white/40">หากมีการเปลี่ยนแปลงข้อมูล</p>
+                <h2 className="mt-1 text-2xl font-extrabold text-white md:text-3xl">ติดต่อฝ่ายพิธีฯ</h2>
+                <p className="mt-2 text-sm text-white/50">OFM/VISA Desk พร้อมดำเนินการให้ท่าน</p>
               </div>
               <a
                 href="mailto:protocol@thaiembdc.org"
@@ -318,20 +306,6 @@ export default function NOCPage() {
           </FadeIn>
         </div>
       </section>
-
-      {/* ══════════ BACK NAV ══════════ */}
-      <div className="mx-auto max-w-7xl px-6 py-8 lg:px-10">
-        <Link
-          href="/arrival"
-          className="inline-flex items-center gap-2 text-sm font-medium text-black/40 transition-colors hover:text-[#0c0479]"
-        >
-          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-          </svg>
-          กลับหน้าคู่มือข้าราชการใหม่
-        </Link>
-      </div>
-
     </main>
   );
 }
