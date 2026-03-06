@@ -14,16 +14,15 @@ const steps: Step[] = [
     title: "Notification of Appointment",
     detail: (
       <>
-        เป็นสิ่งแรกที่ต้องดำเนินการเมื่อเดินทางมาถึง กรุณากรอกข้อมูลตามแบบฟอร์มนี้<br/>{" "}
-        <div className="mt-2">
-          <a
-            href="https://www.cognitoforms.com/RoyalThaiEmbassy1/NotificationOfAppointmentEnglishOnly"
-            target="_blank"
-            rel="noopener noreferrer"
+        การรายงานตัวต่อกระทรวงการต่างประเทศสหรัฐฯ เป็นสิ่งแรกที่ต้องดำเนินการเมื่อเดินทางมาถึง กรุณากรอกข้อมูลตามแบบฟอร์มที่ฝ่ายพิธีฯ จัดเตรียมขึ้น พร้อมทั้งแนบแบบฟอร์ม Signature Card
+        ที่มีลายเซ็นต์ของท่านและหัวหน้าสำนักงานเรียบร้อยแล้วกลับมาเพื่อให้ฝ่ายพิธีฯ ดำเนินการต่อไป <br/>{" "}
+        <div className="mt-4">
+          <Link
+            href="/arrival/noa"
             className="text-[#0c0479] font-semibold hover:text-[#e0261c]"
           >
-              กรอกแบบฟอร์ม →
-          </a>
+            อ่านเพิ่มเติม →
+          </Link>
         </div>
       </>
     ),

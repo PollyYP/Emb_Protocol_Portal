@@ -11,8 +11,8 @@ const arrivalMenu = [
   {
     group: "แจ้งความประสงค์",
     items: [
-      { label: "Notification of Appointment", href: "/noa" },
-      { label: "Notification of Change", href: "/noc" },
+      { label: "Notification of Appointment", href: "/arrival/noa" },
+      { label: "Notification of Change", href: "/arrival/noc" },
     ],
   },
   {
