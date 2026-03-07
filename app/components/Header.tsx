@@ -24,7 +24,7 @@ const arrivalMenu = [
       { label: "การซื้อ/เช่าซื้อรถ", href: "/arrival/vehicle-purchase" },
       { label: "การทำประกันรถยนต์", href: "/arrival/auto-insurance" },
       { label: "การขอมีใบขับขี่", href: "/arrival/driver-license" },
-      { label: "การขึ้นทะเบียนรถ", href: "/arrival/registration" },
+      { label: "การขึ้นทะเบียนรถ", href: "/arrival/vehicle-registration" },
       { label: "การขอบัตร Tax Exemption", href: "/arrival/tax-exemption" },
     ],
   },

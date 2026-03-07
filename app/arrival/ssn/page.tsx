@@ -66,13 +66,19 @@ export default function SsnPage() {
         href="/arrival/bank"
         className="fixed right-6 bottom-8 z-40 hidden md:flex h-16 w-16 items-center justify-center rounded-full border-2 border-[#0c0479] bg-white text-[11px] font-bold uppercase tracking-wider text-[#0c0479] shadow-lg transition-all hover:bg-[#0c0479] hover:text-white hover:shadow-xl"
       >
-        Step 3
+        <div className="flex flex-col items-center">
+          <p>ไปที่</p>
+          <p>Step 3</p>
+        </div>
       </Link>
       <Link
         href="/arrival/bank"
         className="fixed right-4 bottom-5 z-40 flex md:hidden h-14 w-14 items-center justify-center rounded-full border-2 border-[#0c0479] bg-white text-[10px] font-bold uppercase tracking-wider text-[#0c0479] shadow-lg"
       >
-        Step 3
+        <div className="flex flex-col items-center">
+          <p>ไปที่</p>
+          <p>Step 3</p>
+        </div>
       </Link>
 
       {/* ══════════════════════════════════════
@@ -315,6 +321,18 @@ export default function SsnPage() {
           </FadeIn>
         </div>
       </section>
+      {/* ══════════ BACK NAV ══════════ */}
+      <div className="mx-auto max-w-7xl px-6 py-8 lg:px-10">
+        <Link
+        href="/arrival"
+        className="inline-flex items-center gap-2 text-sm font-medium text-black/40 transition-colors hover:text-[#0c0479]"
+        >
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+          </svg>
+            กลับหน้าคู่มือข้าราชการใหม่
+        </Link>
+      </div>
     </main>
   );
 }

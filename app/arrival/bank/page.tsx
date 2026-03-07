@@ -105,7 +105,10 @@ export default function BankPage() {
         href="/arrival/vehicle-purchase"
         className="fixed right-6 bottom-8 z-40 hidden md:flex h-16 w-16 items-center justify-center rounded-full border-2 border-[#0c0479] bg-white text-[11px] font-bold uppercase tracking-wider text-[#0c0479] shadow-lg transition-all hover:bg-[#0c0479] hover:text-white hover:shadow-xl"
       >
-        Step 4
+        <div className="flex flex-col items-center">
+          <p>ไปที่</p>
+          <p>Step 4</p>
+        </div>
       </Link>
 
       {/* Mobile — fixed circle on the right */}
@@ -113,7 +116,10 @@ export default function BankPage() {
         href="/arrival/car"
         className="fixed right-4 bottom-5 z-40 flex md:hidden h-14 w-14 items-center justify-center rounded-full border-2 border-[#0c0479] bg-white text-[10px] font-bold uppercase tracking-wider text-[#0c0479] shadow-lg"
       >
-        Step 4
+        <div className="flex flex-col items-center">
+          <p>ไปที่</p>
+          <p>Step 4</p>
+        </div>
       </Link>
 
       {/* ══════════════════════════════════════
@@ -149,7 +155,7 @@ export default function BankPage() {
                   หรือมีเงื่อนไขที่เหมาะสมกับความต้องการ
                 </p>
                 <p>
-                  ทั้งนี้ สถานเอกอัครราชทูตฯ มีบัญชีธนาคารอยู่กับ <span className="text-[#0c0479]">Bank of America สาขา Georgetown</span> หากข้าราชการประจำการใหม่ยังไม่เคยอาศัยในสหรัฐฯ มาก่อน และยังไม่มีเครดิตบูโร 
+                  ทั้งนี้ สถานเอกอัครราชทูตฯ มีบัญชีธนาคารอยู่กับ <span className="text-[#0c0479]">Bank of America สาขา Georgetown</span> หากข้าราชการประจำการใหม่ยังไม่เคยอาศัยในสหรัฐฯ มาก่อน และยังไม่มีเครดิตบูโร
                   สามารถติดต่อขอเปิดบัญชีที่ธนาคารดังกล่าวได้ โดยสถานเอกอัครราชทูตฯ จะทำหนังสือรับรองให้ หากท่านเคยมาเรียนหรือเคยอาศัยในสหรัฐฯ มาก่อน มีประวัติการเงินและมีเครดิตบูโรแล้ว
                   ท่านสามารถเลือกเปิดบัญชีกับธนาคารที่สะดวกต่อการเดินทาง หรือมีเงื่อนไขที่เหมาะสมกับความต้องการได้
                 </p>
@@ -228,7 +234,7 @@ export default function BankPage() {
                   เพื่อสร้างเครดิต
                 </p>
                 <p>
-                  หากท่านเลือกเปิดบัญชีที่ธนาคาร Bank of America สาขา Georgetown ท่านสามารถสอบถามเรื่องการขอสมัครบัตรเครดิตกับเจ้าหน้าที่ได้ หากได้รับการอนุมัติ 
+                  หากท่านเลือกเปิดบัญชีที่ธนาคาร Bank of America สาขา Georgetown ท่านสามารถสอบถามเรื่องการขอสมัครบัตรเครดิตกับเจ้าหน้าที่ได้ หากได้รับการอนุมัติ
                   ทางธนาคารจะส่งบัตรเครดิตให้ภายใน 1 เดือน นับจากวันที่ยื่นสมัคร โดยวงเงินทขึ้นอยู่กับเงินเดือนและ credit score ของแต่ละบุคคล โดยวงเงินเครดิตที่ได้รับ
                   ในชั้นแรกเป็นเพียงวงเงินเครดิตขั้นต้นเท่านั้น ท่านสามารถขอปรับเพิ่มวงเงินเพิ่มขึ้นได้ในอนาคต
                 </p>
@@ -354,6 +360,18 @@ export default function BankPage() {
           </FadeIn>
         </div>
       </section>
+      {/* ══════════ BACK NAV ══════════ */}
+      <div className="mx-auto max-w-7xl px-6 pb-8 lg:px-10">
+        <Link
+          href="/arrival"
+          className="inline-flex items-center gap-2 text-sm font-medium text-black/40 transition-colors hover:text-[#0c0479]"
+        >
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+          </svg>
+          กลับหน้าข้าราชการประจำการใหม่
+        </Link>
+      </div>
     </main>
   );
 }

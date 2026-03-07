@@ -11,31 +11,28 @@ export default function Hero() {
     <section className="mt-2 w-full">
       <style jsx global>{`
         @keyframes spinSlow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
         }
       `}</style>
+
       <div className="px-2 md:px-6 lg:px-10">
         <motion.p
           className="text-right text-xs lg:text-sm font-semibold uppercase italic tracking-[0.15em] text-[#c40000] p-2 bg-[#f3f3f3]"
           initial="hidden"
           animate="show"
           variants={{
-          hidden: {},
-          show: { transition: { staggerChildren: 0.03, delayChildren: 0.5 } },
+            hidden: {},
+            show: { transition: { staggerChildren: 0.03, delayChildren: 0.5 } },
           }}
-          >
+        >
           {letters.map((ch, i) => (
             <motion.span
               key={`${ch}-${i}`}
               className="inline-block"
               variants={{
-              hidden: { opacity: 0, y: 4 },
-              show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+                hidden: { opacity: 0, y: 4 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
               }}
             >
               {ch === " " ? "\u00A0" : ch}
@@ -43,8 +40,10 @@ export default function Hero() {
           ))}
         </motion.p>
       </div>
+
       <div className="mx-auto w-full px-2 md:px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:gap-6">
+
           {/* LEFT: Image */}
           <div className="relative w-full md:w-2/3">
             <div className="relative aspect-video w-full overflow-hidden bg-black/5 md:aspect-16/10">
@@ -59,58 +58,59 @@ export default function Hero() {
           </div>
 
           {/* RIGHT: Red panel */}
-          <div className="relative mt-4 w-full bg-[#e0261c] p-5 text-white md:mt-0 md:w-1/3 md:p-7">
-
+          <div className="relative mt-4 w-full bg-[#e0261c] p-5 text-white md:mt-0 md:w-1/3 md:p-7 flex flex-col justify-center gap-6">
 
             {/* Title */}
             <h2 className="text-xl font-extrabold leading-tight md:text-2xl">
               GET IN TOUCH
             </h2>
 
-            <div className="relative flex w-full flex-1 flex-col bg-[#e0261c] text-white"></div>
+            {/* Contact Items */}
+            <div className="space-y-5 text-sm lg:text-base">
 
-            {/* Contact Information */}
-            <div className="mt-6 md:mt-2 lg:mt-10 space-y-8 text-sm lg:text-base">
               {/* Address */}
               <div>
                 <div className="flex items-center gap-3 font-semibold">
-                <LocationIcon />
-                <span>Address</span>
+                  <LocationIcon />
+                  <span>Address</span>
                 </div>
-                <div className="mt-2 border-b border-white/60 pb-6 md:pb-4 lg:pb-10">
-                1024 Wisconsin Ave NW <br />
-                Washington, D.C. 20007 <br />
-                ตึกหลัง ชั้น 3
+                <div className="mt-2 border-b border-white/60 pb-4">
+                  1024 Wisconsin Ave NW <br />
+                  Washington, D.C. 20007 <br />
+                  ตึกหลัง ชั้น 3
                 </div>
+              </div>
+
+              {/* Email */}
+              <div>
+                <div className="flex items-center gap-3 font-semibold">
+                  <MailIcon />
+                  <span>Email</span>
+                </div>
+                <div className="mt-2 border-b border-white/60 pb-4">
+                  protocol@thaiembdc.org
+                </div>
+              </div>
+
+              {/* Phone */}
+              <div>
+                <div className="flex items-center gap-3 font-semibold">
+                  <PhoneIcon />
+                  <span>Telephone</span>
+                </div>
+                <div className="mt-2 border-b border-white/60 pb-4">
+                  +1 (202) 298-4798
+                </div>
+              </div>
             </div>
 
-            {/* Email */}
-            <div>
-                <div className="flex items-center gap-3 font-semibold">
-                <MailIcon />
-                <span>Email</span>
-                </div>
-                <div className="mt-2 border-b border-white/60 pb-10 md:pb-4 lg:pb-10">
-                protocol@thaiembdc.org
-                </div>
+            {/* Thai text */}
+            <div className="text-sm text-center leading-relaxed opacity-90">
+              หากท่านมีข้อสงสัยเกี่ยวกับระเบียบ OFM <br/>
+              หรือต้องการขยายระยะเวลาการตรวจลงตราของสหรัฐฯ <br/>
+              OFM/VISA DESK ยินดีให้บริการทุกท่านค่ะ
             </div>
 
-            {/* Phone */}
-            <div>
-                <div className="flex items-center gap-3 font-semibold">
-                <PhoneIcon />
-                <span>Telephone</span>
-                </div>
-                <div className="mt-2 border-b border-white/60 pb-10 md:pb-4 lg:pb-10">
-                +1 (202) 298-4798
-                </div>
-            </div>
-            </div>
-            <div className="mt-12 mb-8 text-sm text-center lg:text-base lg:mt-16">
-                หากท่านมีข้อสงสัยเกี่ยวกับระเบียบ OFM <br/>
-                หรือต้องการขยายระยะเวลาการตรวจลงตราของสหรัฐฯ <br/> 
-                OFM/VISA DESK ยินดีให้บริการทุกท่านค่ะ
-            </div>
           </div>
         </div>
       </div>

@@ -56,27 +56,31 @@ export default function ArrivalGuideCarousel() {
   const active = slides[i];
 
   return (
-    <section id="arrival-guide" className="mt-12 w-full">
-      <div className="mx-auto w-full px-2 md:px-6 lg:px-10">
-        <div ref={titleRef}>
-          <motion.h2
-            className="text-xl font-extrabold uppercase italic tracking-widest text-[#c40000] md:text-3xl"
-            initial={{ opacity: 0, y: 16 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-          >
+    <section id="arrival-guide" className="w-full">
+      <div ref={titleRef}>
+        {/* Red title band */}
+        <motion.div
+          className="w-full bg-[#c40000] py-3 text-center"
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          <h2 className="text-xl font-extrabold uppercase italic tracking-widest text-white md:text-3xl">
             Arrival Guide
-          </motion.h2>
+          </h2>
+        </motion.div>
 
-          <motion.p
-            className="text-sm font-semibold text-[#0c0479]/60 md:text-base lg:text-lg"
-            initial="hidden"
-            animate={inView ? "show" : "hidden"}
-            variants={{
-              hidden: {},
-              show: { transition: { staggerChildren: 0.025, delayChildren: 0.4 } },
-            }}
-          >
+        {/* Navy subtitle band */}
+        <motion.div
+          className="w-full bg-[#0c0479] py-2 text-center"
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.025, delayChildren: 0.4 } },
+          }}
+        >
+          <p className="text-sm font-semibold text-white md:text-base lg:text-lg">
             {subtitleLetters.map((ch, idx) => (
               <motion.span
                 key={`${ch}-${idx}`}
@@ -89,10 +93,11 @@ export default function ArrivalGuideCarousel() {
                 {ch === " " ? "\u00A0" : ch}
               </motion.span>
             ))}
-          </motion.p>
-        </div>
+          </p>
+        </motion.div>
+      </div>
 
-        <div className="mt-8">
+        <div>
           <div className="relative w-full overflow-hidden border border-black/10">
 
             {/* Background Image */}
@@ -161,7 +166,6 @@ export default function ArrivalGuideCarousel() {
             ))}
           </div>
         </div>
-      </div>
     </section>
   );
 }

@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "RTE Protocol Portal",
+  title: "RTEDC Protocol Portal",
   description:
     "A guide for new Thai diplomats on arrival procedures and OFM protocols.",
 };

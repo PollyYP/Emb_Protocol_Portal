@@ -34,6 +34,14 @@ const steps: Step[] = [
         ในช่วงแรก OFM อนุโลมให้ข้าราชการใหม่ใช้ที่อยู่สถานเอกอัครราชทูตฯ ไปก่อน เมื่อได้ที่อยู่แล้ว
         ต้องแจ้ง OFM ทันที หรือหากท่านต้องการเปลี่ยนแปลงข้อมูลส่วนตัวอื่นใด จะต้องแจ้งให้ OFM ทราบเช่นกัน
         ทั้งนี้ ท่านสามารถติดต่อฝ่ายพิธีฯ เพื่อให้ดำเนินการได้
+        <div className="mt-4">
+          <Link
+            href="/arrival/noc"
+            className="text-[#0c0479] font-semibold hover:text-[#e0261c]"
+          >
+            อ่านเพิ่มเติม →
+          </Link>
+        </div>
       </>
     ),
   },
@@ -74,7 +82,7 @@ const steps: Step[] = [
 ];
 
 export default function OfmProceduresSection() {
-  const subtitle = "ระเบียบปฏิบัติที่ต้องดำเนินการกับ OFM";
+  const subtitle = "ระเบียบปฏิบัติทีต้องดำเนินการกับ OFM";
   const subtitleLetters = Array.from(subtitle);
   const titleRef = useRef<HTMLDivElement>(null);
   const inView = useInView(titleRef, { once: true, amount: 0.5 });
@@ -82,20 +90,25 @@ export default function OfmProceduresSection() {
 
   return (
     <section className="w-full py-12">
-      <div className="mx-auto w-full px-2 sm:px-4 md:px-6 lg:px-10">
-        {/* Title */}
+      <div className="mx-auto w-full">
+
+        {/* Two-band title */}
         <div ref={titleRef}>
-          <motion.h2
-            className="text-xl font-extrabold uppercase italic tracking-widest text-[#c40000] md:text-3xl"
+          {/* Red title band */}
+          <motion.div
+            className="w-full bg-[#c40000] py-3 text-center"
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            OFM Procedures
-          </motion.h2>
+            <h2 className="text-xl font-extrabold uppercase italic tracking-widest text-white md:text-3xl">
+              OFM Procedures
+            </h2>
+          </motion.div>
 
-          <motion.p
-            className="text-sm font-semibold text-[#0c0479]/60 md:text-base lg:text-lg"
+          {/* Navy subtitle band */}
+          <motion.div
+            className="w-full bg-[#0c0479] py-2 text-center"
             initial="hidden"
             animate={inView ? "show" : "hidden"}
             variants={{
@@ -103,24 +116,26 @@ export default function OfmProceduresSection() {
               show: { transition: { staggerChildren: 0.025, delayChildren: 0.4 } },
             }}
           >
-            {subtitleLetters.map((ch, idx) => (
-              <motion.span
-                key={`${ch}-${idx}`}
-                className="inline-block"
-                variants={{
-                  hidden: { opacity: 0, y: 4 },
-                  show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
-                }}
-              >
-                {ch === " " ? "\u00A0" : ch}
-              </motion.span>
-            ))}
-          </motion.p>
+            <p className="text-sm font-semibold text-white md:text-base lg:text-lg">
+              {subtitleLetters.map((ch, idx) => (
+                <motion.span
+                  key={`${ch}-${idx}`}
+                  className="inline-block"
+                  variants={{
+                    hidden: { opacity: 0, y: 4 },
+                    show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+                  }}
+                >
+                  {ch === " " ? "\u00A0" : ch}
+                </motion.span>
+              ))}
+            </p>
+          </motion.div>
         </div>
 
         {/* Rows */}
         <div className="mt-8 space-y-4">
-          <p className="text-sm font-semibold uppercase text-[#0c0479]/60 md:text-base">
+          <p className="pl-4 lg:pl-10 text-sm font-semibold uppercase text-[#0c0479]/60 md:text-base">
             ระเบียบที่ทำบ่อย
           </p>
           {rows.map((s, idx) => (
@@ -132,6 +147,7 @@ export default function OfmProceduresSection() {
             />
           ))}
         </div>
+
       </div>
     </section>
   );
