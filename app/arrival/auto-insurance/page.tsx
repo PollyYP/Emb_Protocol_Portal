@@ -153,7 +153,7 @@ export default function AutoInsurancePage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="mx-auto max-w-3xl">
             <FadeIn>
-              <h2 className="text-xl font-bold tracking-tight text-[#0c0479] lg:text-3xl">วงเงินคุ้มครองขั้นต่ำ</h2>
+              <h2 className="mt-4 text-xl font-bold tracking-tight text-[#0c0479] lg:text-3xl">วงเงินคุ้มครองขั้นต่ำ</h2>
               <p className="mt-3 text-sm leading-relaxed text-black/50 sm:text-[15px]">กระทรวงการต่างประเทศสหรัฐฯ กำหนดให้เจ้าหน้าที่ทางการทูตต้องมีประกันภัยรถยนต์ตามวงเงินขั้นต่ำ ดังนี้</p>
             </FadeIn>
             <FadeIn className="mt-8" delay={0.1}>
@@ -200,17 +200,17 @@ export default function AutoInsurancePage() {
                       </p>
                     </div>
                     <p>หากท่านได้ดำเนินการต่ออายุเรียบร้อยแล้ว กรุณานำส่งไฟล์<span className="font-semibold text-black/70"> Certificate of Liability Insurance หรือ Declaration Page </span>กลับมายังฝ่ายพิธีฯ เพื่อดำเนินการในระบบต่อไป</p>
-                    <div className="flex flex-wrap items-center gap-3">
+                    <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3">
                     <button
                       onClick={() => setShowModal(true)}
-                      className="inline-flex items-center gap-2 rounded-lg border border-black/10 bg-black/4 px-4 py-2.5 text-sm font-semibold text-black/50 transition-all hover:bg-black/8 hover:text-black/70 active:scale-[0.97] sm:px-5 sm:py-3"
+                      className="inline-flex w-full items-center justify-center gap-2.5 rounded-lg border border-[#0c0479]/15 bg-[#0c0479]/5 px-4 py-2.5 text-sm font-semibold text-[#0c0479] transition-all hover:bg-[#0c0479]/10 active:scale-[0.97] sm:w-auto sm:px-5 sm:py-3"
                     >
                       <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                       </svg>
                       ดูตัวอย่าง Declaration Page
                     </button>
-                    <a href="mailto:protocol@thaiembdc.org" className="inline-flex items-center gap-2.5 rounded-lg border border-[#0c0479]/15 bg-[#0c0479]/5 px-4 py-2.5 text-sm font-semibold text-[#0c0479] transition-all hover:bg-[#0c0479]/10 active:scale-[0.97] sm:px-5 sm:py-3">
+                    <a href="mailto:protocol@thaiembdc.org" className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-black/10 bg-black/4 px-4 py-2.5 text-sm font-semibold text-black/50 transition-all hover:bg-black/8 hover:text-black/70 active:scale-[0.97] sm:w-auto sm:px-5 sm:py-3">
                       <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                       </svg>

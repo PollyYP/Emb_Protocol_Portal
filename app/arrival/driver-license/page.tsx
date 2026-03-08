@@ -46,7 +46,7 @@ export default function DriverLicensePage() {
           <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-50" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:py-32">
+        <div className="relative mx-auto max-w-7xl px-4 py-16 lg:py-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -95,7 +95,7 @@ export default function DriverLicensePage() {
 
       {/* ══════════ DETAILED STEPS ══════════ */}
       <section className="bg-gray-50/60">
-        <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:py-24">
           <div className="mx-auto max-w-3xl space-y-8">
 
             {/* ── TIP BANNER ── */}
@@ -297,7 +297,7 @@ export default function DriverLicensePage() {
                     <svg className="h-4 w-4 text-[#0c0479]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <p className="text-sm font-semibold text-[#0c0479]">ระยะเวลาดำเนินการ 5 - 14 วัน</p>
+                    <p className="text-sm font-semibold text-[#0c0479]">ระยะเวลาดำเนินการ 7 - 14 วัน</p>
                   </div>
                 </div>
               </div>
@@ -316,7 +316,7 @@ export default function DriverLicensePage() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-base font-bold text-black/80">หากมีข้อสงสัยเพิ่มเติม</h3>
-                  <p className="mt-1 text-sm text-black/45">กรุณาติดต่อ จนท.พิธี ของ สอท. ได้ทางอีเมล</p>
+                  <p className="mt-1 text-sm text-black/45">กรุณาติดต่อ จนท.พิธีฯ ของ สอท. ได้ทางอีเมล</p>
                 </div>
                 <a href="mailto:protocol@thaiembdc.org" className="inline-flex items-center gap-2 rounded-lg bg-[#0c0479] px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#0c0479]/20 transition-all hover:bg-[#09035e] active:scale-[0.97]">
                   ส่งอีเมล

@@ -105,7 +105,7 @@ const changeTypes = [
 
 const warnings = [
   {
-    title: "ไม่มีกำหนดเวลาตายตัว แต่ต้องรีบแจ้ง",
+    title: "ไม่มีกำหนดเวลา แต่ต้องรีบแจ้ง",
     body: "แม้ OFM จะไม่กำหนดระยะเวลาเฉพาะเจาะจงสำหรับ NOC แต่ข้อมูลในระบบต้องเป็นปัจจุบันอยู่เสมอ การปล่อยให้ข้อมูลล้าสมัยอาจก่อให้เกิดปัญหาในขั้นตอนอื่น ๆ เช่น การต่อทะเบียนรถ หรือการใช้สิทธิ์ Tax Exemption",
   },
   {
@@ -114,7 +114,7 @@ const warnings = [
   },
   {
     title: "ฝ่ายพิธีฯ เป็นผู้ดำเนินการให้",
-    body: "ข้าราชการไม่ต้องติดต่อ OFM โดยตรง เพียงแจ้งให้ฝ่ายพิธีฯ (OFM/VISA Desk) ทราบพร้อมเอกสารประกอบที่เกี่ยวข้อง ฝ่ายพิธีฯ จะดำเนินการยื่น NOC ต่อ OFM ในนามของท่าน",
+    body: "ท่านเพียงแจ้งให้ฝ่ายพิธีฯ (OFM/VISA Desk) ทราบพร้อมเอกสารประกอบที่เกี่ยวข้อง ฝ่ายพิธีฯ จะดำเนินการยื่นคำร้องออนไลน์ให้ท่าน",
   },
 ];
 
@@ -160,7 +160,7 @@ export default function NOCPage() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
             <FadeIn>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c40000]/60">เกี่ยวกับ NOC</p>
-              <h2 className="mt-2 text-2xl font-extrabold text-[#0c0479] md:text-4xl">
+              <h2 className="mt-2 text-xl font-extrabold text-[#0c0479] md:text-4xl">
                 Notification of Change คืออะไร
               </h2>
               <div className="mt-4 h-px w-12 bg-[#c40000]" />

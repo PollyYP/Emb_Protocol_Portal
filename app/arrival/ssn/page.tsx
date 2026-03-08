@@ -91,7 +91,7 @@ export default function SsnPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c40000]/60">
               What is SSN
             </p>
-            <h2 className="mt-2 text-2xl font-extrabold text-[#0c0479] md:text-4xl">
+            <h2 className="mt-2 text-xl font-extrabold text-[#0c0479] md:text-4xl">
               SSN คืออะไร และใครสมัครได้บ้าง
             </h2>
             <div className="mt-4 h-px w-16 bg-[#c40000]" />
@@ -110,7 +110,7 @@ export default function SsnPage() {
                   แม้จะสามารถแจ้งว่ายังไม่มีได้ แต่บางธนาคารกำหนดให้ต้องมีเท่านั้น
                   นอกจากการเปิดบัญชีแล้ว SSN ยังช่วยให้สามารถสร้าง{" "}
                   <strong className="text-[#0c0479]">Credit Score</strong>{" "}
-                  ซึ่งคะแนนนี้จำเป็นมากเวลาที่ต้องการซื้อรถ กู้บ้าน หรือเช่าบ้าน
+                  ซึ่งคะแนนนี้จำเป็นมากเวลาที่ต้องการซื้อรถ กู้ซื้อบ้าน เช่าบ้าน หรือเปิดบัตรเครดิต
                 </p>
                 <p>
                   สำหรับข้าราชการที่มาประจำการและต้องการที่อยู่อาศัย{" "}

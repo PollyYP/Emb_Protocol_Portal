@@ -232,8 +232,8 @@ export default function TaxExemptionPage() {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                           <div>
-                            <p className="text-sm font-semibold text-[#0c0479]">{item.label}</p>
-                            <p className="mt-0.5 text-xs text-black/40">{item.sub}</p>
+                            <p className="text-base font-semibold text-[#0c0479]">{item.label}</p>
+                            <p className="mt-0.5 text-sm text-black/40">{item.sub}</p>
                           </div>
                         </div>
                       ))}

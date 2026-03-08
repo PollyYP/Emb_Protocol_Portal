@@ -140,7 +140,7 @@ export default function NOAPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c40000]/60">
                 เกี่ยวกับ NOA
               </p>
-              <h2 className="mt-2 text-xl font-extrabold text-[#0c0479] md:text-3xl">
+              <h2 className="mt-2 text-lg font-extrabold text-[#0c0479] md:text-3xl">
                 Notification of Appointment คืออะไร
               </h2>
               <div className="mt-4 h-px w-12 bg-[#c40000]" />
@@ -251,12 +251,13 @@ export default function NOAPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                   </svg>
                 </div>
-                <div>
+                <div className="text-sm">
                   <p className="font-extrabold text-[#0c0479]">Signature Card</p>
-                  <p className="mt-1 text-sm text-black/55">
-                    ดาวน์โหลดและกรอกให้ครบถ้วน <span className="text-[#c40000]">ยกเว้นช่อง 1. Principal's PID และ 2. Applicant's PID</span> <br/> พร้อมทั้ง
-                    <span className="font-bold text-black">ลงนามในช่อง A. ด้วยหมึกสีดำ</span> แล้วส่งไฟล์มาทางอีเมลฝ่ายพิธีฯ
+                  <p className="mt-1 text-black/55">
+                    ดาวน์โหลดและกรอกให้ครบถ้วน
                   </p>
+                  <p className="mt-1 text-[#c40000]">- ยกเว้นช่อง 1. Principal's PID และ 2. Applicant's PID</p>
+                  <p className="mt-1">- <span className="font-bold text-black">ลงนามในช่อง A. ด้วยหมึกสีดำ </span> แล้วส่งไฟล์มาทางอีเมลฝ่ายพิธีฯ</p>
                 </div>
               </div>
               <a
@@ -313,7 +314,7 @@ export default function NOAPage() {
               <div>
                 <p className="text-xs font-semibold uppercase tracking-widest text-white/40">พร้อมดำเนินการ</p>
                 <h2 className="mt-1 text-2xl font-extrabold text-white md:text-3xl">กรอกแบบฟอร์ม NOA ได้เลย</h2>
-                <p className="mt-2 text-sm text-white/50">อย่าลืมดาวน์โหลดและส่ง Signature Card มาทางอีเมลฝ่ายพิธีฯ</p>
+                <p className="mt-2 text-sm text-white/50">อย่าลืมดาวน์โหลดและส่ง Signature Card มาทางอีเมล</p>
               </div>
               <div className="flex flex-wrap justify-center gap-3 sm:justify-end">
                 <a

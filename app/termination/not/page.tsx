@@ -57,7 +57,7 @@ export default function TerminationNotPage() {
               Notification of Termination
             </p>
             <p className="text-base leading-relaxed text-white/60">
-              การแจ้ง OFM เมื่อข้าราชการกลับประจำการเมื่อสิ้นสุดการปฏบัติภาระกิจ
+              การแจ้ง OFM เมื่อข้าราชการกลับประจำการ
             </p>
           </motion.div>
         </div>
@@ -69,7 +69,7 @@ export default function TerminationNotPage() {
         <div className="mx-auto max-w-7xl px-6 pt-16 pb-10">
           <FadeIn>
             <div className="mx-auto max-w-4xl text-center">
-              <h2 className="text-2xl font-bold tracking-tight text-[#0c0479] sm:text-3xl">
+              <h2 className="text-base font-bold tracking-tight text-[#0c0479] lg:text-3xl">
                 ทำไมต้องแจ้งรายงานข้าราชการกลับประจำการ
               </h2>
               <p className="mt-4 text-base leading-relaxed text-black/50">
@@ -164,7 +164,7 @@ export default function TerminationNotPage() {
                       01
                     </div>
                     <h3 className="text-lg font-bold tracking-tight text-black/85">
-                      ความสำคัญของการแจ้งสิ้นสุดการประจำการ
+                      ความสำคัญของการรายงานการกลับประจำการ
                     </h3>
                   </div>
                   <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-black/55">
@@ -281,7 +281,7 @@ export default function TerminationNotPage() {
                 <div className="flex-1">
                   <h3 className="text-base font-bold text-black/80">แจ้งกำหนดการเดินทางกลับ</h3>
                   <p className="mt-1 text-sm text-black/45">
-                    กรุณาติดต่อฝ่ายพิธีฯ ล่วงหน้าเพื่อดำเนินการแจ้ง OFM
+                    กรุณาติดต่อฝ่ายพิธีฯ 
                   </p>
                 </div>
                 <a
