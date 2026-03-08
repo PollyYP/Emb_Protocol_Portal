@@ -24,7 +24,7 @@ export default function ArrivalGuideCarousel() {
         no: 1,
         title: "หาที่พัก",
         href: "/arrival/housing",
-        image: "/washington.jpg",
+        image: "/apartment.jpg",
       },
       {
         no: 2,

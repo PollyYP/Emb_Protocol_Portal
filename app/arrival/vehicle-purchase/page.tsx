@@ -270,6 +270,18 @@ export default function VehiclePurchasePage() {
               </tbody>
             </table>
           </FadeIn>
+
+          <FadeIn className="mt-8 flex justify-center">
+            <a
+              href="/termination/vehicle-sale"
+              className="inline-flex items-center gap-2 rounded-lg border border-zinc-200 bg-white px-5 py-3 text-xs lg:text-sm font-semibold text-zinc-600 shadow-sm transition-all hover:border-[#c40000]/40 hover:text-[#c40000] hover:shadow-md"
+            >
+              อ่านการคืนรถ/ขายรถ เพื่อประกอบการตัดสินใจ
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </FadeIn>
         </div>
       </section>
 

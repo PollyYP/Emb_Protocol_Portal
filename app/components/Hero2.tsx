@@ -4,8 +4,43 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Hero2() {
+  const text = "PROTOCOL SECTION · OFM/VISA DESK";
+  const letters = Array.from(text);
+
   return (
     <section className="relative h-[85vh] overflow-hidden">
+      <style jsx global>{`
+        @keyframes spinSlow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+      `}</style>
+
+      <div className="absolute top-0 left-0 right-0 z-10">
+        <motion.p
+          className="text-right text-xs lg:text-sm font-semibold uppercase italic tracking-[0.15em] text-[#c40000] p-2 bg-[#f3f3f3]"
+          initial="hidden"
+          animate="show"
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.03, delayChildren: 0.5 } },
+          }}
+        >
+          {letters.map((ch, i) => (
+            <motion.span
+              key={`${ch}-${i}`}
+              className="inline-block"
+              variants={{
+                hidden: { opacity: 0, y: 4 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+              }}
+            >
+              {ch === " " ? "\u00A0" : ch}
+            </motion.span>
+          ))}
+        </motion.p>
+      </div>
+
       <Image
         src="/emb_front3.jpg"
         alt="Royal Thai Embassy"
