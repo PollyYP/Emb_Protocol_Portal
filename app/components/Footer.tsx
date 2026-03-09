@@ -29,7 +29,7 @@ export default function Footer() {
             </p>
             <div className="mt-10 space-y-6 text-sm text-gray-700">
               <p>วันทำการ : จันทร์ - ศุกร์ เวลา 09.00 - 17.00 น. <br/> (ยกเว้นวันหยุดนักขัตฤกษ์ของไทยและสหรัฐอเมริกา)</p>
-              <p>1024 Wisconsin Ave NW, <br /> Washington, DC 20007</p>
+              <p>1024 Wisconsin Ave NW, <br /> Washington, DC 20007 <br/> ตึกหลัง ชั้น 3</p>
               <p>protocol@thaiembdc.org</p>
             </div>
           </div>
