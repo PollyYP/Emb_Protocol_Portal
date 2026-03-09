@@ -130,7 +130,7 @@ export default function AutoInsurancePage() {
         <div className="mx-auto max-w-7xl px-4 pt-14 sm:px-6 sm:py-20">
           <FadeIn>
             <div className="mx-auto max-w-3xl">
-              <h2 className="text-xl font-bold tracking-tight text-[#0c0479] sm:text-2xl lg:text-3xl">ประกันรถยนต์สำคัญอย่างไร?</h2>
+              <h2 className="text-xl font-bold tracking-tight text-[#0c0479] sm:text-2xl lg:text-3xl">ประกันรถยนต์สำคัญอย่างไร</h2>
               <div className="mt-5 space-y-4 text-sm leading-relaxed text-black/55 sm:text-[15px]">
                 <p>ประกันรถยนต์ (Auto Insurance) เป็นสิ่งจำเป็นตามกฎหมายในสหรัฐอเมริกา ทุกคนที่ขับรถบนท้องถนนจะต้องมีประกันภัยรถยนต์ที่มีผลบังคับใช้ หากไม่มีประกันและเกิดอุบัติเหตุ ท่านอาจต้องรับผิดชอบค่าเสียหายทั้งหมดด้วยตนเอง ซึ่งอาจมีมูลค่าสูงมาก</p>
                 <p>ประกันจะช่วยคุ้มครองท่านในกรณีที่เกิดอุบัติเหตุ ไม่ว่าจะเป็นความเสียหายต่อทรัพย์สินของผู้อื่น ค่ารักษาพยาบาลจากการบาดเจ็บ และความเสียหายต่อรถยนต์ของท่านเอง</p>
