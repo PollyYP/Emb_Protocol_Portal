@@ -51,7 +51,7 @@ const steps = [
   },
 ];
 
-const documents = [
+const documents: { name: string; note: string; required: boolean; download?: boolean }[] = [
   {
     name: "หนังสือเดินทาง (Passport)",
     note: "ส่งไฟล์หน้าแรกที่มีข้อมูลของท่านมาทางอีเมลฝ่ายพิธีฯ",
