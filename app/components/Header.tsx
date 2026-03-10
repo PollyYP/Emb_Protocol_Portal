@@ -13,6 +13,7 @@ const arrivalMenu = [
     items: [
       { label: "Notification of Appointment", href: "/arrival/noa" },
       { label: "Notification of Change", href: "/arrival/noc" },
+      { label: "Domestic Worker", href: "/arrival/domestic-worker" },
     ],
   },
   {

@@ -49,10 +49,10 @@ export default function ArrivalPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col items-center"
           >
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-white/50">
+            <p className="mb-4 text-[8px] lg:text-xs font-semibold uppercase tracking-[0.35em] text-white/50">
               Royal Thai Embassy · Washington, D.C.
             </p>
-            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="text-2xl font-extrabold leading-tight text-white lg:text-6xl">
               ยินดีต้อนรับ<br />
               <span className="text-white">ข้าราชการมาประจำการใหม่</span>
             </h1>
@@ -87,7 +87,7 @@ export default function ArrivalPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div ref={titleRef} className="flex flex-col items-center text-center">
             <motion.p
-              className="text-xs font-semibold uppercase tracking-[0.25em] text-white/30"
+              className="text-[10px] lg:text-xs font-semibold uppercase tracking-[0.25em] text-white/30"
               initial={{ opacity: 0 }}
               animate={titleInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6 }}
@@ -95,12 +95,12 @@ export default function ArrivalPage() {
               Protocol Section · OFM/VISA Desk
             </motion.p>
             <motion.h2
-              className="mt-3 text-2xl font-extrabold text-white md:text-4xl"
+              className="mt-3 text-xl font-extrabold text-white md:text-4xl"
               initial={{ opacity: 0, y: 16 }}
               animate={titleInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              ฝ่ายพิธีการทางการทูตยินดีให้บริการ
+              ฝ่ายพิธีการทูตยินดีให้บริการ
             </motion.h2>
             <motion.p
               className="mt-5 max-w-3xl text-sm leading-relaxed text-white/55 md:text-base"
@@ -108,8 +108,8 @@ export default function ArrivalPage() {
               animate={titleInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.25 }}
             >
-              ฝ่ายพิธีการทางการทูต (Protocol Section) ของสถานเอกอัครราชทูตฯ มีหน้าที่ดูแลและประสานงาน
-              ด้านพิธีการทางการทูตทั้งหมด โดยที่ OFM/Visa Desk มีหน้าที่ดำเนินการเรื่องระเบียบทางการทูตกับ Office of Foreign Missions (OFM)
+              ฝ่ายพิธีการทูต (Protocol Section) ของสถานเอกอัครราชทูตฯ มีหน้าที่ดูแลและประสานงาน
+              ด้านพิธีการทูตทั้งหมด โดยที่ OFM/Visa Desk มีหน้าที่ดำเนินการเรื่องระเบียบทางการทูตกับ Office of Foreign Missions (OFM)
               ของกระทรวงการต่างประเทศสหรัฐฯ เพื่อให้เป็นไปตามกฎหมายและระเบียบข้อบังคับที่เกี่ยวข้อง และเพื่อรักษาสิทธิ์ของข้าราชการไทยทุกท่าน
             </motion.p>
             <motion.div
