@@ -59,10 +59,10 @@ export default function Hero2() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center"
         >
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-white/50">
+          <p className="mb-4 text-[9px] lg:text-xs font-semibold uppercase tracking-[0.35em] text-white/50">
             Royal Thai Embassy · Washington, D.C.
           </p>
-          <h1 className="text-4xl font-extrabold leading-tight text-white">
+          <h1 className="text-3xl lg:text-4xl font-extrabold leading-tight text-white">
             PROTOCOL SECTION
           </h1>
           <motion.p

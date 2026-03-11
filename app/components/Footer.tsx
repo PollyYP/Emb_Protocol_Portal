@@ -49,6 +49,9 @@ export default function Footer() {
                 <li>
                   <Link href="/" className="text-xs lg:text-sm text-gray-700 transition hover:opacity-75">หน้าแรก</Link>
                 </li>
+                <li>
+                  <Link href="/visa" className="text-xs lg:text-sm text-gray-700 transition hover:opacity-75">วีซ่า</Link>
+                </li>
               </ul>
             </div>
 
@@ -59,6 +62,7 @@ export default function Footer() {
                 <li className="text-[11px] font-semibold uppercase tracking-wider text-black/35">แจ้งความประสงค์</li>
                 <li><Link href="/arrival/noa" className="text-xs lg:text-sm text-gray-700 transition hover:opacity-75">Notification of Appointment</Link></li>
                 <li><Link href="/arrival/noc" className="text-xs lg:text-sm text-gray-700 transition hover:opacity-75">Notification of Change</Link></li>
+                <li><Link href="/arrival/domestic-worker" className="text-xs lg:text-sm text-gray-700 transition hover:opacity-75">Domestic Worker</Link></li>
                 <li className="pt-2 text-[11px] font-semibold uppercase tracking-wider text-black/35">คู่มือการมาถึง</li>
                 <li><Link href="/arrival/housing" className="text-xs lg:text-sm text-gray-700 transition hover:opacity-75">การหาที่พัก</Link></li>
                 <li><Link href="/arrival/ssn" className="text-xs lg:text-sm text-gray-700 transition hover:opacity-75">การขอมีเลข SSN</Link></li>
