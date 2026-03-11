@@ -145,6 +145,7 @@ export default function Header() {
   const isArrivalActive = arrivalPaths.some((p) => pathname.startsWith(p));
   const isTermActive = termPaths.some((p) => pathname.startsWith(p));
   const isHomeActive = pathname === "/";
+  const isVisaActive = pathname.startsWith("/visa");
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileArrivalOpen, setMobileArrivalOpen] = useState(false);
@@ -250,6 +251,18 @@ export default function Header() {
               onClose={termHandlers.onClose}
               onClick={() => setDesktopTermOpen((v) => !v)}
             />
+
+            <Link
+              href="/visa"
+              className={`relative rounded-lg px-4 py-2 text-sm lg:text-base font-medium transition-colors ${
+                isVisaActive ? "text-[#0c0479]" : "text-black/70 hover:bg-black/4 hover:text-black"
+              }`}
+            >
+              วีซ่า
+              {isVisaActive && (
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 rounded-full bg-[#c40000]" />
+              )}
+            </Link>
           </nav>
 
           {/* Mobile hamburger */}
@@ -303,7 +316,7 @@ export default function Header() {
                 หน้าแรก
               </Link>
 
-              {/* ข้าราชการประจำการใหม่ accordion */}
+              {/* Accordion dropdowns */}
               {[
                 { label: "ข้าราชการประจำการใหม่", menu: arrivalMenu, open: mobileArrivalOpen, setOpen: setMobileArrivalOpen },
                 { label: "ข้าราชการกลับประจำการ", menu: terminationMenu, open: mobileTermOpen, setOpen: setMobileTermOpen },
@@ -362,6 +375,15 @@ export default function Header() {
                   </AnimatePresence>
                 </div>
               ))}
+
+              {/* วีซ่า — plain link */}
+              <Link
+                href="/visa"
+                onClick={() => setMobileOpen(false)}
+                className="block rounded-lg px-4 py-3 text-sm font-medium text-black/70 transition-colors hover:bg-black/4"
+              >
+                วีซ่า
+              </Link>
             </div>
           </motion.div>
         )}

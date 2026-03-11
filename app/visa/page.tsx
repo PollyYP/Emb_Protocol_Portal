@@ -131,7 +131,7 @@ export default function VisaPage() {
               Diplomatic / Official Visa Reissuance
             </p>
             <p className="text-sm lg:text-base leading-relaxed text-white/60">
-              การขอต่ออายุวีซ่า A-2 ผ่านแผนกพิธีการทูต <br/>
+              การขอต่ออายุวีซ่า A-2 ผ่านฝ่ายพิธีการทูต <br/>
               สถานเอกอัครราชทูต ณ กรุงวอชิงตัน
             </p>
           </motion.div>
@@ -150,10 +150,10 @@ export default function VisaPage() {
               <p className="mt-4 text-sm lg:text-base leading-relaxed text-black/50">
                 โดยทั่วไปวีซ่าประเภท A-2 จะมีอายุประมาณ 6 เดือน
                 หากท่านมีความจำเป็นต้องใช้หนังสือเดินทางในการเดินทางเข้าออกประเทศ <br/>
-                สามารถดำเนินการต่ออายุวีซ่าเพื่อให้มีสถานะที่เป็นปัจจุบันอยู่เสมอได้ ทั้งนี้ 
-                การต่ออายุวีซ่าจะต้องดำเนินการที่ Diplomatic Liaison Division ณ กรุงวอชิงตัน 
-                สำหรับผู้ที่ปฏิบัติหน้าที่อยู่ในรัฐอื่น ขอให้ประสานงานผ่านสถานกงสุลใหญ่ในพื้นที่ก่อน 
-                เพื่อให้สถานกงสุลใหญ่ <br/> ติดต่อมายังสถานเอกอัครราชทูต ณ กรุงวอชิงตัน โดยฝ่ายพิธีการทูตของสถานเอกอัครราชทูตฯ 
+                สามารถดำเนินการต่ออายุวีซ่าเพื่อให้มีสถานะที่เป็นปัจจุบันอยู่เสมอได้ ทั้งนี้
+                การต่ออายุวีซ่าจะต้องดำเนินการที่ Diplomatic Liaison Division ณ กรุงวอชิงตัน
+                สำหรับผู้ที่ปฏิบัติหน้าที่อยู่ในรัฐอื่น ขอให้ประสานงานผ่านสถานกงสุลใหญ่ในพื้นที่ก่อน
+                เพื่อให้สถานกงสุลใหญ่ <br/> ติดต่อมายังสถานเอกอัครราชทูต ณ กรุงวอชิงตัน โดยฝ่ายพิธีการทูตของสถานเอกอัครราชทูตฯ
                 จะเป็นผู้ดำเนินการในขั้นตอนต่อไป
               </p>
             </div>
@@ -216,8 +216,7 @@ export default function VisaPage() {
                   </h3>
                 </div>
                 <p className="text-xs lg:text-sm leading-relaxed text-black/60 mb-4">
-                  ผู้ติดตามที่เป็นบุคคลในครอบครัวที่ไม่ใช่คู่สมรสหรือบุตร (immediate family)
-                  และถือหนังสือเดินทางธรรมดา (ปกสีแดงเลือดหมู) จะต้องแสดงเอกสารเพิ่มเติมอย่างใดอย่างหนึ่ง ดังนี้
+                  ผู้ติดตามที่เป็นบุคคลในครอบครัวที่ไม่ใช่คู่สมรสหรือบุตรและถือหนังสือเดินทางธรรมดา (ปกสีแดงเลือดหมู) จะต้องแสดงเอกสารเพิ่มเติมอย่างใดอย่างหนึ่ง ดังนี้
                 </p>
                 <div className="flex items-start gap-3 rounded-xl border border-red-200/60 bg-red-50/60 px-4 py-3 mb-4">
                   <svg className="mt-0.5 h-4 w-4 shrink-0 text-[#c40000]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -314,7 +313,7 @@ export default function VisaPage() {
 
                     {/* 60-day rule */}
                     <div className="mt-2 rounded-xl border border-[#0c0479]/10 bg-gray-50 p-4 text-sm leading-relaxed text-black/55 space-y-2">
-                      <p className="font-semibold text-[#0c0479]">เงื่อนไขการยื่นคำขอต่ออายุ</p>
+                      <p className="text-base font-semibold text-[#0c0479]">เงื่อนไขการยื่นคำขอต่ออายุ</p>
                       <p className="text-xs lg:text-sm">
                         หากวีซ่า<span className="font-semibold text-black/75">ยังไม่หมดอายุ</span> สามารถยื่นคำขอล่วงหน้าได้
                         แต่ต้องอยู่ในช่วง<span className="font-semibold text-black/75">ไม่เกิน 60 วันก่อนวันหมดอายุ</span>{" "}
@@ -346,14 +345,14 @@ export default function VisaPage() {
                   </div>
                   <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-black/55">
                     <p className="text-sm lg:text-base">
-                      หลังจากที่ท่านทำการขอประวัติการเข้า–ออกประเทศ (I-94 Record) ผ่านระบบออนไลน์ 
-                      เอกสารดังกล่าวจะมีผลใช้ได้ภายในเดือนที่ท่านทำการขอข้อมูล 
+                      หลังจากที่ท่านทำการขอประวัติการเข้า - ออกประเทศ (I-94 Record) ผ่านระบบออนไลน์
+                      เอกสารดังกล่าวจะมีผลใช้ได้ภายในเดือนที่ท่านทำการขอข้อมูล
                       โดยสามารถสังเกต<span className="font-semibold text-black/75">วันหมดอายุ</span>ได้ที่<span className="font-semibold text-black/75"> มุมด้านล่างขวาของเอกสาร ซึ่งจะระบุวัน เดือน ปี กำกับไว้ </span>
-                    </p>  
+                    </p>
                     <p className="text-sm lg:text-base">
                       ตัวอย่างเช่น หากเอกสารระบุวันหมดอายุที่ 01/31/2026
-                      เอกสารฉบับดังกล่าวจะมีผลใช้ได้จนถึงวันที่ 31 มกราคม 2569 
-                      แม้ว่าท่านจะทำการตรวจสอบและสั่งพิมพ์เอกสารในช่วงใกล้สิ้นเดือน เช่น พิมพ์ออกมาในวันที่ 
+                      เอกสารฉบับดังกล่าวจะมีผลใช้ได้จนถึงวันที่ 31 มกราคม 2569
+                      แม้ว่าท่านจะทำการตรวจสอบและสั่งพิมพ์เอกสารในช่วงใกล้สิ้นเดือน เช่น พิมพ์ออกมาในวันที่
                       28 มกราคม 2569 เอกสาร I-94 ฉบับนั้นก็จะยังคงระบุวันหมดอายุเป็นวันที่ 31 มกราคม 2569
                       ซึ่งอาจทำให้เอกสารหมดอายุก่อนถึงมือเจ้าหน้าที่ได้
                       กรุณาตรวจสอบให้แน่ใจว่า{" "}
@@ -392,7 +391,7 @@ export default function VisaPage() {
                       03
                     </div>
                     <h3 className="text-base lg:text-lg font-bold tracking-tight text-black/85">
-                      ข้อกำหนดเรื่องรูปถ่าย 
+                      ข้อกำหนดเรื่องรูปถ่าย
                     </h3>
                   </div>
                   <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-black/55">
@@ -403,7 +402,7 @@ export default function VisaPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {[
                         { icon: "📐", title: "ขนาด", detail: "2×2 นิ้ว (51×51 มม.) พื้นหลังสีขาวหรือขาวนวล" },
-                        { icon: "🗓️", title: "ความใหม่", detail: "ถ่ายไม่เกิน 6 เดือนก่อนยื่นเรื่อง" },
+                        { icon: "🗓️", title: "ล่าสุด", detail: "ถ่ายไม่เกิน 6 เดือนก่อนยื่นเรื่อง" },
                         { icon: "👤", title: "ใบหน้า", detail: "ถ่ายตรง เปิดตาทั้งสองข้าง มองตรงเข้ากล้อง ใบหน้าอยู่ในกรอบ 50–70%" },
                         { icon: "😐", title: "สีหน้า", detail: "แสดงสีหน้าเป็นกลาง หรือยิ้มเล็กน้อยพร้อมปิดปาก" },
                         { icon: "🕶️", title: "แว่นตา", detail: "ห้ามสวมแว่นตาทุกชนิด (บังคับตั้งแต่ปี 2559)" },
@@ -419,8 +418,8 @@ export default function VisaPage() {
                         >
                           <span className="text-lg">{item.icon}</span>
                           <div>
-                            <p className="font-semibold text-sm text-black/75">{item.title}</p>
-                            <p className="text-xs text-black/45 mt-0.5 leading-relaxed">{item.detail}</p>
+                            <p className="text-sm font-semibold text-black/75">{item.title}</p>
+                            <p className="text-sm text-black/45 mt-0.5 leading-relaxed">{item.detail}</p>
                           </div>
                         </div>
                       ))}
