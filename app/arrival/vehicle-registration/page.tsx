@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 /* ─── Fade-in wrapper ─── */
 function FadeIn({
@@ -31,6 +32,8 @@ function FadeIn({
 }
 
 export default function RegistrationPage() {
+  const [showDipNote, setShowDipNote] = useState(false);
+
   return (
     <>
       {/* ══════════ HERO ══════════ */}
@@ -109,7 +112,7 @@ export default function RegistrationPage() {
 
               <div className="rounded-2xl border border-[#0c0479]/8 bg-[#0c0479]/3 p-6 text-center">
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-[#0c0479]/10">
-                  <svg className="h-6 w-6 text-[#0c0479]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                  <svg className="h-6 w-6 text-[#0c0479]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182M2.985 19.644l3.181-3.182" />
                   </svg>
                 </div>
@@ -120,6 +123,7 @@ export default function RegistrationPage() {
               </div>
             </div>
           </FadeIn>
+
           {/* Warning */}
           <FadeIn>
             <div className="mx-auto max-w-4xl mt-6">
@@ -134,6 +138,120 @@ export default function RegistrationPage() {
                   จะไม่ออกสติกเกอร์ (Decal)
                   ใหม่ให้หากมีรถที่ต้องต่ออายุสติกเกอร์ในเดือนนั้น
                 </p>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* ══════════ LICENSE PLATE MOUNTING RULES ══════════ */}
+          <FadeIn>
+            <div className="mx-auto max-w-4xl mt-6">
+              <div className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
+                <div className="h-1 w-full bg-linear-to-r from-[#0c0479] to-[#3a2fd4]" />
+                <div className="p-6 sm:p-8">
+                  <h3 className="text-lg font-bold tracking-tight text-[#0c0479]">
+                    การติดป้ายทะเบียนทูต
+                  </h3>
+                  <p className="mt-1 text-sm text-black/40">Diplomatic Plate Mounting Requirements</p>
+
+                  {/* ✅ Green check — correct rule */}
+                  <div className="mt-5 flex items-start gap-3 rounded-xl border border-emerald-200/60 bg-emerald-50/60 px-5 py-4">
+                    <svg className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                    </svg>
+                    <div className="text-sm leading-relaxed text-emerald-900/80">
+                      <p>
+                        ท่านจะได้รับป้ายทะเบียนจำนวน <span className="font-semibold">2 แผ่น</span> — กรุณานำป้ายที่มีสติกเกอร์
+                        (Decal) ติดไว้ที่<span className="font-semibold underline">ด้านหลัง</span>ของรถ
+                        และป้ายที่ไม่มีสติกเกอร์ติดไว้ที่ <span className="font-semibold">ด้านหน้า</span>
+                      </p>
+                      <p className="mt-2">
+                        เนื่องจากป้ายทะเบียนทูตออกโดย Department of State
+                        ซึ่ง<span className="font-semibold">กำหนดให้ต้องติดป้ายทั้งด้านหน้าและด้านหลังอย่างชัดเจน</span>
+                      </p>
+                      <button
+                        onClick={() => setShowDipNote(!showDipNote)}
+                        className="mt-3 inline-flex items-center gap-1.5 rounded-md border border-emerald-300/60 bg-white/80 px-3 py-1.5 text-xs font-semibold text-emerald-700 transition-colors hover:bg-emerald-100/80"
+                      >
+                        <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                        </svg>
+                        Diplomatic Note 89-346
+                        <svg className={`h-3 w-3 transition-transform ${showDipNote ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+
+                      {/* Expandable PDF embed */}
+                      {showDipNote && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="mt-3 overflow-hidden rounded-lg border border-emerald-200/60"
+                        >
+                          <iframe
+                            src="/vehicle-rule.pdf"
+                            className="h-[420px] w-full"
+                            title="Diplomatic Note 89-346 — Vehicle Rule"
+                          />
+                          <div className="flex items-center justify-between border-t border-emerald-200/60 bg-emerald-50/40 px-4 py-2">
+                            <p className="text-xs text-emerald-700/60">Diplomatic Note 89-346</p>
+                            <a
+                              href="/vehicle-rule.pdf"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-700 hover:underline"
+                            >
+                              เปิดในแท็บใหม่
+                              <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                              </svg>
+                            </a>
+                          </div>
+                        </motion.div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* ❌ Red X — common misconception */}
+                  <div className="mt-4 flex items-start gap-3 rounded-xl border border-red-200/60 bg-red-50/60 px-5 py-4">
+                    <svg className="mt-0.5 h-5 w-5 shrink-0 text-[#c40000]" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clipRule="evenodd" />
+                    </svg>
+                    <div className="text-sm leading-relaxed text-red-800/80">
+                      <p>
+                        กฎที่อนุโลมให้ติดป้ายทะเบียนเฉพาะด้านหลังเพียงแผ่นเดียวนั้น
+                        เป็น<span className="font-semibold">กฎหมายท้องถิ่นของสหรัฐฯ ที่ใช้กับป้ายทะเบียนบุคคลธรรมดา</span>ซึ่งออกโดย
+                        DMV เท่านั้น ทั้งนี้ หากเป็นป้ายทะเบียนรัฐแมริแลนด์ที่ออกตามกฎหมายของ MVA
+                        ก็ยังคงกำหนดให้ต้องติดทั้งด้านหน้าและด้านหลังเช่นกัน
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Bottom rule summary */}
+                  <div className="mt-4 rounded-xl border border-[#0c0479]/10 bg-[#0c0479]/3 px-5 py-4">
+                    <p className="text-sm font-semibold leading-relaxed text-[#0c0479]">
+                      หลักปฏิบัติ:{" "}
+                      <span className="font-normal text-black/55">
+                        <span className="text-[#0c0479]">นักการทูตจะต้องปฏิบัติตามระเบียบที่ Department of State กำหนดไว้เป็นลำดับแรกเสมอ </span>
+                        หากมีข้อกำหนดเฉพาะที่แตกต่างจากกฎหมายท้องถิ่น ให้ยึดระเบียบของ Department of State เป็นหลัก
+                        ก่อนที่จะอ้างอิงกฎหมายท้องถิ่นร่วม
+                      </span>
+                    </p>
+                  </div>
+
+                  {/* Diplomatic plate image */}
+                  <div className="mt-6 overflow-hidden rounded-xl border border-black/5">
+                    <Image
+                      src="/diplomatOfmPlate.png"
+                      alt="ตัวอย่างป้ายทะเบียนทูต — Diplomatic License Plate"
+                      width={1200}
+                      height={400}
+                      className="h-auto w-full object-cover"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </FadeIn>
@@ -152,7 +270,6 @@ export default function RegistrationPage() {
               </h2>
               <div className="mt-1 h-1 w-16 rounded-full bg-[#c40000]" />
             </div>
-
           </FadeIn>
 
           <div className="mx-auto max-w-4xl space-y-8 pb-12">
