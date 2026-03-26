@@ -93,9 +93,9 @@ export default function NOAPage() {
               <span className="h-1.5 w-1.5 rounded-full bg-[#c40000]" />
               OFM · Person Management
             </div>
-            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Notification of<br />
-              <span className="text-[#c40000]">Appointment</span>
+            <h1 className="text-5xl font-extrabold tracking-tight text-white lg:text-6xl">
+              Notification of
+              <span className="text-[#c40000]"> Appointment</span>
             </h1>
             <p className="mt-5 text-base leading-relaxed text-white/55">
               การแจ้งเข้ารับตำแหน่งต่อ Office of Foreign Missions (OFM)
@@ -144,7 +144,7 @@ export default function NOAPage() {
                 Notification of Appointment คืออะไร
               </h2>
               <div className="mt-4 h-px w-12 bg-[#c40000]" />
-              <div className="mt-6 space-y-4 text-sm leading-relaxed text-black/60 md:text-base">
+              <div className="mt-6 space-y-4 text-base leading-relaxed text-black/60">
                 <p>
                   Notification of Appointment (NOA) คือการแจ้งอย่างเป็นทางการต่อ Office of Foreign Missions (OFM)
                   ซึ่งเป็นหน่วยงานของกระทรวงการต่างประเทศสหรัฐฯ ว่าข้าราชการได้เข้ารับตำแหน่ง
@@ -157,7 +157,7 @@ export default function NOAPage() {
                   หากไม่ดำเนินการ NOA ท่านจะไม่ได้รับหมายเลขประจำตัวนักการทูตทำให้ไม่สามารถดำเนินการในเรื่องอื่น ๆ ได้
                 </p>
                 <p>
-                  ฝ่ายพิธีการทางการทูตของสถานเอกอัครราชทูตฯ จะเป็นผู้ดำเนินการยื่น NOA ต่อ OFM ผ่านระบบออนไลน์
+                  ฝ่ายพิธีการทางการทูตของสถานเอกอัครราชทูต ณ กรุงวอชิงตัน จะเป็นผู้ดำเนินการยื่น NOA ต่อ OFM ผ่านระบบออนไลน์
                   โดยท่านเพียงกรอกแบบฟอร์มและเตรียมเอกสารที่กำหนดให้ครบถ้วน
                 </p>
               </div>
@@ -180,7 +180,7 @@ export default function NOAPage() {
 
                 <div className="mt-6 space-y-4">
                   {[
-                    { label: "ยื่นโดย", value: "ฝ่ายพิธีการทางการทูต สถานเอกอัครราชทูต ณ กรุงวอชิงตัน" },
+                    { label: "ยื่นโดย", value: "ฝ่ายพิธีการทูต สถานเอกอัครราชทูตฯ" },
                     { label: "ยื่นต่อ", value: "Office of Foreign Missions (OFM), U.S. Department of State" },
                     { label: "ระยะเวลาดำเนินการ", value: "ประมาณ 2 - 4 สัปดาห์" },
                     { label: "ผลลัพธ์", value: "บัตรประจำตัวทางการทูต (Diplomatic ID Card)" },
@@ -198,7 +198,7 @@ export default function NOAPage() {
       </section>
 
       {/* ══════════ DOCUMENTS ══════════ */}
-      <section className="w-full bg-[#fafafa] py-16 md:py-20">
+      <section className="w-full bg-[#fafafa] py-8 md:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <FadeIn>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c40000]/60">
@@ -215,14 +215,14 @@ export default function NOAPage() {
               <FadeIn key={idx} delay={idx * 0.05}>
                 <div className="flex h-full flex-col justify-between rounded-xl border border-black/6 bg-white p-5 shadow-sm">
                   <div className="flex items-start gap-3">
-                    <div className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
+                    <div className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-sm font-bold ${
                       doc.required ? "bg-[#c40000]/10 text-[#c40000]" : "bg-black/6 text-black/40"
                     }`}>
                       {doc.required ? "✓" : "○"}
                     </div>
                     <div>
-                      <p className="font-semibold text-black/80 text-sm">{doc.name}</p>
-                      <p className="mt-0.5 text-xs text-black/45">{doc.note}</p>
+                      <p className="font-semibold text-black/80 text-base">{doc.name}</p>
+                      <p className="mt-0.5 text-sm text-black/45">{doc.note}</p>
                     </div>
                   </div>
                   {doc.download && (
@@ -251,7 +251,7 @@ export default function NOAPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                   </svg>
                 </div>
-                <div className="text-sm">
+                <div className="text-base">
                   <p className="font-extrabold text-[#0c0479]">Signature Card</p>
                   <p className="mt-1 text-black/55">
                     ดาวน์โหลดและกรอกให้ครบถ้วน

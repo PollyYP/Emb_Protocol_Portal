@@ -140,9 +140,9 @@ export default function NOCPage() {
               <span className="h-1.5 w-1.5 rounded-full bg-[#c40000]" />
               OFM · Person Management
             </div>
-            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Notification of<br />
-              <span className="text-[#c40000]">Change</span>
+            <h1 className="text-5xl font-extrabold tracking-tight text-white lg:text-6xl">
+              Notification of
+              <span className="text-[#c40000]"> Change</span>
             </h1>
             <p className="mt-5 text-base leading-relaxed text-white/55 sm:text-lg">
               เมื่อข้อมูลส่วนตัวหรือข้อมูลทางการทูตมีการเปลี่ยนแปลง ท่านต้องแจ้งให้ฝ่ายพิธีการทางการทูต <br/>
@@ -164,7 +164,7 @@ export default function NOCPage() {
                 Notification of Change คืออะไร
               </h2>
               <div className="mt-4 h-px w-12 bg-[#c40000]" />
-              <div className="mt-6 space-y-4 text-sm leading-relaxed text-black/60 md:text-base">
+              <div className="mt-6 space-y-4 leading-relaxed text-black/60 text-base">
                 <p>
                   Notification of Change (NOC) คือกระบวนการแจ้งการเปลี่ยนแปลงข้อมูลอย่างเป็นทางการต่อ OFM
                   เพื่อให้ข้อมูลในระบบของข้าราชการและผู้ติดตามเป็นปัจจุบันและถูกต้องอยู่เสมอ ข้อมูลที่ต้องแจ้งมีตั้งแต่ที่อยู่ในสหรัฐฯ
@@ -188,7 +188,7 @@ export default function NOCPage() {
               <div className="space-y-3">
                 {warnings.map((w, idx) => (
                   <div key={idx} className="rounded-xl border border-black/6 bg-[#fafafa] p-5">
-                    <p className="font-extrabold text-[#0c0479] text-sm">{w.title}</p>
+                    <p className="font-extrabold text-[#0c0479] text-base">{w.title}</p>
                     <p className="mt-2 text-sm leading-relaxed text-black/55">{w.body}</p>
                   </div>
                 ))}
