@@ -293,66 +293,6 @@ export default function DomesticWorkerPage() {
                 </div>
               </div>
             </FadeIn>
-
-            {/* Section 04 – Dependent Protection */}
-            <FadeIn>
-              <div className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
-                <div className="h-1 w-full bg-linear-to-r from-[#7c3aed] to-[#a855f7]" />
-                <div className="p-6 sm:p-8">
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-purple-50 text-sm font-bold text-purple-700">
-                      04
-                    </div>
-                    <h3 className="text-base lg:text-lg font-bold tracking-tight text-black/85">
-                      แผนคุ้มครองผู้ติดตาม (Dependent Protection &amp; Oversight Plan)
-                    </h3>
-                  </div>
-                  <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-black/55">
-                    <p className="text-sm lg:text-base">
-                      หากมีการนำพนักงานมาพร้อมผู้ติดตาม (dependent) หน่วยงานต้องจัดทำแผนคุ้มครองและกำกับดูแล
-                      (Dependent Protection and Oversight Plan)
-                    </p>
-
-                    <div className="rounded-xl border border-purple-200/60 bg-purple-50/40 p-4 text-sm leading-relaxed text-purple-900/70 space-y-2">
-                      <p className="text-base font-semibold text-purple-800">สิ่งที่ต้องจัดทำ</p>
-                      <p className="text-xs lg:text-sm">
-                        แผนคุ้มครองผู้ติดตามต้องลงนามโดยหัวหน้าคณะผู้แทน
-                        หรือผู้บริหารระดับสูงขององค์การระหว่างประเทศ
-                        และต้องยื่นพร้อมกับคำขอแจ้งล่วงหน้า (pre-notification request)
-                      </p>
-                    </div>
-
-                    {[
-                      {
-                        num: "1",
-                        label: "การติดตามสวัสดิภาพ",
-                        sub: "ต้องมีการตรวจสอบสวัสดิภาพและสภาพความเป็นอยู่ของผู้ติดตามอย่างสม่ำเสมอ",
-                      },
-                      {
-                        num: "2",
-                        label: "การดูแลผู้เยาว์",
-                        sub: "หากผู้ติดตามเป็นผู้เยาว์ ต้องมีการกำกับดูแลอย่างเข้มงวดเป็นพิเศษ",
-                      },
-                      {
-                        num: "3",
-                        label: "การรับรองทุก 6 เดือน",
-                        sub: "ผู้จ้างงาน พนักงาน และคณะผู้แทนฯ ต้องรับรองเป็นลายลักษณ์อักษรทุก 6 เดือนว่าผู้ติดตามไม่ได้ทำงานในสหรัฐฯ",
-                      },
-                    ].map((item) => (
-                      <div key={item.num} className="flex items-center gap-3 rounded-xl border border-purple-100 bg-purple-50/40 p-4">
-                        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-purple-700 text-xs font-bold text-white">
-                          {item.num}
-                        </div>
-                        <div>
-                          <p className="font-semibold text-purple-900">{item.label}</p>
-                          <p className="text-xs text-black/40">{item.sub}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
             
             {/* Compliance reminder */}
             <FadeIn className="mt-6">
