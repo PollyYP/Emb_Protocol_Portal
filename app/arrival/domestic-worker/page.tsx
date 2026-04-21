@@ -72,7 +72,7 @@ export default function DomesticWorkerPage() {
               </h2>
               <p className="mt-4 text-base leading-relaxed text-black/50">
                 Domestic Worker Program เป็นโครงการที่กระทรวงการต่างประเทศสหรัฐอเมริกา
-                อนุญาตให้นักการทูตสามารถนำลูกจ้างติดตามมาด้วยได้ นอกเหนือไปจากผู้ติดตามที่เป็นสมาชิกในครอบครัว <br />
+                อนุญาตให้นักการทูตสามารถนำลูกจ้างติดตามมาด้วยได้ นอกเหนือไปจากผู้ติดตามที่เป็นสมาชิกในครอบครัว
                 โดยมุ่งเน้นให้มีการปฏิบัติต่อลูกจ้างอย่างเป็นธรรม โปร่งใส
                 และเป็นไปตามกฎหมายแรงงานของสหรัฐอเมริกา
               </p>
@@ -105,7 +105,7 @@ export default function DomesticWorkerPage() {
                       01
                     </div>
                     <h3 className="text-lg font-bold tracking-tight text-black/85">
-                      นักการทูตที่ได้รับสิทธิ์
+                      นักการทูตที่ได้รับเอกสิทธิ์
                     </h3>
                   </div>
                   <div className="mt-5 space-y-4 text-base leading-relaxed text-black/55">
@@ -293,65 +293,73 @@ export default function DomesticWorkerPage() {
                 </div>
               </div>
             </FadeIn>
-            
-            {/* Compliance reminder */}
-            <FadeIn className="mt-6">
-              <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border border-purple-100 bg-purple-50/40 shadow-sm">
-                <div className="h-1 w-full bg-linear-to-r from-[#7c3aed] to-[#a855f7]" />
-                <div className="p-6 sm:p-7">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-purple-700/10">
-                      <svg className="h-4 w-4 text-purple-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-                      </svg>
+
+            {/* Section 04 – A-3 Application Steps */}
+            <FadeIn>
+              <div className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
+                <div className="h-1 w-full bg-linear-to-r from-[#059669] to-[#34d399]" />
+                <div className="p-6 sm:p-8">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-sm font-bold text-emerald-700">
+                      04
                     </div>
-                    <h3 className="text-sm lg:text-base font-bold text-purple-900">
-                      ข้อพึงระวังในการปฏิบัติ (Compliance Reminder)
+                    <h3 className="text-lg font-bold tracking-tight text-black/85">
+                      ขั้นตอนการขอมีผู้ติดตาม A-3
                     </h3>
                   </div>
-                  <p className="text-xs lg:text-sm leading-relaxed text-black/60 mb-4">
-                    กระทรวงการต่างประเทศสหรัฐอเมริกาให้ความสำคัญอย่างยิ่งต่อการคุ้มครองสิทธิของพนักงานรับใช้ในครัวเรือน
-                    โดยกำหนดให้การปฏิบัติตามข้อกำหนดของโครงการเป็นเงื่อนไขสำคัญของสิทธิประโยชน์ดังกล่าว
-                  </p>
-                  <div className="flex items-start gap-3 rounded-xl border border-red-200/60 bg-red-50/60 px-4 py-3 mb-4">
-                    <svg className="mt-0.5 h-4 w-4 shrink-0 text-[#c40000]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-                    </svg>
-                    <p className="text-xs lg:text-sm leading-relaxed text-red-800/80">
-                      หากผู้ว่าจ้างไม่ปฏิบัติตามข้อกำหนดอย่างครบถ้วน{" "}
-                      <span className="font-bold">อาจถูกระงับการเข้าร่วมโครงการ</span>{" "}
-                      รวมถึงอาจถูกปฏิเสธคำขอ pre-notification สำหรับพนักงานรายใหม่
-                      หรือในบางกรณีอาจมีผลต่อทั้งคณะผู้แทน
-                    </p>
-                  </div>
-                  <div className="space-y-2">
+
+                  <div className="mt-6 space-y-3">
                     {[
                       {
                         num: "1",
-                        title: "ระงับการเข้าร่วมโครงการ",
-                        detail: "กระทรวงฯ อาจปฏิเสธคำขอแจ้งล่วงหน้า (pre-notification) สำหรับพนักงานรายใหม่ของสมาชิกคณะผู้แทนฯ",
+                        title: "ยื่นแบบฟอร์ม Pre-Notification",
+                        detail: (
+                          <>
+                            <p>
+                              นักการทูตที่เป็นนายจ้างกรอกข้อมูลของผู้ติดตามส่งมาให้ฝ่ายพิธีฯ
+                              เพื่อดำเนินการยื่นแบบฟอร์ม Domestic Worker Pre-Notification ต่อ OFM โปรดกรอกข้อมูลโดยใช้ {" "}
+                              <span>
+                                <a
+                                  href="https://www.cognitoforms.com/RoyalThaiEmbassy1/_pre-noa-applicant-info"
+                                  className="font-semibold text-emerald-700 underline underline-offset-2 hover:text-emerald-900"
+                                >
+                                  แบบฟอร์ม
+                                </a>
+                              </span> {" "} นี้
+                            </p>
+                          </>
+                        ),
                       },
                       {
                         num: "2",
-                        title: "ผลกระทบต่อทั้งคณะผู้แทน",
-                        detail: "ในบางกรณี การระงับอาจมีผลต่อสมาชิกทั้งหมดของคณะผู้แทนฯ ตามความเหมาะสมของสถานการณ์",
-                      },
-                      {
-                        num: "3",
-                        title: "ระงับการออกวีซ่า A-3 / G-5",
-                        detail: "กระทรวงฯ ยังคงมีอำนาจในการระงับการออกวีซ่าประเภท A-3 หรือ G-5 ได้ตามความเหมาะสม",
+                        title: "ใช้ใบอนุมัติประกอบการขอวีซ่า",
+                        detail: "เมื่อ OFM อนุมัติแล้วให้นายจ้างนำใบอนุมัติไปใช้ประกอบการขอวีซ่าให้ผู้ติดตาม",
                       },
                     ].map((item) => (
-                      <div key={item.num} className="flex items-start gap-3 rounded-xl border border-purple-100 bg-white/60 p-3">
-                        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-purple-700 text-xs font-bold text-white">
+                      <div key={item.num} className="flex items-start gap-3 rounded-xl border border-emerald-100 bg-emerald-50/40 p-4">
+                        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-xs font-bold text-white">
                           {item.num}
                         </div>
                         <div>
-                          <p className="font-semibold text-xs lg:text-sm text-purple-900">{item.title}</p>
-                          <p className="mt-0.5 text-xs text-black/50">{item.detail}</p>
+                          <p className="font-semibold text-sm text-emerald-900">{item.title}</p>
+                          <p className="mt-0.5 text-sm leading-relaxed text-black/55">{item.detail}</p>
                         </div>
                       </div>
                     ))}
+                  </div>
+
+                  {/* หลักปฏิบัติ note */}
+                  <div className="mt-5 flex items-start gap-3 rounded-xl border border-amber-200/70 bg-amber-50/60 px-4 py-3">
+                    <svg className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                    </svg>
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-wide text-amber-700 mb-0.5">หลักปฏิบัติ</p>
+                      <p className="text-xs lg:text-sm leading-relaxed text-amber-900/80">
+                        นักการทูตที่เป็นนายจ้างจะต้องมีวีซ่าก่อน เนื่องจากจะต้องใช้ข้อมูลวีซ่ากรอกแบบฟอร์ม
+                        Domestic Worker Pre-Notification
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
