@@ -88,26 +88,40 @@ export default function Footer() {
           </div>
         </div>
 
-       {/* Bottom bar */}
-        <div className="mt-6 lg:mt-10 border-t border-black/8 pt-4 flex flex-col items-center gap-2 lg:flex-row lg:justify-between">
-          <p className="text-[9px] lg:text-xs font-semibold uppercase tracking-[0.2em] text-black/40">
-            Royal Thai Embassy &nbsp;·&nbsp; Washington D.C.
-          </p>
-          <p className="text-[9px] lg:text-[11px] text-black/40 uppercase tracking-wider">
-            © {new Date().getFullYear()} All Rights Reserved
-          </p>
-          <a
-            href="https://www.pollyyospan.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-1.5 text-[9px] lg:text-[11px] font-medium text-black/40 transition-colors hover:text-[#0c0479]"
-          >
-            <span className="uppercase tracking-wider">Designed & Developed by</span>
-            <span className="font-bold tracking-wide text-black/50 transition-colors group-hover:text-[#0c0479]">
-              POLLY YOSPAN
-            </span>
-          </a>
-        </div>
+      {/* Bottom bar */}
+      <div className="mt-6 lg:mt-10 border-t border-black/8 pt-4 flex flex-col items-center gap-2 lg:flex-row lg:justify-between">
+        <p className="text-[9px] lg:text-xs font-semibold uppercase tracking-[0.2em] text-black/40">
+          Royal Thai Embassy &nbsp;·&nbsp; Washington D.C.
+        </p>
+        <p className="text-[9px] lg:text-[11px] text-black/40 uppercase tracking-wider">
+          © {new Date().getFullYear()} All Rights Reserved
+        </p>
+        <a
+          href="https://www.pollyyospan.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center gap-1.5 text-[9px] lg:text-[11px] font-medium text-black/40 transition-colors hover:text-[#0c0479]"
+        >
+          <span className="uppercase tracking-wider">Designed & Developed by</span>
+          <span className="flex items-center gap-1 font-bold tracking-wide text-black/50 transition-colors group-hover:text-[#0c0479]">
+            POLLY YOSPAN
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-2.5 w-2.5"
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </span>
+        </a>
+      </div>
       </div>
     </footer>
   );
