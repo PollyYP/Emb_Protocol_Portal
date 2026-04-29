@@ -325,7 +325,7 @@ export default function DomesticWorkerPage() {
                                 >
                                   แบบฟอร์ม
                                 </a>
-                              </span> {" "} นี้
+                              </span> {" "} นี้ หลังจากนั้น สอท. จะออกหนังสือ Diplomatic Note เพื่อแนบไปกับคำร้องให้ OFM อนุมัติ
                             </p>
                           </>
                         ),
@@ -356,7 +356,7 @@ export default function DomesticWorkerPage() {
                     <div>
                       <p className="text-xs font-bold uppercase tracking-wide text-amber-700 mb-0.5">หลักปฏิบัติ</p>
                       <p className="text-xs lg:text-sm leading-relaxed text-amber-900/80">
-                        นักการทูตที่เป็นนายจ้างจะต้องมีวีซ่าก่อน เนื่องจากจะต้องใช้ข้อมูลวีซ่ากรอกแบบฟอร์ม
+                        นักการทูตที่เป็นนายจ้างจะต้องมีวีซ่าก่อน เนื่องจากจะต้องใช้ข้อมูลวีซ่าของนายจ้างในการกรอกแบบฟอร์ม
                         Domestic Worker Pre-Notification
                       </p>
                     </div>
