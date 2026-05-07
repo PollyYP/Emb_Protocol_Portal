@@ -446,6 +446,183 @@ export default function VisaPage() {
             </FadeIn>
 
           </div>
+          
+          {/* Visa Status Tracker */}
+            <FadeIn>
+              <div className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
+                <div className="h-1 w-full bg-linear-to-r from-[#0a7c4e] to-[#10b981]" />
+                <div className="p-6 sm:p-8">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-sm font-bold text-emerald-700">
+                      04
+                    </div>
+                    <h3 className="text-base lg:text-lg font-bold tracking-tight text-black/85">
+                      ติดตามสถานะการอนุมัติวีซ่า
+                    </h3>
+                  </div>
+
+                  <div className="mt-5 space-y-4 text-sm leading-relaxed text-black/55">
+                    <p className="text-sm lg:text-base">
+                      ท่านสามารถติดตามสถานะการอนุมัติวีซ่าได้ที่{" "}
+                      <a
+                        href="https://ceac.state.gov/ceacstattracker/status.aspx"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#0c0479] underline underline-offset-2 hover:text-[#c40000] transition-colors font-medium"
+                      >
+                        ceac.state.gov
+                      </a>
+                    </p>
+
+                    {/* Screenshot */}
+                    <div className="rounded-xl overflow-hidden border border-black/8 bg-gray-50">
+                      <img
+                        src="/visa_check.png"
+                        alt="ตัวอย่างหน้าเว็บติดตามสถานะวีซ่า"
+                        className="w-full h-auto object-contain"
+                      />
+                    </div>
+
+                    {/* Field instructions */}
+                    <div className="space-y-3 mt-2">
+                      {[
+                        {
+                          num: "1",
+                          label: "Visa Application Type",
+                          detail: (
+                            <>
+                              ให้เลือก{" "}
+                              <span className="font-semibold text-black/75">
+                                NONIMMIGRANT VISA (NIV)
+                              </span>
+                            </>
+                          ),
+                        },
+                        {
+                          num: "2",
+                          label: "Select Location",
+                          detail: (
+                            <>
+                              ให้เลือก{" "}
+                              <span className="font-semibold text-black/75">Washington, DC</span>
+                            </>
+                          ),
+                        },
+                        {
+                          num: "3",
+                          label: "Applicant ID or Case Number",
+                          detail: (
+                            <>
+                              มีสองรูปแบบที่ใช้ได้
+                              <ul className="mt-2 space-y-1.5 pl-1">
+                                <li className="flex gap-2">
+                                  <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500 mt-1.5" />
+                                  <span>
+                                    <span className="font-semibold text-black/70">Applicant ID</span>{" "}
+                                    คือหมายเลข Confirmation No. ที่ได้รับตอนกรอกคำร้องออนไลน์ มักขึ้นต้นด้วย{" "}
+                                    <span className="font-semibold text-black/70">AA…</span>{" "}
+                                    จำนวน 10 หลัก
+                                  </span>
+                                </li>
+                                <li className="flex gap-2">
+                                  <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500 mt-1.5" />
+                                  <span>
+                                    <span className="font-semibold text-black/70">Case Number</span>{" "}
+                                    คือหมายเลข Control Number ที่มุมขวาบนของหน้าวีซ่า จำนวน{" "}
+                                    <span className="font-semibold text-black/70">14 หลัก</span>
+                                  </span>
+                                </li>
+                              </ul>
+                            </>
+                          ),
+                        },
+                      ].map((item) => (
+                        <div
+                          key={item.num}
+                          className="flex items-start gap-3 rounded-xl border border-emerald-100 bg-emerald-50/40 p-4"
+                        >
+                          <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-xs font-bold text-white">
+                            {item.num}
+                          </div>
+                          <div className="text-sm leading-relaxed text-black/55">
+                            <span className="font-semibold text-black/75">{item.label}:</span>{" "}
+                            {item.detail}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Case number sample image */}
+                    <div className="rounded-xl overflow-hidden border border-black/8 bg-gray-50">
+                      <img
+                        src="/casenumber_sample.png"
+                        alt="ตัวอย่างตำแหน่ง Control Number บนหน้าวีซ่า"
+                        className="w-full h-auto object-contain"
+                      />
+                    </div>
+
+                    {/* Status explanation */}
+                    <div className="rounded-xl border border-emerald-100 bg-emerald-50/40 px-5 py-4 space-y-3">
+                      <p className="font-semibold text-sm text-emerald-800">ความหมายของสถานะต่าง ๆ</p>
+                      <div className="space-y-2">
+                        {[
+                          {
+                            status: "Application Received",
+                            color: "bg-blue-500",
+                            textColor: "text-blue-700",
+                            borderColor: "border-blue-200",
+                            bgColor: "bg-blue-50/60",
+                            detail: "Diplomatic Visa Office ได้รับเอกสารของท่านแล้ว อยู่ระหว่างการพิจารณา",
+                          },
+                          {
+                            status: "Approved",
+                            color: "bg-emerald-500",
+                            textColor: "text-emerald-700",
+                            borderColor: "border-emerald-200",
+                            bgColor: "bg-emerald-50/60",
+                            detail: "คำร้องได้รับการอนุมัติแล้ว อยู่ระหว่างการจัดทำวีซ่า",
+                          },
+                          {
+                            status: "Issued",
+                            color: "bg-[#0c0479]",
+                            textColor: "text-[#0c0479]",
+                            borderColor: "border-[#0c0479]/20",
+                            bgColor: "bg-[#0c0479]/5",
+                            detail: "วีซ่าออกให้แล้ว สามารถไปรับหนังสือเดินทางได้ที่ Diplomatic Visa Office",
+                          },
+                        ].map((s) => (
+                          <div
+                            key={s.status}
+                            className={`flex items-start gap-3 rounded-lg border ${s.borderColor} ${s.bgColor} px-4 py-3`}
+                          >
+                            <span className={`mt-1.5 h-2 w-2 shrink-0 rounded-full ${s.color}`} />
+                            <div>
+                              <span className={`font-bold text-sm ${s.textColor}`}>{s.status}</span>
+                              <p className="text-xs text-black/50 mt-0.5 leading-relaxed">{s.detail}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Pickup hours callout */}
+                    <div className="flex items-start gap-3 rounded-xl border border-amber-200/60 bg-amber-50/60 px-4 py-4">
+                      <svg className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <div className="text-sm leading-relaxed text-amber-800/80 space-y-1">
+                        <p className="font-semibold">เวลารับหนังสือเดินทาง</p>
+                        <p>
+                          Diplomatic Visa Office อนุญาตให้รับหนังสือเดินทางคืนได้เฉพาะ{" "}
+                          <span className="font-semibold">วันจันทร์ พุธ และศุกร์ เวลา 10:00 – 11:00 น.</span>{" "}
+                          เท่านั้น เมื่อฝ่ายพิธีฯ รับเอกสารแล้ว จะจัดส่งคืนท่านตามบริษัทไปรษณีย์ที่ท่านส่งซองแนบมา
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
 
           {/* Bottom contact */}
           <FadeIn className="pb-12">
