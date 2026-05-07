@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { useRef, useState } from "react";
 
 /* ─── Fade-in wrapper ─── */
@@ -299,6 +300,7 @@ export default function VisaPage() {
                       { num: "2", label: "สำเนาหนังสือเดินทาง", sub: "Copy of Passport" },
                       { num: "3", label: "สำเนาวีซ่า", sub: "Copy of Visa" },
                       { num: "4", label: "I-94", sub: "ดูข้อควรระวังด้านล่าง" },
+                      { num: "5", label: "ซองไปรษณีย์ที่ชำระค่าไปรษณียากรแล้ว", sub: "เพื่อให้ฝ่ายพิธีฯ นำส่งคืนหนังสือเดินทาง — แนะนำ UPS เพื่อความรวดเร็วในการจัดส่ง" },
                     ].map((item) => (
                       <div key={item.num} className="flex items-center gap-3 rounded-xl border border-[#0c0479]/8 bg-[#0c0479]/3 p-4">
                         <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0c0479] text-xs font-bold text-white">
@@ -449,7 +451,7 @@ export default function VisaPage() {
           
           {/* Visa Status Tracker */}
             <FadeIn>
-              <div className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
+              <div className="mx-auto max-w-4xl mb-10 overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
                 <div className="h-1 w-full bg-linear-to-r from-[#0a7c4e] to-[#10b981]" />
                 <div className="p-6 sm:p-8">
                   <div className="flex items-center gap-4">
@@ -476,9 +478,11 @@ export default function VisaPage() {
 
                     {/* Screenshot */}
                     <div className="rounded-xl overflow-hidden border border-black/8 bg-gray-50">
-                      <img
+                      <Image
                         src="/visa_check.png"
                         alt="ตัวอย่างหน้าเว็บติดตามสถานะวีซ่า"
+                        width={800}
+                        height={600}
                         className="w-full h-auto object-contain"
                       />
                     </div>
@@ -554,9 +558,11 @@ export default function VisaPage() {
 
                     {/* Case number sample image */}
                     <div className="rounded-xl overflow-hidden border border-black/8 bg-gray-50">
-                      <img
-                        src="/casenumber_sample.png"
+                      <Image
+                        src="/case_example.png"
                         alt="ตัวอย่างตำแหน่ง Control Number บนหน้าวีซ่า"
+                        width={800}
+                        height={600}
                         className="w-full h-auto object-contain"
                       />
                     </div>
@@ -627,31 +633,65 @@ export default function VisaPage() {
           {/* Bottom contact */}
           <FadeIn className="pb-12">
             <div className="mx-auto max-w-4xl rounded-2xl border border-black/5 bg-white p-7 shadow-sm sm:p-8">
-              <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#0c0479]/8">
-                  <svg className="h-6 w-6 text-[#0c0479]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                  </svg>
+              <div className="flex flex-col gap-6">
+
+                {/* Inquiry row */}
+                <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#0c0479]/8">
+                    <svg className="h-6 w-6 text-[#0c0479]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-sm lg:text-base font-bold text-black/80">หากมีข้อสงสัย</h3>
+                    <p className="mt-1 text-sm text-black/45">ติดต่อฝ่ายพิธีฯ ได้ทางอีเมลหรือโทรศัพท์</p>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <a
+                      href="mailto:protocol@thaiembdc.org"
+                      className="inline-flex items-center gap-2 rounded-lg bg-[#0c0479] px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#0c0479]/20 transition-all hover:bg-[#09035e] active:scale-[0.97]"
+                    >
+                      ส่งอีเมล
+                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                    </a>
+                    <a
+                      href="tel:+12022984798"
+                      className="inline-flex items-center gap-2 rounded-lg border border-[#0c0479]/20 bg-[#0c0479]/5 px-5 py-2.5 text-sm font-semibold text-[#0c0479] transition-all hover:bg-[#0c0479]/10 active:scale-[0.97]"
+                    >
+                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                      </svg>
+                      (202) 298-4798
+                    </a>
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-sm lg:text-base font-bold text-black/80">หากมีข้อสงสัยหรือต้องการยื่นเรื่อง</h3>
-                  <p className="mt-1 text-sm text-black/45">
-                    ติดต่อฝ่ายพิธีฯ ได้โดยตรง
-                  </p>
+
+                {/* Divider */}
+                <div className="h-px w-full bg-black/6" />
+
+                {/* Mailing address row */}
+                <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#c40000]/8">
+                    <svg className="h-6 w-6 text-[#c40000]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8.25V18a2.25 2.25 0 002.25 2.25h13.5A2.25 2.25 0 0021 18V8.25m-18 0V6a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6zm0 3h.008v.008H5.25V9zm0 3h.008v.008H5.25V12z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1 text-left">
+                    <h3 className="text-sm lg:text-base font-bold text-black/80">ส่งเอกสารมาที่</h3>
+                    <address className="mt-1.5 not-italic text-sm leading-relaxed text-black/45">
+                      <span className="font-semibold text-black/60">Protocol Section (OFM/Visa)</span><br />
+                      Royal Thai Embassy<br />
+                      1024 Wisconsin Ave. N.W.<br />
+                      Washington, DC 20007
+                    </address>
+                  </div>
                 </div>
-                <a
-                  href="mailto:protocol@thaiembdc.org"
-                  className="inline-flex items-center gap-2 rounded-lg bg-[#0c0479] px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#0c0479]/20 transition-all hover:bg-[#09035e] active:scale-[0.97]"
-                >
-                  ส่งอีเมล
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </a>
+
               </div>
             </div>
           </FadeIn>
-
         </div>
       </section>
     </>
