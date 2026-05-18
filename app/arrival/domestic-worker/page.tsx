@@ -323,9 +323,9 @@ export default function DomesticWorkerPage() {
                                   href="https://www.cognitoforms.com/RoyalThaiEmbassy1/_pre-noa-applicant-info"
                                   className="font-semibold text-emerald-700 underline underline-offset-2 hover:text-emerald-900"
                                 >
-                                  แบบฟอร์ม
+                                  แบบฟอร์มนี้
                                 </a>
-                              </span> {" "} นี้ หลังจากนั้น สอท. จะออกหนังสือ Diplomatic Note เพื่อแนบไปกับคำร้องให้ OFM อนุมัติ
+                              </span> {" "} หลังจากนั้น สอท. จะออกหนังสือ Diplomatic Note เพื่อแนบไปกับคำร้องให้ OFM อนุมัติ
                             </p>
                           </>
                         ),

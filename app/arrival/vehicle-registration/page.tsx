@@ -99,7 +99,7 @@ export default function RegistrationPage() {
                   แจ้งการเปลี่ยนแปลงระยะเวลาการอนุมัติจดทะเบียนรถยนต์ราชการและรถยนต์ส่วนบุคคลของนักการทูต
                   จากเดิมประมาณ <span className="font-semibold">7 วันทำการ</span> เป็น{" "}
                   <span className="font-bold text-[#c40000] underline">140 วัน</span>{" "}
-                  นับจากวันที่ OFM ได้รับคำร้องออนไลน์จากฝ่ายพิธีฯ
+                  นับจากวันที่ OFM ได้รับคำร้องและเอกสารตัวจริงครบถ้วน
                 </p>
               </div>
             </div>
