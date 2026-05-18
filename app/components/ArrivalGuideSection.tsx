@@ -41,7 +41,7 @@ export default function ArrivalGuideCarousel() {
       {
         no: 4,
         title: "หารถยนต์ส่วนบุคคล",
-        href: "/arrival/car",
+        href: "/arrival/vehicle-purchase",
         image: "/car.jpg",
       },
     ],
