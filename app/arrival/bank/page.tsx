@@ -113,7 +113,7 @@ export default function BankPage() {
 
       {/* Mobile — fixed circle on the right */}
       <Link
-        href="/arrival/car"
+        href="/arrival/vehicle-purchase"
         className="fixed right-4 bottom-5 z-40 flex md:hidden h-14 w-14 items-center justify-center rounded-full border-2 border-[#0c0479] bg-white text-[10px] font-bold uppercase tracking-wider text-[#0c0479] shadow-lg"
       >
         <div className="flex flex-col items-center">
