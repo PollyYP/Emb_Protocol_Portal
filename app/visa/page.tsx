@@ -129,7 +129,7 @@ export default function VisaPage() {
               <br />
             </h1>
             <p className="mt-4 text-base leading-relaxed text-white/60 lg:text-xl">
-              Diplomatic / Official Visa Reissuance
+              Diplomatic Visa Reissuance
             </p>
             <p className="text-sm lg:text-base leading-relaxed text-white/60">
               การขอต่ออายุวีซ่า A-2 ผ่านฝ่ายพิธีการทูต <br/>
@@ -154,8 +154,8 @@ export default function VisaPage() {
                   ได้รับการขยายระยะเวลาจากเดิม 6 เดือน เป็น <span className="font-bold text-[#0c0479]">5 ปี</span> ตามหลักการต่างตอบแทน (Diplomatic Reciprocity) 
                   อย่างไรก็ดี ฝ่ายสหรัฐฯ ยังมิได้มีหนังสือแจ้งอย่างเป็นทางการเกี่ยวกับการเปลี่ยนแปลงดังกล่าว
                   ทั้งนี้ หากท่านยังคงถือวีซ่าประเภท A-2 ที่มีอายุ 6 เดือน และวีซ่าดังกล่าวใกล้หมดอายุ 
-                  แต่มีความจำเป็นต้องใช้หนังสือเดินทางในการเดินทางเข้า-ออกประเทศ 
-                  ท่านสามารถดำเนินการต่ออายุวีซ่าเพื่อให้วีซ่ามีสถานะเป็นปัจจุบันอยู่เสมอได้ โดยมีแนวทางการดำเนินการ ดังนี้
+                  แต่มีความจำเป็นต้องเดินทางทั้งภายในและภายนอกประเทศ 
+                  ท่านสามารถดำเนินการต่ออายุวีซ่าได้ โดยมีแนวทางการดำเนินการ ดังนี้
                 </p>
                 <p>
                   1. การต่ออายุวีซ่าจะต้องดำเนินการผ่าน Diplomatic Liaison Division ณ กรุงวอชิงตัน
@@ -165,7 +165,8 @@ export default function VisaPage() {
                   เพื่อให้สถานกงสุลใหญ่ประสานมายังสถานเอกอัครราชทูตฯ ในการดำเนินการต่อไป
                 </p>
                 <p>
-                  3. เมื่อสถานกงสุลใหญ่ประสานมายังสถานเอกอัครราชทูตฯ แล้ว ฝ่ายพิธีการทูตจะเป็นผู้ดำเนินการประสานไปยัง Diplomatic Visa Office ต่อไป
+                  3. เมื่อสถานกงสุลใหญ่ประสานมายังสถานเอกอัครราชทูตฯ แล้ว ฝ่ายพิธีการทูตจะเป็นผู้ดำเนินการประสานไปยัง Diplomatic Visa Office เมื่อวีซ่าของท่านได้รับการอนุมัติแล้ว
+                  ฝ่ายพิธีฯ จะนำส่งหนังสือเดินทางให้ท่านต่อไป
                 </p>
               </div>
             </div>
@@ -206,7 +207,7 @@ export default function VisaPage() {
                 </div>
                 <p className="mt-3 text-base font-semibold text-[#0c0479]">เอกสารหลัก</p>
                 <p className="mt-1 text-sm leading-relaxed text-black/45">
-                  Application, สำเนา passport,<br />สำเนาวีซ่า และ I-94
+                  Application Confirmation, <br />สำเนาหนังสือเดินทาง, <br />สำเนาวีซ่า และ I-94
                 </p>
               </div>
             </div>
@@ -228,7 +229,7 @@ export default function VisaPage() {
                   </h3>
                 </div>
                 <p className="text-xs lg:text-sm leading-relaxed text-black/60 mb-4">
-                  ผู้ติดตามที่เป็นบุคคลในครอบครัวที่ไม่ใช่คู่สมรสหรือบุตรและถือหนังสือเดินทางธรรมดา (ปกสีแดงเลือดหมู) จะต้องแสดงเอกสารเพิ่มเติมอย่างใดอย่างหนึ่ง ดังนี้
+                  ผู้ติดตามที่เป็นบุคคลในครอบครัวที่ไม่ใช่คู่สมรสหรือบุตรและถือหนังสือเดินทางธรรมดา (ปกสีน้ำตาล) จะต้องแสดงเอกสารเพิ่มเติมอย่างใดอย่างหนึ่ง ดังนี้
                 </p>
                 <div className="flex items-start gap-3 rounded-xl border border-red-200/60 bg-red-50/60 px-4 py-3 mb-4">
                   <svg className="mt-0.5 h-4 w-4 shrink-0 text-[#c40000]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -307,7 +308,7 @@ export default function VisaPage() {
                       นอกจากหนังสือเดินทาง เอกสารที่ต้องจัดเตรียมสำหรับการยื่นขอต่ออายุวีซ่า ได้แก่
                     </p>
                     {[
-                      { num: "1", label: "แบบฟอร์มคำร้อง", sub: "Application" },
+                      { num: "1", label: "แบบฟอร์มคำร้อง (ต้องเห็นบาร์โค้ดชัดเจน)", sub: "Application Confirmation" },
                       { num: "2", label: "สำเนาหนังสือเดินทาง", sub: "Copy of Passport" },
                       { num: "3", label: "สำเนาวีซ่า", sub: "Copy of Visa" },
                       { num: "4", label: "I-94", sub: "ดูข้อควรระวังด้านล่าง" },
@@ -663,9 +664,6 @@ export default function VisaPage() {
                       className="inline-flex items-center gap-2 rounded-lg bg-[#0c0479] px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#0c0479]/20 transition-all hover:bg-[#09035e] active:scale-[0.97]"
                     >
                       ส่งอีเมล
-                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                      </svg>
                     </a>
                     <a
                       href="tel:+12022984798"
