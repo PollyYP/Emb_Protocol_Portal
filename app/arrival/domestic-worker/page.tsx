@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
+import Link from "next/link";
 import { useRef } from "react";
 
 /* ─── Fade-in wrapper ─── */
@@ -240,7 +241,7 @@ export default function DomesticWorkerPage() {
               </div>
             </FadeIn>
 
-            {/* Section 03 – Important Restrictions */}
+            {/* Section 03 – Very Important */}
             <FadeIn>
               <div className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
                 <div className="h-1 w-full bg-linear-to-r from-[#c40000] to-[#e04040]" />
@@ -250,45 +251,43 @@ export default function DomesticWorkerPage() {
                       03
                     </div>
                     <h3 className="text-base lg:text-lg font-bold tracking-tight text-black/85">
-                      ข้อจำกัดที่สำคัญ (Important Restrictions)
+                      สำคัญมาก
                     </h3>
                   </div>
-                  <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-black/55">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {[
-                        {
-                          icon: "👤",
-                          title: "ทำเฉพาะงานที่ได้ระบุไว้ในสัญญาเท่านั้น",
-                          detail: "ลูกจ้างไม่สามารถทำงานที่นอกเหนือจากที่ระบุไว้ในสัญญาได้ เจ้าหน้าที่จะทำการสัมภาษณ์ลูกจ้างในประเด็นนี้เพื่อให้มั่นใจว่าลูกจ้างจะได้รับการปฏิบัติอย่างเป็นธรรม",
-                        },
-                        {
-                          icon: "👨‍👩‍👧",
-                          title: "ห้ามมีความสัมพันธ์เครือญาติ",
-                          detail: "นายจ้างและลูกจ้างจะต้องไม่มีความสัมพันธ์ทางเครือญาติ ยกเว้นกรณีที่ได้รับการพิจารณาเป็นกรณีพิเศษ",
-                        },
-                        {
-                          icon: "🏥",
-                          title: "ค่าใช้จ่ายด้านการรักษาพยาบาล",
-                          detail: "นายจ้างหรือหน่วยงานต้นสังกัดต้องรับผิดชอบค่าใช้จ่ายทางการแพทย์ของพนักงานในระหว่างพำนักในสหรัฐอเมริกา",
-                        },
-                        {
-                          icon: "🚫",
-                          title: "ห้ามหักค่าจ้าง",
-                          detail: "ห้ามมีการหักค่าจ้างนอกเหนือจากที่กฎหมายกำหนด",
-                        },
-                      ].map((item) => (
-                        <div
-                          key={item.title}
-                          className="flex gap-3 items-start p-3 rounded-xl bg-gray-50 border border-black/5"
-                        >
-                          <span className="text-lg">{item.icon}</span>
-                          <div>
-                            <p className="text-sm font-semibold text-black/75">{item.title}</p>
-                            <p className="text-sm text-black/45 mt-0.5 leading-relaxed">{item.detail}</p>
-                          </div>
+                  <div className="mt-5 space-y-3">
+                    {[
+                      {
+                        num: "1",
+                        title:
+                          "หากค่าแรงขั้นต่ำของกรุงวอชิงตันมีการปรับขึ้น โปรดตรวจสอบและจ่ายค่าแรงให้เท่ากับหรือมากกว่าอัตราค่าแรงขั้นต่ำ",
+                      },
+                      {
+                        num: "2",
+                        title: "ทำเฉพาะงานที่ได้ระบุไว้ในสัญญาเท่านั้น",
+                        detail:
+                          "ลูกจ้างไม่สามารถทำงานที่นอกเหนือจากที่ระบุไว้ในสัญญาได้ โปรดระบุขอบข่ายการทำงานให้คลอบคลุมและครบถ้วน เนื่องจากเจ้าหน้าที่จะทำการสัมภาษณ์ลูกจ้างในประเด็นนี้เพื่อให้มั่นใจว่าลูกจ้างจะได้รับการปฏิบัติอย่างเป็นธรรม",
+                      },
+                      {
+                        num: "3",
+                        title:
+                          "นายจ้างจะต้องจ่ายค่าประกันสุขภาพให้กับลูกจ้าง โดยสามารถจ่ายเงินช่วยเหลือค่าประกันสุขภาพได้เป็นอัตราร้อยละตามสมควรของอัตราเบี้ยประกัน",
+                      },
+                    ].map((item) => (
+                      <div
+                        key={item.num}
+                        className="flex items-start gap-3 rounded-xl border border-[#c40000]/10 bg-[#c40000]/3 p-4"
+                      >
+                        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#c40000] text-xs font-bold text-white">
+                          {item.num}
                         </div>
-                      ))}
-                    </div>
+                        <div>
+                          <p className="text-sm lg:text-base font-semibold leading-relaxed text-black/75">{item.title}</p>
+                          {item.detail && (
+                            <p className="mt-0.5 text-sm leading-relaxed text-black/50">{item.detail}</p>
+                          )}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -312,28 +311,42 @@ export default function DomesticWorkerPage() {
                     {[
                       {
                         num: "1",
-                        title: "ยื่นแบบฟอร์ม Pre-Notification",
+                        title: "รายงานตัวต่อกระทรวงการต่างประเทศสหรัฐฯ",
                         detail: (
                           <>
-                            <p>
-                              นักการทูตที่เป็นนายจ้างกรอกข้อมูลของผู้ติดตามส่งมาให้ฝ่ายพิธีฯ
-                              เพื่อดำเนินการยื่นแบบฟอร์ม Domestic Worker Pre-Notification ต่อ OFM โปรดกรอกข้อมูลโดยใช้ {" "}
-                              <span>
-                                <a
-                                  href="https://www.cognitoforms.com/RoyalThaiEmbassy1/_pre-noa-applicant-info"
-                                  className="font-semibold text-emerald-700 underline underline-offset-2 hover:text-emerald-900"
-                                >
-                                  แบบฟอร์มนี้
-                                </a>
-                              </span> {" "} หลังจากนั้น สอท. จะออกหนังสือ Diplomatic Note เพื่อแนบไปกับคำร้องให้ OFM อนุมัติ
-                            </p>
+                            นักการทูตที่เป็นนายจ้างจะต้องเดินทางมาประจำการและรายงานตัว{" "}
+                            <Link
+                              href="/noa"
+                              className="font-semibold text-emerald-700 underline underline-offset-2 hover:text-emerald-900"
+                            >
+                              (Notification of Arrival)
+                            </Link>{" "}
+                            ต่อกระทรวงการต่างประเทศสหรัฐฯ ก่อนเป็นลำดับแรก
+                            เมื่อทำการรายงานตัวและได้รับหมายเลขนักการทูต (PID) แล้ว
+                            จึงจะสามารถดำเนินการยื่นขอมีผู้ติดตาม A-3 ได้
                           </>
                         ),
                       },
                       {
                         num: "2",
+                        title: "ยื่นแบบฟอร์ม Pre-Notification",
+                        detail: (
+                          <>
+                            ท่านสามารถกรอกข้อมูลของผู้ติดตามโดยใช้{" "}
+                            <a
+                              href="https://www.cognitoforms.com/RoyalThaiEmbassy1/_pre-noa-applicant-info"
+                              className="font-semibold text-emerald-700 underline underline-offset-2 hover:text-emerald-900"
+                            >
+                              แบบฟอร์มนี้
+                            </a>{" "}
+                            เพื่อให้ฝ่ายพิธีฯ ดำเนินการยื่นคำร้องต่อไป
+                          </>
+                        ),
+                      },
+                      {
+                        num: "3",
                         title: "ใช้ใบอนุมัติประกอบการขอวีซ่า",
-                        detail: "เมื่อ OFM อนุมัติแล้วให้นายจ้างนำใบอนุมัติไปใช้ประกอบการขอวีซ่าให้ผู้ติดตาม",
+                        detail: "เมื่อ OFM อนุมัติคำร้องแล้ว นายจ้างสามารถนำใบอนุมัติไปใช้ประกอบการขอวีซ่าให้ผู้ติดตามได้",
                       },
                     ].map((item) => (
                       <div key={item.num} className="flex items-start gap-3 rounded-xl border border-emerald-100 bg-emerald-50/40 p-4">
@@ -346,20 +359,6 @@ export default function DomesticWorkerPage() {
                         </div>
                       </div>
                     ))}
-                  </div>
-
-                  {/* หลักปฏิบัติ note */}
-                  <div className="mt-5 flex items-start gap-3 rounded-xl border border-amber-200/70 bg-amber-50/60 px-4 py-3">
-                    <svg className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-                    </svg>
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-wide text-amber-700 mb-0.5">หลักปฏิบัติ</p>
-                      <p className="text-xs lg:text-sm leading-relaxed text-amber-900/80">
-                        นักการทูตที่เป็นนายจ้างจะต้องมีวีซ่าก่อน เนื่องจากจะต้องใช้ข้อมูลวีซ่าของนายจ้างในการกรอกแบบฟอร์ม
-                        Domestic Worker Pre-Notification
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>
