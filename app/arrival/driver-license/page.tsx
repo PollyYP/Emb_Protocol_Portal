@@ -30,9 +30,9 @@ function FadeIn({
 
 const stepsOverview = [
   { number: "01", title: "สอบข้อเขียนออนไลน์" },
-  { number: "02", title: "นำส่งเอกสารทางอีเมล" },
+  { number: "02", title: "นำส่งไฟล์เอกสารทางอีเมล" },
   { number: "03", title: "ตรวจสายตา" },
-  { number: "04", title: "นำส่งแบบฟอร์มตรวจสายตา" },
+  { number: "04", title: "นำส่งไฟล์ผลตรวจสายตา" },
   { number: "05", title: "รับใบขับขี่ทางไปรษณีย์" },
 ];
 
